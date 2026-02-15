@@ -73,7 +73,6 @@ A well-designed system aims for:
 
 ## ⚖️ Relationship
 
-```
 Reducing Latency → Improves user experience
 Increasing Throughput → Improves system capacity
 ``
@@ -87,14 +86,11 @@ Trade-off:
 ## 📊 Conceptual Visualization
 
 ### Latency Focus
-```
 Single Request → Faster Response
-```
 
 ### Throughput Focus
-```
+
 More Requests → More Completed Work per Second
-```
 
 ---
 

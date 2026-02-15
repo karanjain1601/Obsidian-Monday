@@ -25,6 +25,7 @@ tags: [SystemDesign, Performance, Scalability, Architecture]
 
 > If you have a **performance problem**, your system is slow for a **single user**.
 
+> Performance is about speed
 ---
 
 ### 📈 Scalability
@@ -43,6 +44,7 @@ Scalability also includes handling:
 
 > If you have a **scalability problem**, your system is fast for a **single user** but slow under **heavy load**.
 
+> Scalability is being able to handle large amounts of users/data/traffic.
 ---
 
 ## 🧩 Practical Example
@@ -91,9 +93,11 @@ More Resources → Proportionally More Throughput
 ## 🖼️ Diagram Placeholders
 
 Paste images into your Obsidian vault and keep these references:
+![[Pasted image 20260215174408.png]]
+![[Pasted image 20260215174508.png]]
 
 ```
-![[performance-vs-scalability-graph.png]]
+![[Pasted image 20260215174359.png]]
 ![[load-vs-response-time.png]]
 ```
 
