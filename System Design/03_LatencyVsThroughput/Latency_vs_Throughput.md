@@ -18,6 +18,13 @@ A well-designed system aims for:
 
 ---
 
+```handwritten-ink
+{
+	"versionAtEmbed": "0.3.4",
+	"filepath": "Ink/Writing/2026.2.15 - 22.06pm.writing"
+}
+```
+
 ## 📖 Definitions
 
 ### ⏳ Latency
