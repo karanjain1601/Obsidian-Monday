@@ -1,9 +1,18 @@
 ---
 title: Retry Storm
 tags: [SystemDesign, Antipatterns, Reliability, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Retry Storm
+
+> [!abstract] TL;DR
+> A retry storm occurs when aggressive retries after a failure overwhelm an already-stressed system — prevented with exponential backoff, jitter, circuit breakers, and rate limiting.
 
 ## 🧠 Core Idea
 
@@ -119,6 +128,39 @@ Detect retry storms early using metrics such as:
 Retries without control → System collapse
 Retries with backoff + circuit breaker → System recovery
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    FailingService-->|503Error|Client1
+    FailingService-->|503Error|Client2
+    Client1-->|ImmediateRetry|FailingService
+    Client2-->|ImmediateRetry|FailingService
+    FailingService-->|Overwhelmed|Collapse
+    ExponentialBackoff-->|ControlledRetry|Recovery
+    CircuitBreaker-->|FailFast|ProtectsService
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Back_Pressure]]
+- [[Asynchronism]]
+- [[Monitoring]]
+- [[Health_Monitoring]]
+
+---
+
+## Review Questions
+
+1. Why do synchronized retries across many clients make a failing service worse instead of helping recovery?
+2. How does exponential backoff with jitter reduce the chance of a synchronized retry storm?
+3. What is the difference between a circuit breaker pattern and simple retry logic, and when should you use each?
 
 ---
 

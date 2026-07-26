@@ -1,9 +1,18 @@
 ---
 title: Caching
 tags: [SystemDesign, Caching, Performance, Scalability, Databases]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚡ Caching
+
+> [!abstract] TL;DR
+> **Caching** stores frequently accessed data in a fast temporary layer to reduce database load, lower latency, and improve system throughput — with multiple placement strategies (CDN, app, DB, client).
 
 ## 🧠 Core Idea
 
@@ -121,6 +130,19 @@ Database bottleneck → Distributed cache
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    Client-->CDNEdge["CDN Edge Cache"]
+    CDNEdge-->WebServerCache["Web Server Cache (Nginx)"]
+    WebServerCache-->AppCache["App Cache (Redis / Memcached)"]
+    AppCache-->DBCache["DB Buffer Pool"]
+    DBCache-->Database[(Primary Database)]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Load Balancers]]  
@@ -136,6 +158,25 @@ Database bottleneck → Distributed cache
 
 - Cache Strategies — Medium  
   https://medium.com/@mmoshikoo/cache-strategies-996e91c80303
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Application Caching]]
+- [[CDN Caching]]
+- [[Client-Side Caching]]
+- [[Database Caching]]
+- [[Web Server Caching]]
+
+---
+
+## Review Questions
+
+1. What is the difference between a cache hit and a cache miss?
+2. Name three common cache eviction policies and briefly describe each.
+3. What are two trade-offs you accept when introducing a caching layer?
 
 ---
 

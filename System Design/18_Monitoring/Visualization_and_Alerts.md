@@ -1,9 +1,18 @@
 ---
 title: Visualization and Alerts
 tags: [SystemDesign, Monitoring, Observability, Alerts, Operations]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📊 Visualization and Alerts
+
+> [!abstract] TL;DR
+> Visualization transforms raw monitoring data into dashboards and trend graphs, while alerts notify operators when thresholds are crossed — together enabling fast detection and response to incidents.
 
 ## 🧠 Core Idea
 
@@ -104,6 +113,39 @@ Data without visualization → Hard to understand
 Monitoring without alerts → Slow response
 Visualization + alerts → Fast incident response
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    MetricsData-->|Feed|Dashboard
+    Dashboard-->|ShowsTrends|Operators
+    MetricsData-->|ThresholdBreach|AlertEngine
+    AlertEngine-->|PagerDuty|OnCallTeam
+    AlertEngine-->|EscalateUnresolved|Management
+    Dashboard-->|HeatmapsDistributions|HotspotDetection
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Monitoring|↑ Section MOC]]
+- [[Monitoring]]
+- [[Instrumentation]]
+- [[Performance_Monitoring]]
+- [[Health_Monitoring]]
+- [[Usage_Monitoring]]
+
+---
+
+## Review Questions
+
+1. What is alert fatigue and what practices (severity levels, symptom-based alerting) help prevent it?
+2. How do heatmaps and distribution graphs reveal performance problems that average metrics conceal?
+3. Why should alerts include contextual data (links, runbooks, affected services) rather than just a threshold notification?
 
 ---
 

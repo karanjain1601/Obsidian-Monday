@@ -134,6 +134,7 @@ graph LR
 
 ## Related Concepts
 
+- [[_MOC_SearchAlgorithms|↑ Section MOC]]
 - [[Database_Sharding]] — sharding strategies including range-based vs hash-based vs consistent hashing
 - [[Databases]] — where consistent hashing sits in the overall data tier picture
 - [[Load_Balancers]] — L4/L7 load balancers can use consistent hashing for session stickiness

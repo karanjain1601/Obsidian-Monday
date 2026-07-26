@@ -1,9 +1,18 @@
 ---
 title: TCP (Transmission Control Protocol)
 tags: [SystemDesign, TCP, Networking, Communication, Reliability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔗 TCP (Transmission Control Protocol)
+
+> [!abstract] TL;DR
+> TCP is a connection-oriented transport protocol that guarantees reliable, ordered delivery through a three-way handshake, acknowledgements, and retransmission — at the cost of higher latency than UDP.
 
 ## 🧠 Core Idea
 
@@ -130,6 +139,38 @@ Need reliable delivery → Use TCP
 Need low latency streaming → Use UDP
 Large backend connection counts → Use connection pooling
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    Client-->|SYN|Server
+    Server-->|SYNACK|Client
+    Client-->|ACK|Server
+    ConnectionEstablished-->|DataTransfer|BothDirections
+    BothDirections-->|SequenceNumbers|ReliableOrdering
+    BothDirections-->|Acknowledgements|LossRecovery
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[UDP]]
+- [[HTTP]]
+- [[Communication]]
+- [[gRPC]]
+
+---
+
+## Review Questions
+
+1. What is the purpose of the three-way handshake in TCP and what problem does it solve?
+2. How does TCP's flow control differ from congestion control and when does each apply?
+3. Why is connection pooling necessary when using TCP for database connections under high load?
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: RPC (Remote Procedure Call)
 tags: [SystemDesign, RPC, Communication, Microservices, DistributedSystems]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📞 RPC (Remote Procedure Call)
+
+> [!abstract] TL;DR
+> RPC allows clients to call functions on remote servers as if they were local, abstracting network complexity — at the cost of tight coupling and a new API per operation.
 
 ## 🧠 Core Idea
 
@@ -127,6 +136,39 @@ Internal microservice communication → RPC/gRPC
 Public APIs → REST or GraphQL
 Performance critical calls → RPC
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    ClientCode-->|LocalCallSyntax|ClientStub
+    ClientStub-->|MarshalArgs|NetworkTransport
+    NetworkTransport-->|SendRequest|ServerStub
+    ServerStub-->|UnmarshalArgs|ServerProcedure
+    ServerProcedure-->|ReturnResult|ClientCode
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[Communication]]
+- [[HTTP]]
+- [[TCP]]
+- [[gRPC]]
+- [[REST]]
+- [[Microservices]]
+
+---
+
+## Review Questions
+
+1. What does marshalling mean in RPC and why is it necessary for remote procedure calls?
+2. How does RPC differ from REST in terms of interface style and coupling between client and server?
+3. Why are remote RPC calls slower and less reliable than local procedure calls, and what design implications does this have?
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: Web Server Caching
 tags: [SystemDesign, Caching, WebServer, ReverseProxy, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🌐 Web Server Caching
+
+> [!abstract] TL;DR
+> **Web server caching** uses reverse proxies like Nginx or Varnish to serve cached responses without contacting application servers, reducing backend load and cutting response times.
 
 ## 🧠 Core Idea
 
@@ -82,6 +91,19 @@ Global traffic → Combine with CDN
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    Client-->|"HTTP Request"|RevProxy["Reverse Proxy (Nginx / Varnish)"]
+    RevProxy-->|"Cache Hit: serve directly"|Client
+    RevProxy-->|"Cache Miss"|AppServer["Application Server"]
+    AppServer-->|"Generate response"|RevProxy
+    RevProxy-->|"Cache response + serve"|Client
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -89,6 +111,25 @@ Global traffic → Combine with CDN
 [[Client-Side Caching]]  
 [[Load Balancers]]  
 [[Reverse Proxy]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[CDN Caching]]
+- [[Client-Side Caching]]
+- [[Load Balancers]]
+- [[Application Caching]]
+
+---
+
+## Review Questions
+
+1. At which layer of the stack does web server caching operate?
+2. Name two tools used for web server caching and the role they play.
+3. What type of content benefits most from web server caching, and why?
 
 ---
 

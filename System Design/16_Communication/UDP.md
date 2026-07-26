@@ -1,9 +1,18 @@
 ---
 title: UDP (User Datagram Protocol)
 tags: [SystemDesign, UDP, Networking, Communication, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🚀 UDP (User Datagram Protocol)
+
+> [!abstract] TL;DR
+> UDP is a connectionless protocol that sends datagrams without guaranteed delivery or ordering, trading reliability for very low latency — ideal for real-time applications like video, VoIP, and gaming.
 
 ## 🧠 Core Idea
 
@@ -121,6 +130,35 @@ Video / Voice / Gaming → UDP
 Web / APIs / Databases → TCP
 Custom reliability logic → UDP + Error Handling
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Sender-->|Datagram-NoACK|Receiver
+    Sender-->|Broadcast|AllSubnetDevices
+    Client-->|DHCPDiscover|BroadcastNetwork
+    BroadcastNetwork-->|DHCPOffer|Client
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[TCP]]
+- [[HTTP]]
+- [[Communication]]
+
+---
+
+## Review Questions
+
+1. Why is UDP preferred over TCP for real-time video streaming even though packets may be lost?
+2. What does "connectionless" mean in the context of UDP and how does it differ from TCP's three-way handshake?
+3. Give two examples of protocols that use UDP and explain why reliability guarantees would hurt their use case.
 
 ---
 

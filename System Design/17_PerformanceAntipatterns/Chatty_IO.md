@@ -1,9 +1,18 @@
 ---
 title: Chatty I/O Antipattern
 tags: [SystemDesign, Antipatterns, Performance, Scalability, IO]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Chatty I/O Antipattern
+
+> [!abstract] TL;DR
+> Chatty I/O is an antipattern where many small I/O operations replace batched requests, causing excessive network round trips, connection overhead, and degraded throughput.
 
 ## 🧠 Core Idea
 
@@ -113,6 +122,38 @@ Many small I/O calls → Batch operations
 Repeated network calls → Aggregate requests
 Frequent data access → Cache results
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    AntipatternApp-->|NSmallRequests|Database
+    Database-->|NResponses|AntipatternApp
+    OptimizedApp-->|OneBulkRequest|Database
+    Database-->|OneBatchResponse|OptimizedApp
+    OptimizedApp-->|CacheHotData|Cache
+    Cache-->|AvoidIOEntirely|OptimizedApp
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Busy_Database]]
+- [[Extraneous_Fetching]]
+- [[Caching]]
+- [[Synchronous_IO_Antipattern]]
+
+---
+
+## Review Questions
+
+1. Why does performing N individual database queries instead of one bulk query cause performance problems at scale?
+2. What is the difference between chatty I/O and extraneous fetching — can a system suffer from both simultaneously?
+3. How does API aggregation help reduce chatty I/O between a frontend and a microservices backend?
 
 ---
 

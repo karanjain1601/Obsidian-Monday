@@ -158,6 +158,7 @@ class CircuitBreaker:
 
 ## Related Concepts
 
+- [[_MOC_API_Gateway|↑ Section MOC]]
 - [[API_Gateway]]
 - [[Rate_Limiting]]
 - [[Microservices]]

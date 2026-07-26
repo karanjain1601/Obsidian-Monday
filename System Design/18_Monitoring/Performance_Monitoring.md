@@ -1,9 +1,18 @@
 ---
 title: Performance Monitoring
 tags: [SystemDesign, Monitoring, Performance, Reliability, Operations]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📊 Performance Monitoring
+
+> [!abstract] TL;DR
+> Performance monitoring tracks latency, throughput, and resource utilization over time to detect degradation before it causes outages, enabling proactive scaling and optimization.
 
 ## 🧠 Core Idea
 
@@ -92,6 +101,40 @@ Performance degradation → Early signal
 Early detection → Prevent outages
 Monitoring → Enables proactive action
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    System-->|LatencyMetrics|MonitoringPlatform
+    System-->|ThroughputMetrics|MonitoringPlatform
+    System-->|ErrorRates|MonitoringPlatform
+    System-->|ResourceUtilization|MonitoringPlatform
+    MonitoringPlatform-->|ThresholdBreach|Alert
+    Alert-->|Investigate|Operations
+    Operations-->|ScaleOrFix|System
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Monitoring|↑ Section MOC]]
+- [[Monitoring]]
+- [[Health_Monitoring]]
+- [[Instrumentation]]
+- [[Visualization_and_Alerts]]
+- [[Usage_Monitoring]]
+
+---
+
+## Review Questions
+
+1. What is the difference between tracking performance spikes versus trends, and why do both matter for reliability?
+2. How do the four golden signals (latency, traffic, errors, saturation) help diagnose different types of production incidents?
+3. Why should performance monitoring trigger proactive scaling before resource limits are hit, rather than reacting after degradation?
 
 ---
 

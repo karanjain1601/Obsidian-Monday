@@ -1,9 +1,18 @@
 ---
 title: GraphQL
 tags: [SystemDesign, GraphQL, APIs, Communication, Microservices]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧩 GraphQL
+
+> [!abstract] TL;DR
+> GraphQL is a query language letting clients specify exactly the data they need from a single endpoint, eliminating over-fetching and under-fetching issues common in REST APIs.
 
 ## 🧠 Core Idea
 
@@ -132,6 +141,40 @@ Flexible frontend data needs → GraphQL
 Public simple APIs → REST
 Internal microservices → gRPC
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Client-->|SingleEndpoint-Query|GraphQLGateway
+    GraphQLGateway-->|ResolveUser|UserService
+    GraphQLGateway-->|ResolvePosts|PostService
+    UserService-->|UserData|GraphQLGateway
+    PostService-->|PostData|GraphQLGateway
+    GraphQLGateway-->|ExactShapedResponse|Client
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[REST]]
+- [[RPC]]
+- [[gRPC]]
+- [[HTTP]]
+- [[Communication]]
+- [[Extraneous_Fetching]]
+
+---
+
+## Review Questions
+
+1. How does GraphQL's single endpoint approach differ from REST's multiple resource endpoints and what problems does this solve?
+2. What is a GraphQL resolver and how does it allow the server to fulfill a client's custom query?
+3. Why is HTTP-layer caching harder with GraphQL than with REST, and what strategies exist to work around this?
 
 ---
 

@@ -151,6 +151,7 @@ sequenceDiagram
 
 ## Related Concepts
 
+- [[_MOC_Security|↑ Section MOC]]
 - [[OAuth_and_JWT]] — token standards and OAuth 2.0 flows
 - [[TLS_and_HTTPS]] — securing the transport layer during auth exchanges
 - [[API_Gateway]] — where token validation and auth middleware typically live

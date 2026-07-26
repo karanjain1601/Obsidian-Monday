@@ -1,9 +1,18 @@
 ---
 title: Cache-Aside (Lazy Loading)
 tags: [SystemDesign, Caching, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 💤 Cache-Aside (Lazy Loading)
+
+> [!abstract] TL;DR
+> In **Cache-Aside**, the application checks the cache first and fetches from the database only on a miss, then populates the cache — caching only data that is actually requested.
 
 ## 🧠 Core Idea
 
@@ -105,6 +114,20 @@ Fast writes → Write-Behind
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"1. GET key"|Cache["Cache (Redis)"]
+    Cache-->|"2. Cache Miss - return nil"|App
+    App-->|"3. Query DB"|DB[(Database)]
+    DB-->|"4. Return data"|App
+    App-->|"5. SET key=value (TTL)"|Cache
+    App-->|"6. Return data to caller"|Caller["Caller"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -119,6 +142,25 @@ Fast writes → Write-Behind
 
 - Hazelcast — From Cache to In-Memory Data Grid  
   https://www.slideshare.net/slideshow/from-cache-to-in-memory-data-grid-introduction-to-hazelcast/34802471
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Write-Through Cache]]
+- [[Write-Behind Cache]]
+- [[Application Caching]]
+- [[Database Caching]]
+
+---
+
+## Review Questions
+
+1. Describe the cache-aside pattern step by step on a cache miss.
+2. What is the main disadvantage of cache-aside on a cold start?
+3. Why is cache-aside also called "lazy loading"?
 
 ---
 

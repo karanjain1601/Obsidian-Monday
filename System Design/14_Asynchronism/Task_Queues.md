@@ -1,9 +1,18 @@
 ---
 title: Task Queues
 tags: [SystemDesign, TaskQueues, Asynchronism, BackgroundJobs, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧰 Task Queues
+
+> [!abstract] TL;DR
+> Task queues receive jobs with their data, store them reliably, and distribute them to worker processes for background execution — keeping APIs fast while heavy computations run separately.
 
 ## 🧠 Core Idea
 
@@ -109,6 +118,39 @@ Long-running jobs → Task Queue
 Service-to-service events → Message Queue
 Scheduled background work → Task Queue + Scheduler
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Application-->|SubmitTask|TaskQueue
+    TaskQueue-->|AssignJob|Worker1
+    TaskQueue-->|AssignJob|Worker2
+    Worker1-->|StoreResult|ResultStore
+    Worker2-->|StoreResult|ResultStore
+    TaskQueue-->|FailedJob|DeadLetterQueue
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Asynchronism|↑ Section MOC]]
+- [[Asynchronism]]
+- [[Message_Queues]]
+- [[Back_Pressure]]
+- [[Idempotent_Operations]]
+- [[Synchronous_IO_Antipattern]]
+
+---
+
+## Review Questions
+
+1. How does a task queue differ from a message queue in terms of execution model and typical use cases?
+2. What reliability mechanisms (acknowledgements, retries, dead-letter queues) does a task queue provide and why are they important?
+3. How does Celery use a message broker like Redis or RabbitMQ to implement task queue functionality?
 
 ---
 

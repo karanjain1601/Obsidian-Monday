@@ -1,9 +1,18 @@
 ---
 title: Availability in Numbers
+aliases: []
 tags: [SystemDesign, Availability, Reliability, SRE]
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📊 Availability in Numbers
+
+> [!abstract] TL;DR
+> Availability is measured as a percentage of uptime ("nines"), where each additional nine reduces annual downtime by ~10x — and components in sequence reduce total availability while components in parallel increase it.
 
 ## 🧠 Core Idea
 
@@ -111,6 +120,21 @@ Modern systems achieve high availability using:
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph LR
+    subgraph Sequential[Sequential: Availability Decreases]
+        SA[Component A\n99.9%] --> SB[Component B\n99.9%]
+        SB --> SR[Total: ~99.8%]
+    end
+    subgraph Parallel[Parallel: Availability Increases]
+        PA[Component A\n99.9%] & PB[Component B\n99.9%] --> PR[Total: ~99.9999%]
+    end
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 ```
@@ -127,6 +151,25 @@ Modern systems achieve high availability using:
 [[Load Balancing]]  
 [[Disaster Recovery]]  
 [[Reliability]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_AvailabilityPatterns|↑ Section MOC]]
+- [[Availability_vs_Consistency]] — the core distributed system trade-off behind SLA targets
+- [[Failover]] — the primary mechanism for hitting high availability numbers
+- [[Replication]] — data redundancy that underpins availability calculations
+- [[Load_Balancers]] — enabling parallel component arrangements to boost availability
+- [[CAP_Theorem]] — theoretical limits on what availability levels are achievable
+
+---
+
+## Review Questions
+
+1. Your system has three components in sequence with availabilities of 99.9%, 99.95%, and 99.9%. Calculate the total system availability and the resulting annual downtime in minutes.
+2. A startup promises customers "five nines" (99.999%) availability. What is the maximum downtime budget per month, and name two specific architecture decisions this target requires?
+3. Two read replicas are added in parallel to a primary database with 99.9% availability. Calculate the theoretical combined read availability and explain why real-world observed availability may be lower.
 
 ---
 

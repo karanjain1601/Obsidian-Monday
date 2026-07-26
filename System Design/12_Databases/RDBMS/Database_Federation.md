@@ -1,9 +1,18 @@
 ---
 title: Database Federation (Functional Partitioning)
 tags: [SystemDesign, Databases, Federation, Scalability, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧩 Database Federation (Functional Partitioning)
+
+> [!abstract] TL;DR
+> **Federation** splits a monolithic database into specialized databases per business domain, reducing per-database load, enabling independent scaling, and improving cache locality.
 
 ## 🧠 Core Idea
 
@@ -83,6 +92,20 @@ Each service interacts only with its dedicated database.
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    AppLayer["Application Layer"]-->UserSvc["User Service"]
+    AppLayer-->ForumSvc["Forum Service"]
+    AppLayer-->ProductSvc["Product Service"]
+    UserSvc-->UserDB[(UserDB)]
+    ForumSvc-->ForumDB[(ForumDB)]
+    ProductSvc-->ProductDB[(ProductDB)]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -90,6 +113,25 @@ Each service interacts only with its dedicated database.
 [[Database Replication]]  
 [[Microservices]]  
 [[Scalability]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Database Sharding]]
+- [[Database Replication]]
+- [[Microservices]]
+- [[SQL vs NoSQL]]
+
+---
+
+## Review Questions
+
+1. How does database federation reduce load on a single database?
+2. What is a key disadvantage of federation when queries span multiple data stores?
+3. How does federation relate to the microservices pattern of database-per-service?
 
 ---
 

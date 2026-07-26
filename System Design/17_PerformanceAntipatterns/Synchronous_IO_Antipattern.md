@@ -1,9 +1,18 @@
 ---
 title: Synchronous I/O Antipattern
 tags: [SystemDesign, Antipatterns, Performance, Scalability, IO]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Synchronous I/O Antipattern
+
+> [!abstract] TL;DR
+> Synchronous I/O blocks the calling thread until I/O completes, wasting resources and limiting concurrency — replaced by async I/O patterns, background jobs, and non-blocking libraries.
 
 ## 🧠 Core Idea
 
@@ -102,6 +111,38 @@ Network or disk calls → Async I/O
 Long-running tasks → Background jobs
 High concurrency systems → Avoid blocking threads
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    SyncThread-->|BlocksOn|IOOperation
+    IOOperation-->|Waits|SyncThread
+    BlockedThread-->|CannotServe|OtherRequests
+    AsyncThread-->|DelegatesTo|AsyncIOHandler
+    AsyncIOHandler-->|ThreadFreed|ServeOtherRequests
+    AsyncIOHandler-->|IOComplete|Callback
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Asynchronism]]
+- [[Message_Queues]]
+- [[Task_Queues]]
+- [[Chatty_IO]]
+
+---
+
+## Review Questions
+
+1. What happens to server throughput when every request thread is blocked on a synchronous database call under high concurrency?
+2. How does async I/O (e.g., async/await in Python or Node.js) allow a single thread to handle thousands of concurrent connections?
+3. What is the risk of mixing synchronous blocking calls inside an otherwise async codebase?
 
 ---
 

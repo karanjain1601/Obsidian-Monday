@@ -1,9 +1,18 @@
 ---
 title: Client-Side Caching
 tags: [SystemDesign, Caching, ClientCaching, Performance, Web]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 💻 Client-Side Caching
+
+> [!abstract] TL;DR
+> **Client-side caching** stores data on the user's device (browser or app), eliminating server round-trips for repeated requests, reducing network load, and enabling offline access.
 
 ## 🧠 Core Idea
 
@@ -96,6 +105,19 @@ Browsers store these in local cache using HTTP caching headers like:
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    Browser["Browser / App"]-->|"Check local cache"|LocalCache["Local Cache"]
+    LocalCache-->|"Cache Hit - serve instantly"|Browser
+    LocalCache-->|"Cache Miss"|Server["Server"]
+    Server-->|"Response + Cache-Control header"|Browser
+    Browser-->|"Store in local cache (TTL)"|LocalCache
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -110,6 +132,25 @@ Browsers store these in local cache using HTTP caching headers like:
 
 - MDN Web Docs — HTTP Caching  
   https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[CDN Caching]]
+- [[Web Server Caching]]
+- [[Cache Aside]]
+- [[Application Caching]]
+
+---
+
+## Review Questions
+
+1. What HTTP headers control client-side browser caching?
+2. How does ETag-based validation work to confirm whether cached content is still fresh?
+3. What is the main security concern with storing sensitive data in client-side caches?
 
 ---
 

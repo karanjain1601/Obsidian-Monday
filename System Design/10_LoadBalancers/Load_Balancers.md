@@ -1,9 +1,18 @@
 ---
 title: Load Balancers
 tags: [SystemDesign, LoadBalancing, Scalability, Availability, Networking]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚖️ Load Balancers
+
+> [!abstract] TL;DR
+> A **load balancer** distributes incoming client requests across multiple backend servers, preventing overload, enabling horizontal scaling, and eliminating single points of failure.
 
 ## 🧠 Core Idea
 
@@ -102,10 +111,18 @@ Load Balancer → Scalable + Fault-Tolerant Architecture
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[load-balancer-architecture.png]]
+```mermaid
+graph LR
+    Client-->LoadBalancer
+    LoadBalancer-->Server1["Server 1"]
+    LoadBalancer-->Server2["Server 2"]
+    LoadBalancer-->Server3["Server 3"]
+    Server1-->LoadBalancer
+    Server2-->LoadBalancer
+    Server3-->LoadBalancer
+    LoadBalancer-->Client
 ```
 
 ---
@@ -131,6 +148,25 @@ Load Balancer → Scalable + Fault-Tolerant Architecture
 
 - HAProxy Architecture  
   https://www.haproxy.org/download/1.2/doc/architecture.txt
+
+---
+
+## Related Concepts
+
+- [[_MOC_LoadBalancers|↑ Section MOC]]
+- [[Horizontal Scaling]]
+- [[Load Balancing Algorithms]]
+- [[Layer4 vs Layer7 LoadBalancing]]
+- [[LoadBalancer vs ReverseProxy]]
+- [[CDN Caching]]
+
+---
+
+## Review Questions
+
+1. What is the primary purpose of a load balancer in a distributed system?
+2. How does a load balancer differ from a reverse proxy?
+3. What happens to request routing if one of the backend servers behind a load balancer fails?
 
 ---
 

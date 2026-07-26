@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🗃 Arrays — Map of Content
 
 > [!abstract] What This Section Covers
-> Arrays are the most fundamental data structure in computing and the substrate for a large family of interview problems. This section covers the structural difference between static and dynamic arrays, core array operations and their complexities, and four high-leverage problem-solving techniques that operate directly on arrays: the two-pointer pattern for shrinking search spaces, the sliding window for subarray/substring problems, prefix sums for range queries, and Kadane's algorithm for the maximum subarray problem. These techniques alone unlock a substantial portion of easy and medium array interview questions.
+> Arrays are the most fundamental data structure in computing and the substrate for a large family of interview problems. This section covers the structural difference between static and dynamic arrays, core array operations and their complexities, and five high-leverage problem-solving techniques that operate directly on arrays: the two-pointer pattern for shrinking search spaces, the sliding window for subarray/substring problems, prefix sums for range queries, Kadane's algorithm for the maximum subarray problem, and merging overlapping intervals. These techniques alone unlock a substantial portion of easy and medium array interview questions.
 
 ## Concept Map
 
@@ -25,6 +25,7 @@ graph TD
     TECH --> SLIDE["Sliding_Window"]
     TECH --> PREFIX["Prefix_Sum"]
     TECH --> KADANE["Kadane_Algorithm"]
+    TECH --> INTERVALS["Merge_Intervals"]
 
     style CENTER fill:#7c3aed,color:#fff
     style DS fill:#2563eb,color:#fff
@@ -41,6 +42,7 @@ Recommended order to study the notes in this section.
 4. [[Two_Pointers]] — Collapse O(n²) brute-force pair searches to O(n) with a left/right pointer strategy
 5. [[Sliding_Window]] — Maintain a variable- or fixed-size window to solve subarray problems in O(n)
 6. [[Kadane_Algorithm]] — Find the maximum-sum contiguous subarray using a single O(n) pass
+7. [[Merge_Intervals]] — Sort intervals by start, then sweep and merge overlaps; the gateway to interval-scheduling problems
 
 ## All Notes at a Glance
 
@@ -52,6 +54,7 @@ Recommended order to study the notes in this section.
 | [[Sliding_Window]] | Fixed or variable window that slides to track a subarray property in O(n) | Intermediate |
 | [[Prefix_Sum]] | Transform an array so range-sum queries become O(1) subtraction | Beginner |
 | [[Kadane_Algorithm]] | DP-flavored greedy scan for maximum contiguous subarray sum | Intermediate |
+| [[Merge_Intervals]] | Sort-then-sweep to merge/insert overlapping intervals | Intermediate |
 
 ## Key Questions This Section Answers
 

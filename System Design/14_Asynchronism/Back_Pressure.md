@@ -1,9 +1,18 @@
 ---
 title: Back Pressure
 tags: [SystemDesign, BackPressure, Scalability, Performance, DistributedSystems]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🚦 Back Pressure
+
+> [!abstract] TL;DR
+> Back pressure prevents system overload by throttling producers when queues fill up, signaling clients to slow down or retry with exponential backoff to maintain stable throughput.
 
 ## 🧠 Core Idea
 
@@ -96,6 +105,38 @@ Async systems + Queues → Always implement Back Pressure
 High traffic APIs → Return 503 when overloaded
 Streaming systems → Control producer rate
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Producer-->|SendMessages|Queue
+    Queue-->|QueueFull-HTTP503|Producer
+    Queue-->|Dequeue|Consumer
+    Consumer-->|Process|Result
+    Producer-->|ExponentialBackoff|RetryLater
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Asynchronism|↑ Section MOC]]
+- [[Asynchronism]]
+- [[Message_Queues]]
+- [[Task_Queues]]
+- [[Retry_Storm]]
+- [[Monitoring]]
+
+---
+
+## Review Questions
+
+1. What happens to a system without back pressure when producers are faster than consumers?
+2. How does exponential backoff with jitter help prevent retry storms during back pressure events?
+3. In what HTTP status code is back pressure typically signaled and why?
 
 ---
 

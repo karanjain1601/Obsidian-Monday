@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🏁 Competitive Programming — Map of Content
 
 > [!abstract] What This Section Covers
-> Competitive programming extends core DSA with a toolkit of mathematical techniques, advanced string algorithms, and specialised data structures that reduce hard problems to known patterns within time limits. This section covers 16 notes organised into six clusters: environment setup, mathematics (number theory, modular arithmetic, sieve, combinatorics), bit manipulation, string algorithms (KMP, Z-algorithm, hashing, suffix array), advanced data structures (Fenwick/BIT tree, Segment Tree, Sparse Table), and advanced techniques (coordinate compression, meet-in-the-middle). The section closes with a pattern index linking problem constraints to the right algorithm family.
+> Competitive programming extends core DSA with a toolkit of mathematical techniques, advanced string algorithms, and specialised data structures that reduce hard problems to known patterns within time limits. This section covers 19 notes organised into six clusters: environment setup, mathematics (number theory, modular arithmetic, sieve, combinatorics, Euler's totient, Chinese Remainder Theorem, Miller–Rabin primality), bit manipulation, string algorithms (KMP, Z-algorithm, hashing, suffix array), advanced data structures (Fenwick/BIT tree, Segment Tree, Sparse Table), and advanced techniques (coordinate compression, meet-in-the-middle). The section closes with a pattern index linking problem constraints to the right algorithm family.
 
 ## Concept Map
 
@@ -30,6 +30,9 @@ graph TD
     MATH --> MA["[[Modular_Arithmetic]]"]
     MATH --> SV["[[Sieve_of_Eratosthenes]]"]
     MATH --> CB["[[Combinatorics]]"]
+    MATH --> ET["[[Euler_Totient]]"]
+    MATH --> CRT["[[Chinese_Remainder_Theorem]]"]
+    MATH --> MR["[[Miller_Rabin_Primality]]"]
 
     BITS --> BM["[[Bit_Manipulation]]"]
 
@@ -54,18 +57,21 @@ graph TD
 2. [[Bit_Manipulation]] — Bit tricks, masks, XOR properties; bitmask DP prerequisites
 3. [[Number_Theory]] — GCD/LCM, Euler's totient, modular inverse, Fermat's little theorem
 4. [[Modular_Arithmetic]] — Modular exponentiation, inverse, properties under mod; overflow avoidance
-5. [[Sieve_of_Eratosthenes]] — Linear and segmented sieve; smallest prime factor table
-6. [[Combinatorics]] — nCr mod p, Pascal's triangle, inclusion-exclusion, Catalan numbers
-7. [[KMP_Algorithm]] — Failure function; pattern matching in O(n+m); prefix function intuition
-8. [[Z_Algorithm]] — Z-array; O(n+m) matching; comparison with KMP
-9. [[String_Hashing]] — Polynomial rolling hash; collision avoidance; double hashing
-10. [[Suffix_Array]] — SA-IS or prefix-doubling construction; LCP array; applications
-11. [[Fenwick_Tree]] — Binary indexed tree; point update + prefix sum in O(log n)
-12. [[Sparse_Table]] — Idempotent range queries in O(1); static array preprocessing
-13. [[Segment_Tree_Advanced]] — Lazy propagation; range update + range query; persistent segment trees
-14. [[Coordinate_Compression]] — Mapping large value ranges to small indices before applying BIT/SegTree
-15. [[Meet_in_the_Middle]] — Split search space; 2^(n/2) collision approach; application to subset sum
-16. [[Problem_Patterns_Index]] — Constraint → algorithm mapping reference; pattern recognition guide
+5. [[Euler_Totient]] — Euler's φ function; Euler's theorem; totient-based modular inverse and its sieve
+6. [[Chinese_Remainder_Theorem]] — Solve simultaneous congruences; CRT reconstruction and its uniqueness
+7. [[Miller_Rabin_Primality]] — Fast probabilistic primality via witnesses; deterministic bases for 64-bit ints
+8. [[Sieve_of_Eratosthenes]] — Linear and segmented sieve; smallest prime factor table
+9. [[Combinatorics]] — nCr mod p, Pascal's triangle, inclusion-exclusion, Catalan numbers
+10. [[KMP_Algorithm]] — Failure function; pattern matching in O(n+m); prefix function intuition
+11. [[Z_Algorithm]] — Z-array; O(n+m) matching; comparison with KMP
+12. [[String_Hashing]] — Polynomial rolling hash; collision avoidance; double hashing
+13. [[Suffix_Array]] — SA-IS or prefix-doubling construction; LCP array; applications
+14. [[Fenwick_Tree]] — Binary indexed tree; point update + prefix sum in O(log n)
+15. [[Sparse_Table]] — Idempotent range queries in O(1); static array preprocessing
+16. [[Segment_Tree_Advanced]] — Lazy propagation; range update + range query; persistent segment trees
+17. [[Coordinate_Compression]] — Mapping large value ranges to small indices before applying BIT/SegTree
+18. [[Meet_in_the_Middle]] — Split search space; 2^(n/2) collision approach; application to subset sum
+19. [[Problem_Patterns_Index]] — Constraint → algorithm mapping reference; pattern recognition guide
 
 ## All Notes at a Glance
 
@@ -77,6 +83,9 @@ graph TD
 | [[Modular_Arithmetic]] | Mod operations; fast exponentiation; modular inverse | Intermediate |
 | [[Sieve_of_Eratosthenes]] | O(n log log n) prime sieve; SPF table | Intermediate |
 | [[Combinatorics]] | nCr, inclusion-exclusion, Catalan, Stirling numbers | Intermediate |
+| [[Euler_Totient]] | Euler's φ function; Euler's theorem; totient-based modular inverse | Advanced |
+| [[Chinese_Remainder_Theorem]] | Solve simultaneous congruences; CRT reconstruction | Advanced |
+| [[Miller_Rabin_Primality]] | Probabilistic primality test; deterministic 64-bit witnesses | Advanced |
 | [[String_Hashing]] | Polynomial rolling hash; O(1) substring comparison | Advanced |
 | [[KMP_Algorithm]] | Failure function; O(n+m) string matching | Advanced |
 | [[Z_Algorithm]] — | Z-array; alternative to KMP for pattern matching | Advanced |

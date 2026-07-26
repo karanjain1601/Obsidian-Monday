@@ -1,9 +1,18 @@
 ---
 title: Asynchronism
 tags: [SystemDesign, Asynchronous, Scalability, Performance, Microservices]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⏳ Asynchronism
+
+> [!abstract] TL;DR
+> Asynchronism offloads time-consuming tasks to background workers or queues, keeping user-facing services fast and responsive while heavy processing happens independently.
 
 ## 🧠 Core Idea
 
@@ -128,6 +137,38 @@ User-facing latency sensitive tasks → Async
 Long-running computations → Background Jobs
 Service communication → Message Queues
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Client-->|Request|WebServer
+    WebServer-->|ImmediateResponse|Client
+    WebServer-->|Enqueue|MessageQueue
+    MessageQueue-->|Dequeue|Worker
+    Worker-->|Process|BackgroundJob
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Asynchronism|↑ Section MOC]]
+- [[Back_Pressure]]
+- [[Message_Queues]]
+- [[Task_Queues]]
+- [[Idempotent_Operations]]
+- [[Synchronous_IO_Antipattern]]
+
+---
+
+## Review Questions
+
+1. What is the main benefit of asynchronism in system design, and what latency/consistency trade-off does it introduce?
+2. How do message queues differ from task queues in purpose and typical tooling?
+3. What is back pressure and why is it necessary in systems where producers can outpace consumers?
 
 ---
 

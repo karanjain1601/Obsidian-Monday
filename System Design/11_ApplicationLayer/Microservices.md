@@ -1,9 +1,18 @@
 ---
 title: Microservices
 tags: [SystemDesign, Microservices, Architecture, ApplicationLayer, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧩 Microservices
+
+> [!abstract] TL;DR
+> **Microservices** decompose an application into small, independently deployable services that each own a specific business capability and communicate via APIs or messaging queues.
 
 ## 🧠 Core Idea
 
@@ -106,10 +115,18 @@ Most large systems begin as monoliths and evolve into microservices when scale d
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[microservices-architecture.png]]
+```mermaid
+graph LR
+    Client-->APIGateway["API Gateway"]
+    APIGateway-->UserService["User Service"]
+    APIGateway-->FeedService["Feed Service"]
+    APIGateway-->SearchService["Search Service"]
+    APIGateway-->PhotoService["Photo Service"]
+    UserService-->UserDB[(UserDB)]
+    FeedService-->FeedDB[(FeedDB)]
+    SearchService-->SearchIndex[(SearchIndex)]
 ```
 
 ---
@@ -135,6 +152,25 @@ Most large systems begin as monoliths and evolve into microservices when scale d
 
 - Martin Fowler — Microservices  
   https://martinfowler.com/articles/microservices.html
+
+---
+
+## Related Concepts
+
+- [[_MOC_ApplicationLayer|↑ Section MOC]]
+- [[Application Layer]]
+- [[Service Discovery]]
+- [[Load Balancers]]
+- [[Databases]]
+- [[Caching]]
+
+---
+
+## Review Questions
+
+1. What is the core principle behind microservices architecture?
+2. How does an API gateway simplify client communication in a microservices system?
+3. What are two common challenges when transitioning from a monolith to microservices?
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: Busy Frontend Antipattern
 tags: [SystemDesign, Antipatterns, Performance, Scalability, Frontend]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Busy Frontend Antipattern
+
+> [!abstract] TL;DR
+> The busy frontend antipattern occurs when frontend servers are overwhelmed by traffic, large assets, or excessive API calls — resolved through CDNs, load balancing, and asset optimization.
 
 ## 🧠 Core Idea
 
@@ -107,6 +116,39 @@ Heavy scripts → Lazy load
 Traffic spikes → Load balance servers
 Repeated data → Cache responses
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    ManyUsers-->|ConcurrentRequests|FrontendServer
+    FrontendServer-->|Overloaded|SlowResponses
+    CDN-->|ServesStaticAssets|ManyUsers
+    LoadBalancer-->|DistributesTraffic|FrontendServer1
+    LoadBalancer-->|DistributesTraffic|FrontendServer2
+    Cache-->|APIResponseCache|FrontendServer1
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Caching]]
+- [[Load_Balancers]]
+- [[Busy_Database]]
+- [[Chatty_IO]]
+- [[Synchronous_IO_Antipattern]]
+
+---
+
+## Review Questions
+
+1. What is the difference between a busy frontend and a busy backend, and how do their solutions differ?
+2. How does a CDN reduce load on frontend servers and what types of content benefit most from CDN caching?
+3. What causes "excessive API calls" from the frontend and what architectural patterns reduce them?
 
 ---
 

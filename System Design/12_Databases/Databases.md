@@ -1,9 +1,18 @@
 ---
 title: Databases
 tags: [SystemDesign, Databases, DataLayer, Scalability, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🗄️ Databases
+
+> [!abstract] TL;DR
+> Choosing the right database is critical — SQL, NoSQL, Key-Value, Graph, and Wide Column databases are each optimized for different access patterns, consistency needs, and scale requirements.
 
 ## 🧠 Core Idea
 
@@ -108,10 +117,15 @@ Databases connect directly with:
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[database-types-overview.png]]
+```mermaid
+graph TD
+    Databases-->SQLRelational["SQL / Relational (MySQL, PostgreSQL)"]
+    Databases-->DocumentDB["Document Store (MongoDB, CouchDB)"]
+    Databases-->KeyValueDB["Key-Value (Redis, DynamoDB)"]
+    Databases-->WideColumnDB["Wide Column (Cassandra, HBase)"]
+    Databases-->GraphDB["Graph DB (Neo4j, Amazon Neptune)"]
 ```
 
 ---
@@ -120,6 +134,25 @@ Databases connect directly with:
 
 - Database Selection in System Design (YouTube)  
   https://www.youtube.com/watch?v=kKjm4ehYiMs
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[SQL vs NoSQL]]
+- [[Database Replication]]
+- [[Database Sharding]]
+- [[Caching]]
+- [[Key-Value Store]]
+
+---
+
+## Review Questions
+
+1. What are the four main categories of NoSQL databases?
+2. When would you choose a relational database over a NoSQL database?
+3. What is the CAP theorem and why is it relevant to database selection?
 
 ---
 

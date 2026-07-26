@@ -1,9 +1,18 @@
 ---
 title: Busy Database
 tags: [SystemDesign, Database, Antipatterns, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Busy Database Antipattern
+
+> [!abstract] TL;DR
+> A busy database antipattern occurs when a single database becomes a throughput bottleneck due to high load, poor queries, or missing indexes — solved by caching, read replicas, and sharding.
 
 ## 🧠 Core Idea
 
@@ -122,6 +131,41 @@ Reads heavy → Add replicas + caching
 Writes heavy → Partition data
 Growing workload → Shard early
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    ManyServices-->|AllReadsWrites|SingleDatabase
+    SingleDatabase-->|Overloaded|Bottleneck
+    Bottleneck-->|Solution1|ReadReplicas
+    Bottleneck-->|Solution2|CacheLayer
+    Bottleneck-->|Solution3|ShardedDatabases
+    ReadReplicas-->|HandlesReads|Clients
+    CacheLayer-->|ServesHotData|Clients
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Caching]]
+- [[Monolithic_Persistence]]
+- [[Databases]]
+- [[Busy_Frontend]]
+- [[Chatty_IO]]
+- [[Extraneous_Fetching]]
+
+---
+
+## Review Questions
+
+1. What are the most common root causes of the busy database antipattern and which is easiest to fix first?
+2. How do read replicas help with a read-heavy busy database, and what consistency trade-off do they introduce?
+3. When would you choose database sharding over adding a caching layer to address an overloaded database?
 
 ---
 

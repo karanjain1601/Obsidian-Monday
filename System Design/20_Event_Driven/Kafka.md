@@ -149,6 +149,7 @@ flowchart LR
 
 ## Related Concepts
 
+- [[_MOC_EventDriven|↑ Section MOC]]
 - [[RabbitMQ]] — traditional message broker; use when you need complex routing or work queues
 - [[Message_Queues]] — general messaging patterns Kafka fits into
 - [[Event_Sourcing]] — Kafka is commonly used as the event store backbone

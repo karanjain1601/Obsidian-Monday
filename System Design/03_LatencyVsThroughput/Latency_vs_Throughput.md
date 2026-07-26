@@ -1,9 +1,18 @@
 ---
 title: Latency vs Throughput
+aliases: []
 tags: [SystemDesign, Performance, Latency, Throughput]
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⏱️ Latency vs Throughput
+
+> [!abstract] TL;DR
+> Latency is the time a single request takes to complete, while throughput is the number of requests a system can process per unit time — good systems maximize throughput while keeping latency acceptable.
 
 ## 🧠 Core Idea
 
@@ -88,6 +97,19 @@ Trade-off:
 - Optimizing throughput may increase latency due to batching or queueing.
 - Optimizing latency may reduce throughput due to resource reservation.
 
+```mermaid
+graph LR
+    subgraph LatencyFocus[Latency: Single Request Journey]
+        LReq[Request] --> LNet[Network Delay] --> LProc[Processing] --> LResp[Response]
+    end
+    subgraph ThroughputFocus[Throughput: Many Concurrent Requests]
+        TR1[Request 1] --> TWorker[Worker Pool]
+        TR2[Request 2] --> TWorker
+        TR3[Request 3] --> TWorker
+        TWorker --> TOut[N Requests/sec]
+    end
+```
+
 ---
 
 ## 📊 Conceptual Visualization
@@ -128,6 +150,26 @@ Add these images into your Obsidian vault:
 [[Queueing Systems]]  
 [[Bottlenecks]]  
 [[Capacity Estimation]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_LatencyVsThroughput|↑ Section MOC]]
+- [[Performance_vs_Scalability]] — broader view of system speed vs growth capacity
+- [[Caching]] — the most direct way to reduce latency by avoiding repeated work
+- [[Load_Balancers]] — distribute requests to improve both latency and throughput
+- [[Message_Queues]] — increase throughput by decoupling producers from consumers
+- [[Task_Queues]] — offload work to increase API throughput
+- [[Database_Replication]] — scale read throughput by distributing queries across replicas
+
+---
+
+## Review Questions
+
+1. A real-time multiplayer game requires smooth gameplay for players. Would you optimize for low latency or high throughput, and what trade-offs does that choice force on your infrastructure?
+2. Your API has 50ms latency per request but processes only 20 requests per second. A competitor achieves 200ms latency but 2,000 RPS. For which use cases is each system better suited?
+3. Adding batch processing to your data pipeline reduces latency spikes but lowers per-request throughput. Explain this trade-off and describe a scenario where you would accept it.
 
 ---
 

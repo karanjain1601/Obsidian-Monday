@@ -1,9 +1,18 @@
 ---
 title: Extraneous Fetching
 tags: [SystemDesign, Antipatterns, Performance, Scalability, Optimization]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Extraneous Fetching
+
+> [!abstract] TL;DR
+> Extraneous fetching is an antipattern where systems retrieve more data than needed, wasting compute, memory, and network resources — fixed by selecting only required fields and paginating results.
 
 ## 🧠 Core Idea
 
@@ -89,6 +98,37 @@ Needed fields only → Fetch minimal data
 Large datasets → Use pagination
 API responses → Keep lightweight
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    AntipatternQuery-->|SELECTstar-AllFields|Database
+    Database-->|HugePayload|AntipatternQuery
+    OptimizedQuery-->|SELECTonlyNeeded|Database
+    Database-->|MinimalPayload|OptimizedQuery
+    OptimizedQuery-->|PaginatedResults|Client
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Chatty_IO]]
+- [[Busy_Database]]
+- [[Caching]]
+- [[GraphQL]]
+
+---
+
+## Review Questions
+
+1. What SQL antipattern exemplifies extraneous fetching and how does column projection fix it?
+2. How does GraphQL specifically address the extraneous fetching problem compared to a traditional REST API?
+3. What is the performance impact of loading entire collections without pagination on memory and network usage?
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: Refresh-Ahead Cache Strategy
 tags: [SystemDesign, Caching, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔄 Refresh-Ahead Cache Strategy
+
+> [!abstract] TL;DR
+> **Refresh-Ahead** proactively refreshes cache entries before they expire based on predicted access patterns, eliminating cache-miss latency for predictably hot data.
 
 ## 🧠 Core Idea
 
@@ -76,6 +85,20 @@ Many real systems combine refresh-ahead for **hot keys** and cache-aside for **c
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"Read hot key"|Cache["Cache"]
+    Cache-->|"Cache Hit - serve data"|App
+    Cache-->|"TTL nearing expiry - trigger"|Refresher["Background Refresher"]
+    Refresher-->|"Fetch fresh data"|DB[(Database)]
+    DB-->|"Return new data"|Refresher
+    Refresher-->|"Update cache entry"|Cache
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -90,6 +113,25 @@ Many real systems combine refresh-ahead for **hot keys** and cache-aside for **c
 
 - Hazelcast — From Cache to In-Memory Data Grid  
   https://www.slideshare.net/slideshow/from-cache-to-in-memory-data-grid-introduction-to-hazelcast/34802471
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Cache Aside]]
+- [[Write-Through Cache]]
+- [[Write-Behind Cache]]
+- [[CDN Caching]]
+
+---
+
+## Review Questions
+
+1. What distinguishes refresh-ahead from cache-aside in terms of when data is loaded?
+2. What is the risk of inaccurate TTL prediction in refresh-ahead caching?
+3. Name a workload where refresh-ahead caching is most effective.
 
 ---
 

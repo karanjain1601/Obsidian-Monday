@@ -1,9 +1,18 @@
 ---
 title: SQL Tuning
 tags: [SystemDesign, Databases, SQL, Performance, Optimization]
+aliases: []
+domain: SystemDesign
+difficulty: Advanced
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚙️ SQL Tuning
+
+> [!abstract] TL;DR
+> **SQL tuning** diagnoses and improves query performance through benchmarking, profiling, indexing, and query optimization — often more cost-effective than scaling hardware or sharding.
 
 ## 🧠 Core Idea
 
@@ -100,6 +109,21 @@ SQL tuning often saves more cost than scaling infrastructure.
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph TD
+    SlowQuery["Slow Query Detected"]-->Profile["Profile: EXPLAIN ANALYZE"]
+    Profile-->IndexCheck{"Missing / wrong index?"}
+    IndexCheck-->|Yes|AddIndex["Add or Fix Index"]
+    IndexCheck-->|No|RewriteQuery["Rewrite / Restructure Query"]
+    AddIndex-->Benchmark["Benchmark Under Load"]
+    RewriteQuery-->Benchmark
+    Benchmark-->Done["Performance Goal Met"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -117,6 +141,25 @@ SQL tuning often saves more cost than scaling infrastructure.
 
 - Towards Data Science — Query Optimization in PostgreSQL  
   https://towardsdatascience.com/query-optimization-for-mere-humans-in-postgresql-875ab864390a/
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Denormalization]]
+- [[Database Replication]]
+- [[Database Sharding]]
+- [[Database Caching]]
+
+---
+
+## Review Questions
+
+1. What does the EXPLAIN or EXPLAIN ANALYZE command reveal about a query?
+2. Why can adding too many indexes hurt write performance?
+3. What is a covering index, and when does it eliminate the need to access the main table?
 
 ---
 

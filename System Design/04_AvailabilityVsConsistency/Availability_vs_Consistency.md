@@ -1,9 +1,18 @@
 ---
 title: Availability vs Consistency
+aliases: []
 tags: [SystemDesign, DistributedSystems, Availability, Consistency, CAP]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔄 Availability vs Consistency
+
+> [!abstract] TL;DR
+> In distributed systems, availability (always responding) and consistency (always showing the latest data) cannot both be fully guaranteed during network failures — the CAP Theorem formalizes this fundamental trade-off.
 
 ## 🧠 Core Idea
 
@@ -88,6 +97,20 @@ Since partitions are unavoidable, systems must choose between **Consistency** an
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph TD
+    Partition[Network Partition Occurs]
+    Partition --> Choice{System Must Choose}
+    Choice --> Consistency[Prioritize Consistency\nRefuse requests until sync\nCP System]
+    Choice --> Availability[Prioritize Availability\nReturn stale data\nAP System]
+    Consistency --> ExamplesCP[HBase, Zookeeper]
+    Availability --> ExamplesAP[Cassandra, DynamoDB]
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 Add this image to your Obsidian vault:
@@ -115,6 +138,26 @@ Add this image to your Obsidian vault:
 [[Distributed Systems]]  
 [[Fault Tolerance]]  
 [[Reliability]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_AvailabilityVsConsistency|↑ Section MOC]]
+- [[CAP_Theorem]] — the formal proof that formalizes this trade-off
+- [[Consistency_Patterns]] — concrete models (strong, weak, eventual) for data visibility
+- [[Replication]] — the mechanism that introduces the consistency vs availability tension
+- [[Failover]] — how availability patterns respond to failures
+- [[Database_Replication]] — where CP vs AP choices shape database architecture
+- [[Databases]] — where the C vs A decision directly influences technology selection
+
+---
+
+## Review Questions
+
+1. You're building an inventory system for an online flash sale. Would you prioritize availability or consistency for stock counts, and how would you mitigate the risks of whichever you sacrifice?
+2. After a network partition heals in a CP system, nodes must reconcile diverged state. Describe the reconciliation process and at least two potential issues that could arise.
+3. A distributed cache returns stale data 0.1% of the time due to replication lag. Is this a formal consistency violation? Which CAP system type does this represent, and is it acceptable in a user-facing checkout flow?
 
 ---
 

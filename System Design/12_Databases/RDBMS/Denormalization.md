@@ -1,9 +1,18 @@
 ---
 title: Denormalization
 tags: [SystemDesign, Databases, Denormalization, Performance, DataModeling]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧮 Denormalization
+
+> [!abstract] TL;DR
+> **Denormalization** intentionally stores redundant data to eliminate expensive JOINs, trading write speed and storage for dramatically faster reads — especially useful in distributed systems.
 
 ## 🧠 Core Idea
 
@@ -106,6 +115,22 @@ Distributed databases → Prefer denormalization
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph TB
+    subgraph Normalized["Normalized Schema (JOIN required)"]
+        UsersTable["Users(id, name)"]
+        OrdersTable["Orders(id, user_id, product)"]
+        UsersTable-->|"JOIN on user_id"|OrdersTable
+    end
+    subgraph Denormalized["Denormalized Schema (no JOIN)"]
+        OrdersFull["Orders(id, user_id, user_name, product)"]
+    end
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -120,6 +145,25 @@ Distributed databases → Prefer denormalization
 
 - Wikipedia — Denormalization  
   https://en.wikipedia.org/wiki/Denormalization
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Database Sharding]]
+- [[Database Federation]]
+- [[SQL Tuning]]
+- [[Database Replication]]
+
+---
+
+## Review Questions
+
+1. What trade-off does denormalization make between read and write performance?
+2. In what type of workload is denormalization most beneficial?
+3. How does denormalization help in distributed database architectures?
 
 ---
 

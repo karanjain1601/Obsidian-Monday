@@ -1,9 +1,18 @@
 ---
 title: SQL vs NoSQL
 tags: [SystemDesign, Databases, SQL, NoSQL, DataModeling]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚖️ SQL vs NoSQL
+
+> [!abstract] TL;DR
+> **SQL** databases offer structured schemas, ACID transactions, and strong consistency. **NoSQL** databases offer flexible schemas and horizontal scalability. Most modern systems use both.
 
 ## 🧠 Core Idea
 
@@ -106,6 +115,18 @@ Many modern systems use **hybrid architectures** combining both.
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    Request["Data Request"]-->|"Structured + ACID needed"|SQLDB["SQL Database (MySQL, PostgreSQL)"]
+    Request-->|"Flexible schema + scale needed"|NoSQLDB["NoSQL Database (MongoDB, Cassandra)"]
+    SQLDB-->StrongConsistency["Strong Consistency + Complex Queries"]
+    NoSQLDB-->HighScalability["High Scalability + Flexible Schema"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -128,6 +149,25 @@ Many modern systems use **hybrid architectures** combining both.
 
 - MongoDB — NoSQL vs SQL  
   https://www.mongodb.com/resources/basics/databases/nosql-explained/nosql-vs-sql
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Document Store]]
+- [[Key-Value Store]]
+- [[Wide Column Store]]
+- [[Database Replication]]
+
+---
+
+## Review Questions
+
+1. What four properties does ACID guarantee in relational databases?
+2. What does BASE stand for in the context of NoSQL systems?
+3. Give one example each of a workload best suited for SQL and one best suited for NoSQL.
 
 ---
 

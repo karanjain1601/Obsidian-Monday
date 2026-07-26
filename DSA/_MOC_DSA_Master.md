@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🏆 DSA + Competitive Programming — Master Map of Content
 
 > [!abstract] About This Vault
-> Comprehensive DSA and competitive programming knowledge vault covering ~100 notes across 13 sections — from Big O fundamentals to advanced CP algorithms. Designed for interview prep, competitive programming, and deep algorithmic understanding.
+> Comprehensive DSA and competitive programming knowledge vault covering ~140 notes across 16 sections — from Big O fundamentals to advanced CP algorithms, string processing, disk-based data structures, and computational geometry. Designed for interview prep, competitive programming, and deep algorithmic understanding.
 
 ## Vault Architecture
 
@@ -33,11 +33,16 @@ graph TD
 
     M --> C12["12 Competitive Programming"]:::red
 
+    M --> C13["13 Strings"]:::blue
+    M --> C14["14 Advanced Data Structures"]:::green
+    M --> C15["15 Computational Geometry"]:::teal
+
     classDef master fill:#7c3aed,color:#fff,stroke:#5b21b6
     classDef blue fill:#2563eb,color:#fff,stroke:#1d4ed8
     classDef green fill:#059669,color:#fff,stroke:#047857
     classDef orange fill:#d97706,color:#fff,stroke:#b45309
     classDef red fill:#dc2626,color:#fff,stroke:#b91c1c
+    classDef teal fill:#0d9488,color:#fff,stroke:#0f766e
 ```
 
 ## Sections at a Glance
@@ -45,18 +50,21 @@ graph TD
 | # | Section | Notes | Entry Point | Difficulty |
 |---|---------|-------|-------------|------------|
 | 00 | Complexity Analysis | 6 | [[_MOC_Complexity_Analysis]] | Beginner |
-| 01 | Arrays | 6 | [[_MOC_Arrays]] | Beginner–Intermediate |
+| 01 | Arrays | 7 | [[_MOC_Arrays]] | Beginner–Intermediate |
 | 02 | Linked Lists | 4 | [[_MOC_Linked_Lists]] | Beginner–Intermediate |
 | 03 | Stacks & Queues | 5 | [[_MOC_Stacks_Queues]] | Beginner–Intermediate |
 | 04 | Hash Tables | 4 | [[_MOC_Hash_Tables]] | Beginner–Intermediate |
 | 05 | Trees | 7 | [[_MOC_Trees]] | Beginner–Advanced |
-| 06 | Heaps | 4 | [[_MOC_Heaps]] | Intermediate |
-| 07 | Graphs | 9 | [[_MOC_Graphs]] | Beginner–Intermediate |
-| 08 | Sorting & Searching | 5 | [[_MOC_Sorting_Searching]] | Beginner–Intermediate |
-| 09 | Recursion & Backtracking | 4 | [[_MOC_Recursion_Backtracking]] | Beginner–Intermediate |
-| 10 | Dynamic Programming | 9 | [[_MOC_Dynamic_Programming]] | Intermediate–Advanced |
+| 06 | Heaps | 5 | [[_MOC_Heaps]] | Intermediate |
+| 07 | Graphs | 17 | [[_MOC_Graphs]] | Beginner–Intermediate |
+| 08 | Sorting & Searching | 12 | [[_MOC_Sorting_Searching]] | Beginner–Intermediate |
+| 09 | Recursion & Backtracking | 6 | [[_MOC_Recursion_Backtracking]] | Beginner–Intermediate |
+| 10 | Dynamic Programming | 13 | [[_MOC_Dynamic_Programming]] | Intermediate–Advanced |
 | 11 | Greedy | 4 | [[_MOC_Greedy]] | Intermediate |
-| 12 | Competitive Programming | 16 | [[_MOC_Competitive_Programming]] | Intermediate–Advanced |
+| 12 | Competitive Programming | 19 | [[_MOC_Competitive_Programming]] | Intermediate–Advanced |
+| 13 | Strings | 5 | [[_MOC_Strings]] | Beginner–Advanced |
+| 14 | Advanced Data Structures | 5 | [[_MOC_Advanced_Data_Structures]] | Intermediate–Advanced |
+| 15 | Computational Geometry | 3 | [[_MOC_Computational_Geometry]] | Intermediate–Advanced |
 
 ## Learning Paths
 
@@ -124,5 +132,8 @@ Modular arithmetic, Sieve, BIT/Fenwick Tree, KMP/Z-algorithm
 - [[_MOC_Dynamic_Programming]] — Memoisation, tabulation, knapsack, sequence, tree DP
 - [[_MOC_Greedy]] — Greedy proofs, activity selection, Huffman coding
 - [[_MOC_Competitive_Programming]] — Math, strings, advanced DS, CP techniques
+- [[_MOC_Strings]] — String fundamentals, pattern matching, Manacher, suffix structures
+- [[_MOC_Advanced_Data_Structures]] — B-tree family, B+ tree, 2-3 tree, skip list, indexing
+- [[_MOC_Computational_Geometry]] — Geometry primitives, convex hull, line & polygon algorithms
 
 #MOC #DSA #CompetitiveProgramming #MasterMOC

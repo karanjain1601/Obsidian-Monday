@@ -1,9 +1,18 @@
 ---
 title: Write-Behind Cache Strategy
 tags: [SystemDesign, Caching, Performance, Scalability, Availability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📝 Write-Behind Cache Strategy
+
+> [!abstract] TL;DR
+> In **Write-Behind** caching, writes go to cache immediately with database persistence handled asynchronously later, maximizing write throughput at the cost of potential data loss on cache failure.
 
 ## 🧠 Core Idea
 
@@ -97,6 +106,18 @@ Simple pattern → Cache-Aside
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"1. Write data"|Cache["Cache"]
+    Cache-->|"2. Immediate OK (no wait)"|App
+    Cache-->|"3. Queue write"|BGWorker["Background Worker"]
+    BGWorker-->|"4. Async flush to DB (later)"|DB[(Database)]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -112,6 +133,25 @@ Simple pattern → Cache-Aside
 
 - Scalability, Availability, Stability Patterns  
   https://www.slideshare.net/slideshow/scalability-availability-stability-patterns/4062682
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Cache Aside]]
+- [[Write-Through Cache]]
+- [[Refresh-Ahead Cache]]
+- [[Application Caching]]
+
+---
+
+## Review Questions
+
+1. How does write-behind caching differ from write-through in terms of database write timing?
+2. What is the risk of data loss in write-behind caching, and how is it mitigated?
+3. Name one use case where write-behind caching provides a significant performance advantage.
 
 ---
 

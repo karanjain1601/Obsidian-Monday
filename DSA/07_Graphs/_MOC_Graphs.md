@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🕸️ Graphs — Map of Content
 
 > [!abstract] What This Section Covers
-> Graphs are the most general data structure in DSA — any relationship between entities can be modelled as a graph. This section moves from representation choices (adjacency list vs matrix) through traversal (BFS, DFS), connectivity (Union-Find), shortest paths (Dijkstra, Bellman-Ford, Floyd-Warshall), ordering (topological sort), and spanning trees (MST). Together these nine notes cover the algorithm families that appear most often in interviews and competitive programming graph problems.
+> Graphs are the most general data structure in DSA — any relationship between entities can be modelled as a graph. This section moves from representation choices (adjacency list vs matrix) through traversal (BFS, DFS, grid/island traversal, Eulerian paths), connectivity (Union-Find, strongly connected components, articulation points & bridges), shortest paths (Dijkstra, Bellman-Ford, Floyd-Warshall, A*), ordering and spanning trees (topological sort, MST), tree queries (lowest common ancestor), and the flow/matching family (network flow, bipartite matching). Together these seventeen notes cover the algorithm families that appear most often in interviews and competitive programming graph problems.
 
 ## Concept Map
 
@@ -21,20 +21,30 @@ graph TD
     G --> CONN["Connectivity"]
     G --> SP["Shortest Path"]
     G --> ORD["Ordering + MST"]
+    G --> ADV["Flow, Matching & Trees"]
 
     REP --> GR["[[Graph_Representation]]"]
 
     TRAV --> BFS["[[BFS]]"]
     TRAV --> DFS["[[DFS]]"]
+    TRAV --> ISL["[[Island_Traversal]]"]
+    TRAV --> EUL["[[Eulerian_Path_and_Circuit]]"]
 
     CONN --> UF["[[Union_Find]]"]
+    CONN --> SCC["[[Strongly_Connected_Components]]"]
+    CONN --> APB["[[Articulation_Points_and_Bridges]]"]
 
     SP --> DIJ["[[Dijkstra]]"]
     SP --> BF["[[Bellman_Ford]]"]
     SP --> FW["[[Floyd_Warshall]]"]
+    SP --> AST["[[A_Star_Search]]"]
 
     ORD --> TS["[[Topological_Sort]]"]
     ORD --> MST["[[Minimum_Spanning_Tree]]"]
+
+    ADV --> NF["[[Network_Flow]]"]
+    ADV --> BPM["[[Bipartite_Matching]]"]
+    ADV --> LCA["[[Lowest_Common_Ancestor]]"]
 ```
 
 ## Learning Path
@@ -48,6 +58,14 @@ graph TD
 7. [[Bellman_Ford]] — Dynamic programming SSSP; handles negative weights, detects negative cycles
 8. [[Floyd_Warshall]] — All-pairs shortest path via DP in O(V³)
 9. [[Minimum_Spanning_Tree]] — Prim's and Kruskal's algorithms; spanning tree cost minimisation
+10. [[Island_Traversal]] — Grid-as-graph BFS/DFS; connected components / flood fill on matrices
+11. [[Eulerian_Path_and_Circuit]] — Degree conditions; Hierholzer's algorithm to walk every edge once
+12. [[Strongly_Connected_Components]] — Tarjan's and Kosaraju's algorithms; condensation DAG
+13. [[Articulation_Points_and_Bridges]] — DFS low-link values to find cut vertices and critical edges
+14. [[A_Star_Search]] — Heuristic-guided shortest path; admissibility/consistency; Dijkstra generalised
+15. [[Lowest_Common_Ancestor]] — Binary lifting and Euler-tour + RMQ for O(log n) / O(1) LCA queries
+16. [[Network_Flow]] — Max-flow/min-cut; Ford-Fulkerson, Edmonds-Karp, Dinic's algorithm
+17. [[Bipartite_Matching]] — Maximum bipartite matching via augmenting paths (Hungarian / Hopcroft-Karp)
 
 ## All Notes at a Glance
 
@@ -62,6 +80,14 @@ graph TD
 | [[Floyd_Warshall]] | DP matrix for all-pairs shortest paths; O(V³) | Intermediate |
 | [[Topological_Sort]] | Linear ordering of DAG nodes; cycle detection | Intermediate |
 | [[Minimum_Spanning_Tree]] | Prim (greedy) + Kruskal (Union-Find) | Intermediate |
+| [[Island_Traversal]] | Grid-as-graph BFS/DFS; flood fill; connected components on a matrix | Intermediate |
+| [[Eulerian_Path_and_Circuit]] | Degree conditions + Hierholzer's algorithm to traverse every edge once | Intermediate |
+| [[Strongly_Connected_Components]] | Tarjan / Kosaraju; condensation DAG | Advanced |
+| [[Articulation_Points_and_Bridges]] | DFS low-link cut vertices and critical bridges | Advanced |
+| [[A_Star_Search]] | Heuristic-guided shortest path; admissible/consistent heuristics | Advanced |
+| [[Lowest_Common_Ancestor]] | Binary lifting / Euler tour + RMQ; O(log n)–O(1) queries | Advanced |
+| [[Network_Flow]] | Max-flow/min-cut; Ford-Fulkerson, Edmonds-Karp, Dinic | Advanced |
+| [[Bipartite_Matching]] | Augmenting-path matching; Hungarian / Hopcroft-Karp | Advanced |
 
 ## Key Questions This Section Answers
 

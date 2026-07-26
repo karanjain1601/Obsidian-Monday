@@ -1,9 +1,18 @@
 ---
 title: Background Jobs
+aliases: []
 tags: [SystemDesign, BackgroundJobs, AsynchronousProcessing, Scalability]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🕒 Background Jobs
+
+> [!abstract] TL;DR
+> Background jobs offload time-consuming or non-critical tasks from the main request flow, keeping APIs fast and responsive while enabling scalable async processing via queues, schedulers, and worker pools.
 
 ## 🧠 Core Idea
 
@@ -70,6 +79,19 @@ They commonly run via:
 User Request → API Server → Message Queue → Worker Nodes → Result Store
 ```
 
+```mermaid
+graph LR
+    User[User Request] --> API[API Server]
+    API -- immediate response --> User
+    API --> Queue[Message Queue]
+    Queue --> W1[Worker Node 1]
+    Queue --> W2[Worker Node 2]
+    Queue --> W3[Worker Node 3]
+    W1 --> Store[Result Store]
+    W2 --> Store
+    W3 --> Store
+```
+
 ---
 
 ## 🔀 Implementation Approaches
@@ -120,6 +142,25 @@ User Request → API Server → Message Queue → Worker Nodes → Result Store
 [[Scalability]]  
 [[Load Balancing]]  
 [[Microservices Architecture]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_BackgroundJobs|↑ Section MOC]]
+- [[Message_Queues]] — the primary delivery mechanism for background job tasks
+- [[Task_Queues]] — higher-level abstraction over queues for managing background work
+- [[Microservices]] — background jobs are a core pattern in microservice architectures
+- [[Load_Balancers]] — distributing background workers to scale processing capacity
+- [[Horizontal_Scaling]] — adding more worker nodes to increase background job throughput
+
+---
+
+## Review Questions
+
+1. An image processing service lets users upload photos that get resized and watermarked by a background worker. Due to a network timeout, the same image is processed twice and receives a double watermark. What design principle prevents this, and how would you implement it?
+2. Your background job queue has accumulated 50,000 pending jobs with only 5 workers active, causing users to wait hours for email confirmations. What strategies would you use to reduce lag without dropping messages?
+3. A background job for bank transaction notifications fails after debiting an account but before sending the notification. How do you guarantee the notification is eventually sent without ever sending it twice?
 
 ---
 

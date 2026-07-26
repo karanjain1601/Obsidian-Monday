@@ -1,9 +1,18 @@
 ---
 title: Message Queues
 tags: [SystemDesign, MessageQueues, Asynchronism, DistributedSystems, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📬 Message Queues
+
+> [!abstract] TL;DR
+> Message queues decouple producers from consumers, enabling async communication where services publish messages independently and workers process them in the background at their own pace.
 
 ## 🧠 Core Idea
 
@@ -118,6 +127,39 @@ Official Site: https://kafka.apache.org/
 | Purpose | Service-to-service messaging | Execute background jobs |
 | Consumers | Services | Worker processes |
 | Examples | Kafka, RabbitMQ | Celery, Sidekiq |
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Producer-->|Publish|MessageQueue
+    MessageQueue-->|Deliver|Consumer1
+    MessageQueue-->|Deliver|Consumer2
+    Consumer1-->|Process|Result1
+    Consumer2-->|Process|Result2
+    MessageQueue-->|DeadLetter|DLQ
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Asynchronism|↑ Section MOC]]
+- [[Asynchronism]]
+- [[Task_Queues]]
+- [[Back_Pressure]]
+- [[Idempotent_Operations]]
+- [[Retry_Storm]]
+
+---
+
+## Review Questions
+
+1. How do message queues decouple producers from consumers and why does this improve scalability?
+2. What is the difference between Redis, RabbitMQ, and Kafka as message brokers, and when would you choose each?
+3. Why must workers consuming from a queue be designed as idempotent operations?
 
 ---
 

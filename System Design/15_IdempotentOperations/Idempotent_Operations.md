@@ -1,9 +1,18 @@
 ---
 title: Idempotent Operations
 tags: [SystemDesign, Idempotency, DistributedSystems, Reliability, Messaging]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔁 Idempotent Operations
+
+> [!abstract] TL;DR
+> An idempotent operation produces the same result regardless of how many times it is executed, making retries and at-least-once delivery safe in distributed and queue-based systems.
 
 ## 🧠 Core Idea
 
@@ -96,6 +105,38 @@ Designing workers to be idempotent allows:
 - Email sending
 - Background job execution
 - API request retries
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    IncomingRequest-->|CheckRequestID|IdempotencyStore
+    IdempotencyStore-->|AlreadyProcessed|ReturnCachedResult
+    IdempotencyStore-->|NewRequest|ProcessOperation
+    ProcessOperation-->|StoreResult|IdempotencyStore
+    ProcessOperation-->|Return|NewResult
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_IdempotentOperations|↑ Section MOC]]
+- [[Message_Queues]]
+- [[Task_Queues]]
+- [[Asynchronism]]
+- [[Back_Pressure]]
+- [[HTTP]]
+
+---
+
+## Review Questions
+
+1. Why does at-least-once delivery in message queues require consumers to implement idempotent operations?
+2. What is the difference between a safe HTTP method and an idempotent HTTP method? Give an example of each.
+3. How would you implement idempotency for a payment processing endpoint that must not charge a user twice?
 
 ---
 

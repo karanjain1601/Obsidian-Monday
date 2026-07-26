@@ -1,9 +1,18 @@
 ---
 title: Write-Through Cache Strategy
 tags: [SystemDesign, Caching, Performance, Scalability, Consistency]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ✍️ Write-Through Cache Strategy
+
+> [!abstract] TL;DR
+> In **Write-Through** caching, every write goes to both cache and database synchronously, ensuring strong consistency between them at the cost of added write latency.
 
 ## 🧠 Core Idea
 
@@ -118,6 +127,20 @@ Many real-world systems combine **Write-Through + Cache-Aside** for best results
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"1. Write data"|Cache["Cache"]
+    Cache-->|"2. Synchronous write"|DB[(Database)]
+    DB-->|"3. Confirm write"|Cache
+    Cache-->|"4. Confirm to app"|App
+    App-->|"5. Read same key"|Cache
+    Cache-->|"6. Cache Hit - fresh data"|App
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -132,6 +155,25 @@ Many real-world systems combine **Write-Through + Cache-Aside** for best results
 
 - Scalability, Availability, Stability Patterns  
   https://www.slideshare.net/slideshow/scalability-availability-stability-patterns/4062682
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Cache Aside]]
+- [[Write-Behind Cache]]
+- [[Refresh-Ahead Cache]]
+- [[Database Caching]]
+
+---
+
+## Review Questions
+
+1. In write-through caching, when is data written to the database relative to the cache write?
+2. What is the main advantage of write-through caching for subsequent read performance?
+3. What is the downside of write-through when dealing with write-heavy workloads?
 
 ---
 

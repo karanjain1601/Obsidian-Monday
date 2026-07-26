@@ -1,9 +1,18 @@
 ---
 title: Improper Instantiation
 tags: [SystemDesign, Performance, Antipatterns, Scalability, Optimization]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Improper Instantiation
+
+> [!abstract] TL;DR
+> Improper instantiation is an antipattern where expensive objects or connections are repeatedly created per request instead of being pooled or reused, causing CPU waste and poor scalability.
 
 ## 🧠 Core Idea
 
@@ -127,6 +136,38 @@ Expensive resource → Reuse it
 Frequently needed object → Pool or cache it
 Per-request initialization → Avoid
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    AntipatternRequest-->|CreateNewConnection|ExpensiveSetup
+    ExpensiveSetup-->|HighLatency|Response
+    OptimizedRequest-->|BorrowConnection|ConnectionPool
+    ConnectionPool-->|ReuseExisting|OptimizedRequest
+    OptimizedRequest-->|LowLatency|Response
+    SharedSingleton-->|InitializedOnce|AllRequests
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Caching]]
+- [[Busy_Database]]
+- [[Synchronous_IO_Antipattern]]
+- [[Chatty_IO]]
+
+---
+
+## Review Questions
+
+1. Why is recreating a database connection on every request expensive and how does connection pooling solve this?
+2. What design patterns (singleton, object pool, factory) are most applicable to solving improper instantiation?
+3. How does repeated object creation inside a loop affect garbage collection pressure in managed runtimes?
 
 ---
 

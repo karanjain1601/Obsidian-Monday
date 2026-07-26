@@ -1,9 +1,18 @@
 ---
 title: System Design - Introduction
+aliases: []
 tags: [SystemDesign, Architecture, Scalability, Reliability]
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📌 System Design — Introduction
+
+> [!abstract] TL;DR
+> System design is the structured process of defining the architecture, components, and interactions of a software system to meet functional and non-functional requirements at scale.
 
 ## 🧠 What is System Design?
 System design is the structured process of **defining the architecture, components, modules, interfaces, interactions, and overall structure** of a software system so that it meets **functional and non-functional requirements**. It acts as a **blueprint** that guides implementation and evolution of software systems.
@@ -130,6 +139,17 @@ Understand Problem
 → Detailed Design  
 → Documentation  
 → Continuous Improvement
+
+```mermaid
+flowchart TD
+    UnderstandProblem[Understand Problem] --> DefineScope[Define Scope]
+    DefineScope --> Research[Research Existing Systems]
+    Research --> HighLevel[High-Level Architecture]
+    HighLevel --> DetailedDesign[Detailed Design]
+    DetailedDesign --> Documentation[Documentation]
+    Documentation --> ContinuousImprovement[Continuous Improvement]
+    ContinuousImprovement --> HighLevel
+```
 
 ---
 
@@ -672,6 +692,31 @@ Benefits:
 [[Load Balancing]]  
 [[Caching]]  
 [[CAP Theorem]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Introduction|↑ Section MOC]]
+- [[Performance_vs_Scalability]] — how fast a system runs vs how well it handles growth
+- [[Latency_vs_Throughput]] — key performance metrics every designer must balance
+- [[Availability_vs_Consistency]] — core distributed system trade-off
+- [[CAP_Theorem]] — formal theorem on what distributed systems can guarantee
+- [[Load_Balancers]] — distributing traffic across multiple servers
+- [[Horizontal_Scaling]] — adding more nodes to handle increased load
+- [[Microservices]] — splitting systems into independent, deployable services
+- [[Caching]] — improving performance by storing frequently accessed data
+- [[Message_Queues]] — asynchronous communication between system components
+- [[Domain_Name_System]] — translating domain names to IP addresses
+- [[Databases]] — persistent data storage patterns and trade-offs
+
+---
+
+## Review Questions
+
+1. A startup's single-server app handles 100 users fine but crashes at 10,000. Which step of the system design process was likely skipped, and what architectural changes would you make retroactively?
+2. You're designing a payment processing system from scratch. What trade-offs would you make between consistency and availability, and how does the CAP Theorem guide your technology selection?
+3. An e-commerce platform expects a 10x traffic spike during Black Friday. How would you approach the Estimations and Deep Dive phases of the system design template to prepare for this load?
 
 ---
 

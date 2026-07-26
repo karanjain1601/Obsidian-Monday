@@ -1,9 +1,18 @@
 ---
 title: Replication
+aliases: []
 tags: [SystemDesign, Availability, Reliability, DistributedSystems, Replication]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧬 Replication
+
+> [!abstract] TL;DR
+> Replication maintains multiple copies of data across nodes — master-slave excels at read scaling while master-master enables multi-region writes, at the cost of conflict resolution complexity.
 
 ## 🧠 Core Idea
 
@@ -129,6 +138,21 @@ It is also tightly connected to:
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph TD
+    subgraph MasterSlave[Master-Slave Replication]
+        MS_Master[Master\nWrites + Reads] --> MS_Slave1[Slave 1\nReads Only]
+        MS_Master --> MS_Slave2[Slave 2\nReads Only]
+    end
+    subgraph MasterMaster[Master-Master Replication]
+        MM_Master1[Master 1\nWrites + Reads] <--> MM_Master2[Master 2\nWrites + Reads]
+    end
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 Add an image to your Obsidian vault:
@@ -136,6 +160,26 @@ Add an image to your Obsidian vault:
 ```
 ![[replication-architecture-diagram.png]]
 ```
+
+---
+
+## Related Concepts
+
+- [[_MOC_AvailabilityPatterns|↑ Section MOC]]
+- [[Failover]] — replication is the prerequisite that makes failover possible
+- [[Availability_vs_Consistency]] — replication lag is the root cause of this trade-off
+- [[CAP_Theorem]] — replication strategy determines whether a system is CP or AP
+- [[Database_Replication]] — the database-specific implementation of this pattern
+- [[Database_Sharding]] — complementary technique for scaling writes alongside replication
+- [[Consistency_Patterns]] — how replication lag maps to strong, weak, or eventual consistency
+
+---
+
+## Review Questions
+
+1. A master-slave MySQL setup has the master crash before replicating its last 50 writes to any slave. A slave is then promoted to master. What happened to those 50 writes, and how would you design the system to minimize this data loss risk?
+2. You're building a global e-commerce platform serving customers in both the US and Europe. Would master-slave or master-master replication better serve this use case, and what consistency challenges would you need to address?
+3. Explain how replication relates to the CAP Theorem. When a replica consistently lags behind the master by 500ms, which CAP property are you sacrificing, and under what conditions would you enforce strong consistency instead?
 
 ---
 

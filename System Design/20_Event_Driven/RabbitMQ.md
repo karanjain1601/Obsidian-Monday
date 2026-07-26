@@ -140,6 +140,7 @@ flowchart LR
 
 ## Related Concepts
 
+- [[_MOC_EventDriven|↑ Section MOC]]
 - [[Kafka]] — the event streaming alternative; use when you need replay, high throughput, or fan-out
 - [[Message_Queues]] — general patterns for async messaging
 - [[Task_Queues]] — RabbitMQ's primary use case pattern

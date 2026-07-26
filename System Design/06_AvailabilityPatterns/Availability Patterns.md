@@ -1,9 +1,18 @@
 ---
 title: Availability Patterns
+aliases: []
 tags: [SystemDesign, Availability, Reliability, DistributedSystems]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🟢 Availability Patterns
+
+> [!abstract] TL;DR
+> Availability patterns — including redundancy, failover, replication, and graceful degradation — are architectural approaches that keep systems operational and minimize downtime when failures occur.
 
 ## 🧠 Core Idea
 
@@ -86,6 +95,24 @@ Higher Availability → More Redundancy → Higher Cost & Complexity
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph TD
+    AP[Availability Patterns]
+    AP --> Redundancy[Redundancy]
+    AP --> Failover[Failover]
+    AP --> Replication[Replication]
+    AP --> LoadBalancing[Load Balancing]
+    AP --> HealthChecks[Health Checks]
+    AP --> GracefulDegradation[Graceful Degradation]
+    AP --> DisasterRecovery[Disaster Recovery]
+    Redundancy --> ActiveActive[Active-Active]
+    Redundancy --> ActivePassive[Active-Passive]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Availability vs Consistency]]  
@@ -94,6 +121,26 @@ Higher Availability → More Redundancy → Higher Cost & Complexity
 [[Failover]]  
 [[Replication]]  
 [[Disaster Recovery]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_AvailabilityPatterns|↑ Section MOC]]
+- [[Availability_vs_Consistency]] — the foundational trade-off availability patterns must navigate
+- [[Failover]] — the primary pattern for handling primary component failure
+- [[Replication]] — maintaining data copies to support availability under failure
+- [[Load_Balancers]] — distribute traffic to eliminate single points of failure
+- [[CAP_Theorem]] — the formal constraint on what availability guarantees are possible
+- [[Consistency_Patterns]] — how consistency choices interact with availability design
+
+---
+
+## Review Questions
+
+1. A critical payment service goes down for 4 unplanned minutes. Which availability pattern(s) could have prevented this, and what would be the cost and complexity trade-off of implementing each?
+2. You're designing a media streaming platform that must maintain 99.99% uptime. Which combination of availability patterns would you recommend, and how do they interact with each other?
+3. "Graceful degradation" means providing limited functionality rather than total failure. Design a specific graceful degradation strategy for a social media platform when the primary database becomes unavailable.
 
 ---
 

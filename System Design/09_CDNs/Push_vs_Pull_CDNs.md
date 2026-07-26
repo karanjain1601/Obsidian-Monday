@@ -1,9 +1,18 @@
 ---
 title: Push vs Pull CDNs
+aliases: []
 tags: [SystemDesign, CDN, Caching, Networking, Performance]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📦 Push vs Pull CDNs
+
+> [!abstract] TL;DR
+> Pull CDNs fetch content from origin on first request and cache automatically (ideal for high-traffic sites), while Push CDNs require pre-uploading content (ideal for low-traffic or rarely-changed assets) — most large systems use a hybrid of both.
 
 ## 🧠 Core Idea
 
@@ -141,6 +150,25 @@ Many real-world systems use **hybrid models** combining both.
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph TD
+    subgraph PullCDN[Pull CDN: On-Demand Caching]
+        PR1[First Request] --> PEdge[CDN Edge]
+        PEdge -- Cache Miss --> POrigin[Origin Server]
+        POrigin --> PEdge
+        PEdge -- Cached --> PR2[Subsequent Requests]
+    end
+    subgraph PushCDN[Push CDN: Pre-Uploaded Content]
+        Dev[Developer / CI Pipeline] --> Upload[Upload to CDN]
+        Upload --> PStore[CDN Storage]
+        PStore --> AllRequests[All User Requests]
+    end
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 ```
@@ -156,6 +184,25 @@ Many real-world systems use **hybrid models** combining both.
 [[Domain Name System (DNS)]]  
 [[Web Performance]]  
 [[Scalability]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_CDNs|↑ Section MOC]]
+- [[Content_Delivery_Network]] — the broader CDN concept these two models implement
+- [[Domain_Name_System]] — DNS directs users to CDN edges regardless of push or pull model
+- [[Caching]] — both CDN models are specialized caching strategies at global scale
+- [[Load_Balancers]] — CDN edges act as a distributed load balancing layer in front of origin
+- [[Performance_vs_Scalability]] — choosing push vs pull directly impacts both dimensions
+
+---
+
+## Review Questions
+
+1. A news website publishes 200 articles per day with associated images and receives 5 million page views daily. Would you use a Push or Pull CDN for article images? Justify your answer by weighing the specific trade-offs.
+2. A software company distributes a 2GB installer that is updated only once per quarter but downloaded by 100,000 users per release cycle. Which CDN model is more cost-effective, and why does traffic volume matter less than update frequency in this decision?
+3. You run a hybrid CDN setup: static assets use Push CDN, user-generated content uses Pull CDN. A cache poisoning attack succeeds on the Pull CDN layer. How does each model's architecture affect your ability to detect, isolate, and remediate the attack?
 
 ---
 

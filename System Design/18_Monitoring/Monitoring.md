@@ -1,9 +1,18 @@
 ---
 title: Monitoring in Distributed Systems
 tags: [SystemDesign, Monitoring, Observability, Reliability, Operations]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📊 Monitoring in Distributed Systems
+
+> [!abstract] TL;DR
+> Monitoring continuously collects metrics, logs, and traces from distributed systems to detect failures, diagnose issues, and track performance — enabling teams to operate production with confidence.
 
 ## 🧠 Core Idea
 
@@ -100,6 +109,39 @@ Continuously verify service availability.
 If you can't observe it, you can't operate it.
 Monitor systems before they fail, not after.
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    DistributedSystem-->|EmitsMetrics|MonitoringPlatform
+    DistributedSystem-->|EmitsLogs|MonitoringPlatform
+    DistributedSystem-->|EmitsTraces|MonitoringPlatform
+    MonitoringPlatform-->|Dashboard|Operations
+    MonitoringPlatform-->|Alert|OnCallTeam
+    MonitoringPlatform-->|HealthStatus|LoadBalancer
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Monitoring|↑ Section MOC]]
+- [[Health_Monitoring]]
+- [[Instrumentation]]
+- [[Performance_Monitoring]]
+- [[Usage_Monitoring]]
+- [[Visualization_and_Alerts]]
+
+---
+
+## Review Questions
+
+1. What are the three pillars of observability in distributed systems and what does each one help diagnose?
+2. Why is monitoring necessary even when no users have reported issues, and what categories of failure does it detect proactively?
+3. How does distributed tracing differ from centralized logging and when is tracing more useful?
 
 ---
 

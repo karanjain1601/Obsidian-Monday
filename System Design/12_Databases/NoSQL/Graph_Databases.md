@@ -1,9 +1,18 @@
 ---
 title: Graph Databases
 tags: [SystemDesign, Databases, GraphDatabase, NoSQL, Relationships]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🕸️ Graph Databases
+
+> [!abstract] TL;DR
+> A **graph database** stores data as nodes and edges, enabling highly efficient traversal of complex relationships that would require expensive recursive joins in a relational database.
 
 ## 🧠 Core Idea
 
@@ -105,6 +114,19 @@ Fast lookups → Key-Value Store
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    Alice["(Alice: User)"]-->|FOLLOWS|Bob["(Bob: User)"]
+    Alice-->|LIKES|Photo["(Photo: Post)"]
+    Bob-->|FOLLOWS|Carol["(Carol: User)"]
+    Carol-->|LIKES|Photo
+    Bob-->|FRIENDS_WITH|Dave["(Dave: User)"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -122,6 +144,25 @@ Fast lookups → Key-Value Store
 
 - YouTube — Graph Databases Explained  
   https://www.youtube.com/watch?v=qI_g07C_Q5I
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[SQL vs NoSQL]]
+- [[Document Store]]
+- [[Key-Value Store]]
+- [[Wide Column Store]]
+
+---
+
+## Review Questions
+
+1. What are nodes and edges in a graph database, and what do they represent?
+2. Why is a graph database more efficient than a relational database for traversing highly connected data?
+3. Name two real-world use cases where graph databases excel.
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: Wide Column Store
 tags: [SystemDesign, Databases, WideColumnStore, NoSQL, BigData]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧱 Wide Column Store
+
+> [!abstract] TL;DR
+> A **wide column store** organizes data as column families under row keys, excelling at massive write-heavy workloads and time-series data at petabyte scale with built-in versioning.
 
 ## 🧠 Core Idea
 
@@ -104,6 +113,20 @@ Strong relations → Relational DB
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph TD
+    RowKey["RowKey: user123"]-->ProfileFamily["Column Family: profile"]
+    RowKey-->ActivityFamily["Column Family: activity"]
+    ProfileFamily-->NameCol["name: Karan (ts: 2026-01-24)"]
+    ProfileFamily-->EmailCol["email: k@ex.com (ts: 2026-01-24)"]
+    ActivityFamily-->LoginCol["login: 2026-01-24T18:30"]
+    ActivityFamily-->PurchaseCol["purchase: 2026-01-24T19:10"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -119,6 +142,25 @@ Strong relations → Relational DB
 
 - Google Bigtable Paper  
   https://www.read.seas.harvard.edu/~kohler/class/cs239-w08/chang06bigtable.pdf
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[SQL vs NoSQL]]
+- [[Key-Value Store]]
+- [[Database Sharding]]
+- [[Database Replication]]
+
+---
+
+## Review Questions
+
+1. How do wide-column stores differ from relational databases in terms of schema flexibility?
+2. Why are wide-column stores particularly effective for time-series or IoT data?
+3. What is a column family, and how does it group related data in a wide-column store?
 
 ---
 

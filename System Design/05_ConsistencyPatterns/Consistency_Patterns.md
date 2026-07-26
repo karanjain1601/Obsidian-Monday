@@ -1,9 +1,18 @@
 ---
 title: Consistency Patterns
+aliases: []
 tags: [SystemDesign, DistributedSystems, Consistency, CAP]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔗 Consistency Patterns
+
+> [!abstract] TL;DR
+> Consistency patterns — strong, weak, and eventual — define when and how data updates become visible across distributed nodes, each making different trade-offs between correctness, latency, and availability.
 
 ## 🧠 Core Idea
 
@@ -121,6 +130,21 @@ This aligns directly with the [[CAP Theorem]] trade-offs.
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph LR
+    Patterns[Consistency Patterns]
+    Patterns --> Strong[Strong Consistency]
+    Patterns --> Weak[Weak Consistency]
+    Patterns --> Eventual[Eventual Consistency]
+    Strong --> StrongDesc[All nodes see latest write\nHigher latency\nLower availability]
+    Weak --> WeakDesc[Stale reads allowed\nLowest latency\nHighest throughput]
+    Eventual --> EventualDesc[Nodes converge over time\nLow latency\nHigh availability]
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 Add this image into your Obsidian vault:
@@ -139,6 +163,26 @@ Add this image into your Obsidian vault:
 [[Quorum Reads and Writes]]  
 [[Consensus Algorithms]]  
 [[Distributed Systems]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_ConsistencyPatterns|↑ Section MOC]]
+- [[Availability_vs_Consistency]] — the foundational trade-off these patterns navigate
+- [[CAP_Theorem]] — the theorem that constrains which patterns are achievable
+- [[Replication]] — the mechanism through which consistency is propagated across nodes
+- [[Database_Replication]] — how databases implement consistency guarantees in practice
+- [[Databases]] — where strong vs eventual consistency shapes technology selection
+- [[Failover]] — how consistency levels interact with failover behavior
+
+---
+
+## Review Questions
+
+1. A distributed e-commerce cart must show accurate stock counts at checkout to prevent overselling. Which consistency pattern is required, and which database or system would you use to implement it?
+2. Your team argues that eventual consistency is "good enough" for a financial transaction ledger. Construct a specific failure scenario that demonstrates why this argument is flawed.
+3. How does the global DNS system demonstrate eventual consistency in practice, and what are the consequences for a website operator who changes their server IP address?
 
 ---
 

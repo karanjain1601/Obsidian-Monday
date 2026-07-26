@@ -1,9 +1,18 @@
 ---
 title: Database Sharding
 tags: [SystemDesign, Databases, Sharding, Scalability, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧩 Database Sharding
+
+> [!abstract] TL;DR
+> **Sharding** distributes data across multiple database instances using a shard key, enabling horizontal scaling for massive datasets by reducing per-database load and allowing parallel writes.
 
 ## 🧠 Core Idea
 
@@ -104,6 +113,21 @@ Both are usually combined in real-world architectures.
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->ShardRouter["Shard Router (shard key lookup)"]
+    ShardRouter-->Shard1["Shard1 (Users A-M)"]
+    ShardRouter-->Shard2["Shard2 (Users N-Z)"]
+    ShardRouter-->Shard3["Shard3 (new users)"]
+    Shard1-->Replica1["Shard1 Replica"]
+    Shard2-->Replica2["Shard2 Replica"]
+    Shard3-->Replica3["Shard3 Replica"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -121,6 +145,25 @@ Both are usually combined in real-world architectures.
 
 - Wikipedia — Shard (Database Architecture)  
   https://en.wikipedia.org/wiki/Shard_(database_architecture)
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Database Replication]]
+- [[Database Federation]]
+- [[Denormalization]]
+- [[SQL Tuning]]
+
+---
+
+## Review Questions
+
+1. What is a shard key, and why is choosing the right one critical?
+2. How does sharding differ from replication in terms of what problem it solves?
+3. What is a hot shard problem and how can it be mitigated?
 
 ---
 

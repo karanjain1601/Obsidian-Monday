@@ -1,9 +1,18 @@
 ---
 title: Domain Name System (DNS)
+aliases: [DNS]
 tags: [SystemDesign, DNS, Networking, InternetInfrastructure]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🌐 Domain Name System (DNS)
+
+> [!abstract] TL;DR
+> DNS translates human-readable domain names into IP addresses through a hierarchical distributed system of resolvers and authoritative servers, with TTL-based caching reducing lookup overhead at every level.
 
 ## 🧠 Core Idea
 
@@ -142,6 +151,30 @@ These services provide:
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant LocalCache as Local Cache
+    participant Resolver as DNS Resolver
+    participant Root as Root Server
+    participant TLD as TLD Server
+    participant Auth as Auth Server
+    Browser->>LocalCache: www.example.com?
+    LocalCache-->>Browser: Cache Miss
+    Browser->>Resolver: www.example.com?
+    Resolver->>Root: Who handles .com?
+    Root-->>Resolver: TLD Server address
+    Resolver->>TLD: Who handles example.com?
+    TLD-->>Resolver: Auth Server address
+    Resolver->>Auth: www.example.com?
+    Auth-->>Resolver: 93.184.216.34
+    Resolver-->>Browser: 93.184.216.34 (cached)
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 ```
@@ -157,6 +190,25 @@ These services provide:
 [[High Availability]]  
 [[Failover]]  
 [[Networking Fundamentals]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_DNS|↑ Section MOC]]
+- [[Content_Delivery_Network]] — CDNs rely on DNS for routing users to the nearest edge server
+- [[Load_Balancers]] — DNS-level load balancing (weighted round robin) complements server-level LBs
+- [[Failover]] — DNS TTL and health checks are key to DNS-based failover strategies
+- [[HTTP]] — DNS is the prerequisite to every HTTP connection
+- [[TCP]] — DNS lookups precede TCP handshakes for all domain-based connections
+
+---
+
+## Review Questions
+
+1. You update your website's DNS A record to point to a new server IP address. Some users continue to reach the old server for several hours. Explain exactly why this happens and identify which DNS concept controls the duration.
+2. A company uses latency-based DNS routing across three regions (US, EU, Asia). During a full EU region outage, what mechanism ensures users are routed to the next-best region, and how long before that rerouting takes effect?
+3. An attacker intercepts DNS responses to redirect users to a malicious server (DNS cache poisoning). What security extension was designed to prevent this attack, and how does it cryptographically verify DNS responses?
 
 ---
 

@@ -122,6 +122,7 @@ flowchart LR
 
 ## Related Concepts
 
+- [[_MOC_API_Gateway|↑ Section MOC]]
 - [[Load_Balancers]]
 - [[Rate_Limiting]]
 - [[Circuit_Breaker]]

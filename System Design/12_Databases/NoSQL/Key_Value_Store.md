@@ -1,9 +1,18 @@
 ---
 title: Key-Value Store
 tags: [SystemDesign, Databases, KeyValueStore, NoSQL, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🗂️ Key-Value Store
+
+> [!abstract] TL;DR
+> A **key-value store** maps unique keys to values with O(1) reads and writes, making it ideal for caching, session management, and any workload requiring ultra-fast simple lookups.
 
 ## 🧠 Core Idea
 
@@ -103,6 +112,20 @@ Need complex queries & relations → Relational Database
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"GET user:123"|KVStore["Key-Value Store (Redis)"]
+    KVStore-->|"Return value O(1)"|App
+    App-->|"SET session:abc = {...}"|KVStore
+    KVStore-->K1["user:123 -> {name:'Karan', role:'admin'}"]
+    KVStore-->K2["session:abc -> {expires: 10min}"]
+    KVStore-->K3["counter:views -> 42"]
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -120,6 +143,25 @@ Need complex queries & relations → Relational Database
 
 - StackOverflow — Disadvantages of Key-Value Stores  
   https://stackoverflow.com/questions/4056093/what-are-the-disadvantages-of-using-a-key-value-table-over-nullable-columns-or
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Caching]]
+- [[Application Caching]]
+- [[Database Caching]]
+- [[SQL vs NoSQL]]
+
+---
+
+## Review Questions
+
+1. What is the time complexity of a GET or SET operation in a key-value store?
+2. Name two popular key-value stores and one typical use case for each.
+3. What is a major limitation of key-value stores compared to relational databases?
 
 ---
 

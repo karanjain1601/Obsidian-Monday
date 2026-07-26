@@ -1,9 +1,18 @@
 ---
 title: Application Caching
 tags: [SystemDesign, Caching, ApplicationLayer, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚙️ Application Caching
+
+> [!abstract] TL;DR
+> **Application caching** uses in-memory stores like Redis or Memcached between the application and database, delivering microsecond-level access for frequently read data stored in RAM.
 
 ## 🧠 Core Idea
 
@@ -112,6 +121,20 @@ Need simple fast cache → Use Memcached
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"GET key"|Redis["Redis / Memcached"]
+    Redis-->|"Cache Hit - microsecond response"|App
+    Redis-->|"Cache Miss"|App
+    App-->|"Query (on cache miss)"|DB[(Database)]
+    DB-->|"Return data"|App
+    App-->|"SET key=value"|Redis
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -127,6 +150,25 @@ Need simple fast cache → Use Memcached
 
 - System Design Primer — Application Caching  
   https://github.com/donnemartin/system-design-primer#application-caching
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Database Caching]]
+- [[Cache Aside]]
+- [[Write-Through Cache]]
+- [[Write-Behind Cache]]
+
+---
+
+## Review Questions
+
+1. What is the key difference between Redis and Memcached for application caching?
+2. What cache eviction policy does Redis use most commonly, and what does it evict first?
+3. Why is file-based caching discouraged in horizontally scaled systems?
 
 ---
 

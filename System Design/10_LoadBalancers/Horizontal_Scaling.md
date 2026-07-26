@@ -1,9 +1,18 @@
 ---
 title: Horizontal Scaling
 tags: [SystemDesign, Scalability, Availability, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📈 Horizontal Scaling
+
+> [!abstract] TL;DR
+> **Horizontal scaling** adds more machines to handle increased load rather than upgrading a single machine, enabling nearly unlimited scalability when servers are made stateless.
 
 ## 🧠 Core Idea
 
@@ -92,10 +101,18 @@ must handle more simultaneous connections.
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[horizontal-scaling-architecture.png]]
+```mermaid
+graph TB
+    subgraph HorizontalScaling["Horizontal Scaling (Scale Out)"]
+        LB[LoadBalancer]-->S1[Server1]
+        LB-->S2[Server2]
+        LB-->S3[Server3]
+    end
+    subgraph VerticalScaling["Vertical Scaling (Scale Up)"]
+        BigServer["Single Upgraded Server"]
+    end
 ```
 
 ---
@@ -108,6 +125,25 @@ must handle more simultaneous connections.
 [[Caching]]  
 [[Database Replication]]  
 [[Database Sharding]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_LoadBalancers|↑ Section MOC]]
+- [[Load Balancers]]
+- [[Database Sharding]]
+- [[Microservices]]
+- [[Service Discovery]]
+- [[Caching]]
+
+---
+
+## Review Questions
+
+1. What is the difference between horizontal scaling and vertical scaling?
+2. Why do stateless services scale horizontally more easily than stateful ones?
+3. What role does a load balancer play when horizontally scaling web servers?
 
 ---
 

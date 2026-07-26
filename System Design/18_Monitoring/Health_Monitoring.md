@@ -1,9 +1,18 @@
 ---
 title: Health Monitoring
 tags: [SystemDesign, Monitoring, Reliability, Operations, HealthChecks]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🩺 Health Monitoring
+
+> [!abstract] TL;DR
+> Health monitoring continuously checks whether services are running and ready to serve requests, enabling load balancers and orchestrators to automatically remove and recover unhealthy instances.
 
 ## 🧠 Core Idea
 
@@ -90,6 +99,40 @@ Healthy service → Receives traffic
 Unhealthy service → Removed from rotation
 Recovered service → Reintroduced safely
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    LoadBalancer-->|LivenessCheck|ServiceA
+    LoadBalancer-->|ReadinessCheck|ServiceA
+    ServiceA-->|Healthy200|LoadBalancer
+    ServiceB-->|Unhealthy503|LoadBalancer
+    LoadBalancer-->|RemoveFromPool|ServiceB
+    LoadBalancer-->|RouteTraffic|ServiceA
+    ServiceB-->|Recovery|LoadBalancer
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Monitoring|↑ Section MOC]]
+- [[Monitoring]]
+- [[Instrumentation]]
+- [[Performance_Monitoring]]
+- [[Visualization_and_Alerts]]
+- [[Load_Balancers]]
+
+---
+
+## Review Questions
+
+1. What is the difference between a liveness check and a readiness check, and what actions are taken when each fails?
+2. Why should health check endpoints be lightweight and not depend on downstream services?
+3. How do load balancers use health check responses to provide zero-downtime deployments?
 
 ---
 

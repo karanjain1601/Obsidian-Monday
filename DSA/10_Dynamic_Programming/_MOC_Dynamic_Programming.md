@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🧩 Dynamic Programming — Map of Content
 
 > [!abstract] What This Section Covers
-> Dynamic programming is the technique that converts exponential brute-force into polynomial time by recognising overlapping subproblems and storing their results. This section builds from the two prerequisites of DP (optimal substructure + overlapping subproblems) through both implementation styles (top-down memoisation and bottom-up tabulation), covers the canonical problem families that appear in interviews (knapsack variants, sequence problems, string edit problems), advances to DP on trees, and closes with a pattern-classification reference. Mastering DP requires pattern recognition more than memorisation — the reference note encodes that recognition system.
+> Dynamic programming is the technique that converts exponential brute-force into polynomial time by recognising overlapping subproblems and storing their results. This section builds from the two prerequisites of DP (optimal substructure + overlapping subproblems) through both implementation styles (top-down memoisation and bottom-up tabulation), covers the canonical problem families that appear in interviews (knapsack variants, sequence problems, string edit problems), advances through DP on grids, interval DP, and DP on trees, tackles the harder state encodings (bitmask DP for subset states, digit DP for digit-constrained counting), and closes with a pattern-classification reference. Mastering DP requires pattern recognition more than memorisation — the reference note encodes that recognition system.
 
 ## Concept Map
 
@@ -19,7 +19,8 @@ graph TD
     DP --> FOUND["Foundation"]
     DP --> KS["Knapsack Family"]
     DP --> STR["String / Sequence"]
-    DP --> ADV["Advanced"]
+    DP --> GRID["Grid & Interval"]
+    DP --> ADV["Advanced States"]
 
     FOUND --> DPF["[[DP_Fundamentals]]"]
     FOUND --> MVT["[[Memoization_vs_Tabulation]]"]
@@ -31,7 +32,12 @@ graph TD
     STR --> LCS["[[LCS_and_LIS]]"]
     STR --> ED["[[Edit_Distance]]"]
 
+    GRID --> DOG["[[DP_on_Grids]]"]
+    GRID --> IDP["[[Interval_DP]]"]
+
     ADV --> DOT["[[DP_on_Trees]]"]
+    ADV --> BMD["[[Bitmask_DP]]"]
+    ADV --> DGD["[[Digit_DP]]"]
     ADV --> DPP["[[DP_Patterns]]"]
 ```
 
@@ -44,8 +50,12 @@ graph TD
 5. [[Coin_Change]] — Minimum coins (unbounded knapsack); counting ways variant
 6. [[LCS_and_LIS]] — Longest Common Subsequence (2D DP) and Longest Increasing Subsequence (1D + binary search O(n log n))
 7. [[Edit_Distance]] — Levenshtein distance; 2D DP table; path reconstruction
-8. [[DP_on_Trees]] — Rerooting technique; tree knapsack; subtree DP
-9. [[DP_Patterns]] — Pattern taxonomy: linear, interval, bitmask, digit, probability DP
+8. [[DP_on_Grids]] — 2D path counting / min-path-sum; obstacles; in-place space optimisation
+9. [[Interval_DP]] — DP over ranges `[i..j]`; matrix-chain multiplication, palindrome partitioning, burst balloons
+10. [[DP_on_Trees]] — Rerooting technique; tree knapsack; subtree DP
+11. [[Bitmask_DP]] — Subsets as integer states; travelling salesman, assignment, profile DP
+12. [[Digit_DP]] — Counting numbers under digit constraints; tight/loose bound bookkeeping
+13. [[DP_Patterns]] — Pattern taxonomy: linear, interval, bitmask, digit, probability DP
 
 ## All Notes at a Glance
 
@@ -58,7 +68,11 @@ graph TD
 | [[Coin_Change]] | Min-coins and count-ways variants of unbounded knapsack | Intermediate |
 | [[LCS_and_LIS]] | 2D LCS table; LIS in O(n log n) via patience sorting | Intermediate |
 | [[Edit_Distance]] | Levenshtein; 3 operations; 2D recurrence | Intermediate |
+| [[DP_on_Grids]] | 2D path counting / min-path-sum; obstacles; rolling-row space trick | Intermediate |
+| [[Interval_DP]] | DP over ranges; MCM, palindrome partition, burst balloons | Advanced |
 | [[DP_on_Trees]] | Subtree DP; rerooting; tree knapsack | Advanced |
+| [[Bitmask_DP]] | Subset-as-bitmask states; TSP, assignment, profile DP | Advanced |
+| [[Digit_DP]] | Digit-constrained counting with tight/loose bounds | Advanced |
 | [[DP_Patterns]] | Classification of all DP families with templates | Intermediate (reference) |
 
 ## Key Questions This Section Answers

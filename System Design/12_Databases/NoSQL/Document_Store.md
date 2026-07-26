@@ -1,9 +1,18 @@
 ---
 title: Document Store
 tags: [SystemDesign, Databases, DocumentStore, NoSQL, DataModeling]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📄 Document Store
+
+> [!abstract] TL;DR
+> A **document store** saves data as self-contained JSON/BSON documents with flexible schemas, enabling rich queries on internal fields without rigid table structures or fixed schemas.
 
 ## 🧠 Core Idea
 
@@ -110,6 +119,19 @@ Ultra-fast simple lookups → Key-Value Store
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->Collection["MongoDB Collection"]
+    Collection-->Doc1["Doc1: {userId:1, name:'Alice', prefs:{}}"]
+    Collection-->Doc2["Doc2: {userId:2, name:'Bob', roles:['admin']}"]
+    Collection-->Doc3["Doc3: {productId:5, tags:['tech'], price:29}"]
+    App-->|"Query: find by internal field"|Collection
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -124,6 +146,25 @@ Ultra-fast simple lookups → Key-Value Store
 
 - Wikipedia — Document-Oriented Database  
   https://en.wikipedia.org/wiki/Document-oriented_database
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[SQL vs NoSQL]]
+- [[Key-Value Store]]
+- [[Wide Column Store]]
+- [[Database Sharding]]
+
+---
+
+## Review Questions
+
+1. How does a document store differ from a relational database in terms of schema?
+2. Why are document stores well-suited for content management and user profile workloads?
+3. What is a potential disadvantage of storing denormalized data in documents?
 
 ---
 

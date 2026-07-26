@@ -1,9 +1,18 @@
 ---
 title: Event-Driven Invocation
+aliases: []
 tags: [SystemDesign, EventDriven, BackgroundJobs, AsynchronousProcessing]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚡ Event-Driven Invocation
+
+> [!abstract] TL;DR
+> Event-driven invocation triggers background tasks in response to system events — such as queue messages, storage changes, or API calls — decoupling producers and consumers for scalable async architectures.
 
 ## 🧠 Core Idea
 
@@ -115,6 +124,22 @@ Event Producer → Trigger Mechanism → Event Handler / Worker → Background P
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+sequenceDiagram
+    participant Producer
+    participant Queue
+    participant Worker
+    participant Storage
+    Producer->>Queue: Publish Event
+    Queue-->>Worker: Deliver Event
+    Worker->>Storage: Process and Store Result
+    Worker-->>Queue: Acknowledge
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 ```
@@ -130,6 +155,25 @@ Event Producer → Trigger Mechanism → Event Handler / Worker → Background P
 [[Event-Driven Architecture]]  
 [[Asynchronous Processing]]  
 [[Microservices Architecture]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_BackgroundJobs|↑ Section MOC]]
+- [[Message_Queues]] — the backbone of event-driven invocation (Kafka, RabbitMQ, SQS)
+- [[Task_Queues]] — higher-level abstraction that wraps event-driven invocation
+- [[Microservices]] — event-driven invocation is the glue that decouples microservices
+- [[Service_Discovery]] — how event consumers locate and connect to event brokers
+- [[Latency_vs_Throughput]] — event-driven patterns trade latency for higher throughput
+
+---
+
+## Review Questions
+
+1. A user uploads a video and your system must trigger transcoding, thumbnail generation, and notification emails. How would you design an event-driven pipeline where these three steps are independent, and what happens when one step fails mid-pipeline?
+2. An event is published to a queue but the consumer crashes mid-processing. When the broker re-delivers the event, it is processed a second time. What problem does this create, and what design pattern resolves it?
+3. Compare event-driven invocation to synchronous API calls for triggering background work. In what scenarios would you choose each approach, and how do their failure modes differ?
 
 ---
 

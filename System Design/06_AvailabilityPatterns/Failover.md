@@ -1,9 +1,18 @@
 ---
 title: Failover
+aliases: []
 tags: [SystemDesign, Availability, Reliability, Failover, HighAvailability]
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔁 Failover
+
+> [!abstract] TL;DR
+> Failover automatically switches traffic to a backup component when the primary fails — active-passive setups minimize cost, while active-active setups minimize downtime at higher complexity.
 
 ## 🧠 Core Idea
 
@@ -119,6 +128,19 @@ Higher Availability → More Redundancy → Higher Cost & Complexity
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph TD
+    Monitor[Health Monitor] -- heartbeat ok --> Primary[Primary Server\nActive]
+    Monitor -- heartbeat fails --> Trigger[Failover Triggered]
+    Trigger --> Secondary[Secondary Promoted\nNow Active]
+    LB[Load Balancer] --> Primary
+    LB -.-> Secondary
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 Add this image into your Obsidian vault:
@@ -137,6 +159,26 @@ Add this image into your Obsidian vault:
 [[Consensus Algorithms]]  
 [[Disaster Recovery]]  
 [[Health Checks]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_AvailabilityPatterns|↑ Section MOC]]
+- [[Replication]] — the data synchronization that makes failover viable
+- [[Load_Balancers]] — the layer that detects failures and reroutes traffic
+- [[Availability_vs_Consistency]] — the tension that shapes active-active vs active-passive choice
+- [[CAP_Theorem]] — how failover decisions align with CP vs AP system design
+- [[Database_Replication]] — where failover is most commonly applied in practice
+- [[Consistency_Patterns]] — how failover events affect consistency guarantees
+
+---
+
+## Review Questions
+
+1. You're running a database with active-passive failover. A network glitch causes the health monitor to incorrectly detect a primary failure and promote the passive (split-brain scenario). What data consistency risks arise, and what mechanisms prevent this?
+2. Compare the Recovery Time Objective (RTO) for hot standby versus cold standby failover. In which business scenarios would you accept cold standby despite its longer downtime?
+3. An active-active database allows writes to both nodes simultaneously. Describe a specific write conflict scenario that could occur and explain two strategies the system could use to resolve it.
 
 ---
 

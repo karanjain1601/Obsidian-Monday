@@ -1,9 +1,18 @@
 ---
 title: Database Replication
 tags: [SystemDesign, Databases, Replication, Scalability, Availability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔁 Database Replication
+
+> [!abstract] TL;DR
+> **Database replication** copies data across nodes — master-slave scales reads, master-master enables high-availability writes — improving fault tolerance and overall read throughput.
 
 ## 🧠 Core Idea
 
@@ -114,6 +123,21 @@ Most real-world architectures start with **master-slave**, then evolve to more c
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph TD
+    subgraph MasterSlave["Master-Slave Replication"]
+        Master["Master (reads + writes)"]-->Slave1["Slave1 (reads only)"]
+        Master-->Slave2["Slave2 (reads only)"]
+    end
+    subgraph MasterMaster["Master-Master Replication"]
+        MasterA["MasterA (reads + writes)"]<-->MasterB["MasterB (reads + writes)"]
+    end
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Databases]]  
@@ -121,6 +145,25 @@ Most real-world architectures start with **master-slave**, then evolve to more c
 [[Consistency Patterns]]  
 [[High Availability]]  
 [[Caching]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Databases|↑ Section MOC]]
+- [[Databases]]
+- [[Database Sharding]]
+- [[Database Federation]]
+- [[SQL Tuning]]
+- [[Caching]]
+
+---
+
+## Review Questions
+
+1. What is the difference between master-slave and master-master replication?
+2. How does replication improve read throughput and availability?
+3. What is replication lag, and what consistency issues can it cause?
 
 ---
 

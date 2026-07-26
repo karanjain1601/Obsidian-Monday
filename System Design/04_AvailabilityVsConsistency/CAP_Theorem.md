@@ -160,6 +160,7 @@ print(f"NodeB reads: {node_b.read('user:1')}")  # Alice
 
 ## Related Concepts
 
+- [[_MOC_AvailabilityVsConsistency|↑ Section MOC]]
 - [[Availability_vs_Consistency]] — the foundational note this theorem formalizes
 - [[Consistency_Patterns]] — concrete patterns (strong, eventual, weak) that correspond to CAP choices
 - [[Availability Patterns]] — failover and replication strategies for AP systems

@@ -1,9 +1,18 @@
 ---
 title: CDN Caching
 tags: [SystemDesign, Caching, CDN, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🌍 CDN Caching
+
+> [!abstract] TL;DR
+> **CDN caching** serves content from edge servers geographically close to users, reducing latency, offloading origin servers, and improving global availability for static and dynamic assets.
 
 ## 🧠 Core Idea
 
@@ -86,6 +95,20 @@ High traffic spikes → CDN protects origin servers
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    UserUS["User (US)"]-->EdgeUS["CDN Edge (US)"]
+    UserEU["User (EU)"]-->EdgeEU["CDN Edge (EU)"]
+    EdgeUS-->|"Cache Hit: serve directly"|UserUS
+    EdgeEU-->|"Cache Hit: serve directly"|UserEU
+    EdgeUS-->|"Cache Miss: fetch"|Origin["Origin Server"]
+    EdgeEU-->|"Cache Miss: fetch"|Origin
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -93,6 +116,25 @@ High traffic spikes → CDN protects origin servers
 [[Web Server Caching]]  
 [[Load Balancers]]  
 [[DNS]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Client-Side Caching]]
+- [[Web Server Caching]]
+- [[Load Balancers]]
+- [[Application Caching]]
+
+---
+
+## Review Questions
+
+1. What is the difference between an edge server and an origin server in a CDN?
+2. How does TTL configuration affect CDN cache freshness?
+3. Name two types of content that benefit most from CDN caching.
 
 ---
 

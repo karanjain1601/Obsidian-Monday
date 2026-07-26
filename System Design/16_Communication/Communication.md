@@ -1,9 +1,18 @@
 ---
 title: Communication in Distributed Systems
 tags: [SystemDesign, Communication, Networking, Protocols, APIs]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 📡 Communication in Distributed Systems
+
+> [!abstract] TL;DR
+> Distributed systems communicate via network protocols (HTTP, TCP, UDP) and architectural styles (REST, RPC, GraphQL, gRPC) — each offering different trade-offs between performance, simplicity, and flexibility.
 
 ## 🧠 Core Idea
 
@@ -97,6 +106,42 @@ Public Web APIs → REST or GraphQL
 Internal Microservices → gRPC or RPC
 Real-time Systems → UDP-based protocols
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    Client-->|PublicAPI|RESTorGraphQL
+    ServiceA-->|InternalCall|gRPCorRPC
+    RealtimeApp-->|LowLatency|UDPBased
+    RESTorGraphQL-->|RunsOver|HTTP
+    gRPCorRPC-->|RunsOver|HTTP
+    HTTP-->|RunsOver|TCP
+    UDPBased-->|RunsOver|UDP
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[HTTP]]
+- [[TCP]]
+- [[UDP]]
+- [[REST]]
+- [[RPC]]
+- [[gRPC]]
+- [[GraphQL]]
+
+---
+
+## Review Questions
+
+1. When would you choose gRPC over REST for inter-service communication and why?
+2. What is the key difference between TCP and UDP and which layer of the stack do they operate at?
+3. How does GraphQL solve the over-fetching and under-fetching problems found in REST?
 
 ---
 

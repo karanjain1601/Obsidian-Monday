@@ -188,6 +188,7 @@ sequenceDiagram
 
 ## Related Concepts
 
+- [[_MOC_API_Gateway|↑ Section MOC]]
 - [[API_Gateway]]
 - [[Circuit_Breaker]]
 - [[Back_Pressure]]

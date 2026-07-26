@@ -1,9 +1,18 @@
 ---
 title: Instrumentation in Distributed Systems
 tags: [SystemDesign, Monitoring, Instrumentation, Observability, Operations]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔧 Instrumentation in Distributed Systems
+
+> [!abstract] TL;DR
+> Instrumentation embeds code in applications to collect metrics, logs, and traces, providing the raw observability data that monitoring systems need to detect issues and diagnose incidents.
 
 ## 🧠 Core Idea
 
@@ -116,6 +125,39 @@ No instrumentation → No visibility
 No visibility → Slow incident response
 Instrumentation → Enables monitoring & observability
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Application-->|EmitMetrics|Collector
+    Application-->|EmitLogs|Collector
+    Application-->|EmitTraces|Collector
+    Collector-->|Aggregate|MonitoringPlatform
+    MonitoringPlatform-->|Dashboards|Operators
+    MonitoringPlatform-->|Alerts|OnCall
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Monitoring|↑ Section MOC]]
+- [[Monitoring]]
+- [[Health_Monitoring]]
+- [[Performance_Monitoring]]
+- [[Visualization_and_Alerts]]
+- [[Usage_Monitoring]]
+
+---
+
+## Review Questions
+
+1. What are the three core signal types captured by instrumentation and what questions does each answer?
+2. Why is structured logging preferred over unstructured logging in distributed systems at scale?
+3. What is OpenTelemetry and how does it simplify instrumentation across a polyglot microservices architecture?
 
 ---
 

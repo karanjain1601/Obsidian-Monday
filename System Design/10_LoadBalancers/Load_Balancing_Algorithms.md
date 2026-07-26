@@ -1,9 +1,18 @@
 ---
 title: Load Balancing Algorithms
 tags: [SystemDesign, LoadBalancing, Networking, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚙️ Load Balancing Algorithms
+
+> [!abstract] TL;DR
+> Load balancing algorithms decide which backend server handles each request. **Static** algorithms (Round Robin, IP Hash) ignore server state; **dynamic** algorithms (Least Connections) adapt in real time to current load.
 
 ## 🧠 Core Idea
 
@@ -131,10 +140,19 @@ Modern production systems often use **hybrid approaches** combining both.
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[load-balancing-algorithms.png]]
+```mermaid
+graph TD
+    Algorithms["Load Balancing Algorithms"]-->Static
+    Algorithms-->Dynamic
+    Static-->RoundRobin["Round Robin"]
+    Static-->WeightedRR["Weighted Round Robin"]
+    Static-->IPHash["IP Hash"]
+    Static-->Random["Random"]
+    Dynamic-->LeastConn["Least Connections"]
+    Dynamic-->LeastRT["Least Response Time"]
+    Dynamic-->ResourceBased["Resource Based"]
 ```
 
 ---
@@ -153,6 +171,25 @@ Modern production systems often use **hybrid approaches** combining both.
 
 - Cloudflare — Types of Load Balancing Algorithms  
   https://www.cloudflare.com/learning/performance/types-of-load-balancing-algorithms/
+
+---
+
+## Related Concepts
+
+- [[_MOC_LoadBalancers|↑ Section MOC]]
+- [[Load Balancers]]
+- [[Layer4 vs Layer7 LoadBalancing]]
+- [[Horizontal Scaling]]
+- [[Service Discovery]]
+- [[Microservices]]
+
+---
+
+## Review Questions
+
+1. What is the difference between Round Robin and Weighted Round Robin algorithms?
+2. In which scenario would Least Connections outperform Round Robin?
+3. Why might IP Hash be used, and what is its main limitation?
 
 ---
 

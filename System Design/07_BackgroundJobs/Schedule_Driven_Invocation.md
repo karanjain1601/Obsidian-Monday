@@ -1,9 +1,18 @@
 ---
 title: Schedule-Driven Invocation
+aliases: []
 tags: [SystemDesign, Scheduling, BackgroundJobs, AsynchronousProcessing]
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⏰ Schedule-Driven Invocation
+
+> [!abstract] TL;DR
+> Schedule-driven invocation triggers background tasks at fixed times or intervals — using cron jobs, application timers, or external schedulers — to automate recurring maintenance, batch processing, and reporting tasks.
 
 ## 🧠 Core Idea
 
@@ -127,6 +136,21 @@ Scheduler / Timer → API or Worker → Background Processing → Storage / Repo
 
 ---
 
+## Mermaid Diagram
+
+```mermaid
+graph LR
+    Scheduler[Scheduler / Timer] --> Trigger{Condition Met?}
+    Trigger -- Yes --> Worker[Background Worker]
+    Trigger -- No --> Wait[Wait for Next Interval]
+    Wait --> Trigger
+    Worker --> Process[Process Task]
+    Process --> Store[Store Results]
+    Process --> Notify[Send Notifications]
+```
+
+---
+
 ## 🖼️ Diagram Placeholder
 
 ```
@@ -143,6 +167,24 @@ Scheduler / Timer → API or Worker → Background Processing → Storage / Repo
 [[Task Scheduling]]  
 [[Asynchronous Processing]]  
 [[Microservices Architecture]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_BackgroundJobs|↑ Section MOC]]
+- [[Message_Queues]] — scheduled jobs often enqueue work for downstream queue consumers
+- [[Task_Queues]] — scheduled triggers commonly feed work into task queues for processing
+- [[Microservices]] — schedule-driven invocation coordinates time-based work across services
+- [[Latency_vs_Throughput]] — batch scheduling optimizes throughput at the cost of real-time latency
+
+---
+
+## Review Questions
+
+1. A daily report generation job is scheduled to run at midnight, but the previous day's job is still running due to unexpectedly large data. What problem does this overlap create, and what mechanisms would you put in place to prevent it?
+2. You're running a cron job on every application server to clean up expired user sessions every hour. How would you redesign this to run safely across a cluster of 10 servers without duplicate execution?
+3. A payment system sends monthly invoices via a scheduled job that fails halfway — some customers received invoices and others did not. How would you design the job to be both resumable and idempotent?
 
 ---
 

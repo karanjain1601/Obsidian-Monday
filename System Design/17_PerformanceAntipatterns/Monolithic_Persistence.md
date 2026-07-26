@@ -1,9 +1,18 @@
 ---
 title: Monolithic Persistence
 tags: [SystemDesign, Database, Antipatterns, Scalability, Persistence]
+aliases: []
+domain: SystemDesign
+difficulty: Advanced
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Monolithic Persistence
+
+> [!abstract] TL;DR
+> Monolithic persistence stores all application data in a single database, creating tight coupling and scaling bottlenecks — resolved by database-per-service, sharding, and polyglot persistence strategies.
 
 ## 🧠 Core Idea
 
@@ -130,6 +139,38 @@ Small system → Single DB acceptable
 Growing system → Split persistence
 Microservices → Database per service
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    Antipattern-->|AllServices|SingleDatabase
+    SingleDatabase-->|SinglePointOfFailure|Outage
+    BestPractice_UserSvc-->|Owns|UserDB
+    BestPractice_OrderSvc-->|Owns|OrderDB
+    BestPractice_AnalyticsSvc-->|Owns|AnalyticsDB
+    BestPractice_OrderSvc-->|PolyglotPersistence|GraphDB
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Busy_Database]]
+- [[Databases]]
+- [[Microservices]]
+- [[CAP_Theorem]]
+
+---
+
+## Review Questions
+
+1. What are the three main problems caused by monolithic persistence in a growing microservices architecture?
+2. What is polyglot persistence and when would a system benefit from using multiple different database types?
+3. How does the database-per-service pattern address tight coupling, and what new challenges does it introduce (e.g., cross-service queries)?
 
 ---
 

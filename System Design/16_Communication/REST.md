@@ -1,9 +1,18 @@
 ---
 title: REST (Representational State Transfer)
 tags: [SystemDesign, REST, APIs, Communication, Microservices]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🌐 REST (Representational State Transfer)
+
+> [!abstract] TL;DR
+> REST is a stateless, resource-oriented architectural style using HTTP verbs on unique URIs, enabling scalable and cacheable public APIs with loose client-server coupling.
 
 ## 🧠 Core Idea
 
@@ -148,6 +157,41 @@ Public APIs → REST
 Internal microservices → gRPC / RPC
 Complex client queries → GraphQL
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    Client-->|GET /users/123|RESTServer
+    RESTServer-->|200OK+JSON|Client
+    Client-->|POST /orders|RESTServer
+    RESTServer-->|201Created|Client
+    RESTServer-->|Cacheable|CDN
+    CDN-->|ServesCached|Client
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[HTTP]]
+- [[Communication]]
+- [[RPC]]
+- [[gRPC]]
+- [[GraphQL]]
+- [[Microservices]]
+- [[Idempotent_Operations]]
+
+---
+
+## Review Questions
+
+1. What are the six guiding constraints of REST and why does statelessness matter for horizontal scaling?
+2. How does HATEOAS make a REST API self-discoverable and what is a practical limitation of implementing it?
+3. What problem does GraphQL solve that REST cannot easily address, and when would you still prefer REST?
 
 ---
 

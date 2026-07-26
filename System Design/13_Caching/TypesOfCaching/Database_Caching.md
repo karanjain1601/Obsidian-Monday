@@ -1,9 +1,18 @@
 ---
 title: Database Caching
 tags: [SystemDesign, Caching, Database, Performance, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🗄️ Database Caching
+
+> [!abstract] TL;DR
+> **Database caching** stores frequently accessed query results or data objects in fast memory, reducing disk reads and lowering database load for read-heavy workloads.
 
 ## 🧠 Core Idea
 
@@ -103,6 +112,19 @@ Massive scale → Combine DB cache + Application cache
 
 ---
 
+## 🖼️ Diagram
+
+```mermaid
+graph LR
+    App-->|"Query"|BufferPool["DB Buffer Pool (in memory)"]
+    BufferPool-->|"Cache Hit - return data"|App
+    BufferPool-->|"Cache Miss"|DiskStorage["Disk Storage"]
+    DiskStorage-->|"Load data page into buffer"|BufferPool
+    BufferPool-->|"Return data"|App
+```
+
+---
+
 ## 🔗 Related Topics
 
 [[Caching]]  
@@ -110,6 +132,25 @@ Massive scale → Combine DB cache + Application cache
 [[SQL Tuning]]  
 [[Database Replication]]  
 [[Database Sharding]]
+
+---
+
+## Related Concepts
+
+- [[_MOC_Caching|↑ Section MOC]]
+- [[Caching]]
+- [[Application Caching]]
+- [[SQL Tuning]]
+- [[Database Replication]]
+- [[Database Sharding]]
+
+---
+
+## Review Questions
+
+1. What is a database buffer pool, and what data does it cache?
+2. How does increasing the buffer pool size improve database read performance?
+3. What is the difference between database-internal caching and application-level caching with Redis?
 
 ---
 

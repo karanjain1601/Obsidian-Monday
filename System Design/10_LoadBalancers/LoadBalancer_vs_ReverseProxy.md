@@ -1,9 +1,18 @@
 ---
 title: Load Balancer vs Reverse Proxy
 tags: [SystemDesign, LoadBalancing, ReverseProxy, Networking, Scalability]
+aliases: []
+domain: SystemDesign
+difficulty: Beginner
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚖️ Load Balancer vs Reverse Proxy
+
+> [!abstract] TL;DR
+> A **load balancer** distributes traffic across multiple servers, while a **reverse proxy** optimizes and controls requests in front of one or more servers. Tools like NGINX and HAProxy do both.
 
 ## 🧠 Core Idea
 
@@ -104,10 +113,19 @@ Often → Use both together
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[loadbalancer-vs-reverseproxy.png]]
+```mermaid
+graph LR
+    subgraph LBFlow["Load Balancer (multiple servers)"]
+        C1[Client]-->LB[LoadBalancer]
+        LB-->Srv1[Server1]
+        LB-->Srv2[Server2]
+    end
+    subgraph RPFlow["Reverse Proxy (one or more servers)"]
+        C2[Client2]-->RP[ReverseProxy]
+        RP-->Backend[BackendServer]
+    end
 ```
 
 ---
@@ -135,6 +153,25 @@ Often → Use both together
 
 - HAProxy Architecture  
   https://www.haproxy.org/download/1.2/doc/architecture.txt
+
+---
+
+## Related Concepts
+
+- [[_MOC_LoadBalancers|↑ Section MOC]]
+- [[Load Balancers]]
+- [[CDN Caching]]
+- [[Web Server Caching]]
+- [[Application Layer]]
+- [[Microservices]]
+
+---
+
+## Review Questions
+
+1. What is the key difference between a load balancer and a reverse proxy?
+2. Can a reverse proxy be used with only one backend server? Explain.
+3. Name two features a reverse proxy provides beyond basic traffic distribution.
 
 ---
 

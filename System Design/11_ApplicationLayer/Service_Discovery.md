@@ -1,9 +1,18 @@
 ---
 title: Service Discovery
 tags: [SystemDesign, ServiceDiscovery, Microservices, DistributedSystems]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🔍 Service Discovery
+
+> [!abstract] TL;DR
+> **Service discovery** lets services in distributed systems dynamically register and locate each other without hardcoded addresses, using a registry like Consul or etcd that tracks health in real time.
 
 ## 🧠 Core Idea
 
@@ -107,10 +116,17 @@ Microservices → Service Discovery is essential
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[service-discovery-architecture.png]]
+```mermaid
+graph TB
+    ServiceA-->|"register + heartbeat"|Registry["Service Registry (Consul / etcd)"]
+    ServiceB-->|"register + heartbeat"|Registry
+    Registry-->|"health check"|ServiceA
+    Registry-->|"health check"|ServiceB
+    ClientSvc-->|"lookup ServiceB address"|Registry
+    Registry-->|"return host:port"|ClientSvc["Client Service"]
+    ClientSvc-->|"direct call"|ServiceB
 ```
 
 ---
@@ -132,6 +148,25 @@ Microservices → Service Discovery is essential
 
 - Wikipedia — Service-Oriented Architecture  
   https://en.wikipedia.org/wiki/Service-oriented_architecture
+
+---
+
+## Related Concepts
+
+- [[_MOC_ApplicationLayer|↑ Section MOC]]
+- [[Microservices]]
+- [[Load Balancers]]
+- [[Application Layer]]
+- [[Horizontal Scaling]]
+- [[Load Balancing Algorithms]]
+
+---
+
+## Review Questions
+
+1. What problem does service discovery solve in a microservices environment?
+2. What is the difference between client-side and server-side service discovery?
+3. Name two popular tools used for service discovery and health checking.
 
 ---
 

@@ -1,9 +1,18 @@
 ---
 title: Layer 4 vs Layer 7 Load Balancing
 tags: [SystemDesign, LoadBalancing, Networking, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # 🧭 Layer 4 vs Layer 7 Load Balancing
+
+> [!abstract] TL;DR
+> **Layer 4** load balancers route based on IP/port metadata (fast, low overhead), while **Layer 7** load balancers inspect HTTP headers, URLs, and cookies for intelligent content-based routing.
 
 ## 🧠 Core Idea
 
@@ -140,10 +149,16 @@ Modern systems → Often use both together
 
 ---
 
-## 🖼️ Diagram Placeholder
+## 🖼️ Diagram
 
-```
-![[layer4-vs-layer7-loadbalancer.png]]
+```mermaid
+graph TB
+    Client-->L4LB["Layer4 LB (IP + Port routing)"]
+    Client-->L7LB["Layer7 LB (HTTP header / URL routing)"]
+    L4LB-->BackendA["Backend Server A"]
+    L4LB-->BackendB["Backend Server B"]
+    L7LB-->VideoServers["/videos/ servers"]
+    L7LB-->BillingServers["/billing/ servers"]
 ```
 
 ---
@@ -162,6 +177,25 @@ Modern systems → Often use both together
 
 - F5 — Layer 4 Load Balancing  
   https://www.f5.com/glossary/layer-4-load-balancing
+
+---
+
+## Related Concepts
+
+- [[_MOC_LoadBalancers|↑ Section MOC]]
+- [[Load Balancers]]
+- [[Load Balancing Algorithms]]
+- [[Microservices]]
+- [[LoadBalancer vs ReverseProxy]]
+- [[Application Layer]]
+
+---
+
+## Review Questions
+
+1. At which OSI layers do Layer 4 and Layer 7 load balancers operate?
+2. In what scenario would you prefer a Layer 7 load balancer over a Layer 4 load balancer?
+3. What is the performance trade-off between Layer 4 and Layer 7 load balancing?
 
 ---
 

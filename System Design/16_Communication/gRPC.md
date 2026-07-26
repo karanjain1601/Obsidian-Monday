@@ -1,9 +1,18 @@
 ---
 title: gRPC
 tags: [SystemDesign, gRPC, RPC, Communication, Microservices, Performance]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚡ gRPC
+
+> [!abstract] TL;DR
+> gRPC is a high-performance RPC framework using Protocol Buffers over HTTP/2, enabling strongly-typed, low-latency, bidirectional streaming communication ideal for microservice-to-microservice calls.
 
 ## 🧠 Core Idea
 
@@ -115,6 +124,39 @@ Internal microservices → gRPC
 Public external APIs → REST / GraphQL
 Real-time streaming → gRPC streaming
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph LR
+    ServiceA-->|ProtobufOverHTTP2|gRPCServer
+    gRPCServer-->|RouteToHandler|ServiceHandler
+    ServiceHandler-->|BidirectionalStream|ServiceA
+    ProtoFile-->|GenerateCode|ClientStub
+    ProtoFile-->|GenerateCode|ServerSkeleton
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_Communication|↑ Section MOC]]
+- [[RPC]]
+- [[HTTP]]
+- [[TCP]]
+- [[REST]]
+- [[Microservices]]
+- [[Communication]]
+
+---
+
+## Review Questions
+
+1. Why does gRPC use Protocol Buffers instead of JSON and what are the trade-offs of binary serialization?
+2. What four communication modes does gRPC support beyond the standard unary request-response pattern?
+3. Why is gRPC typically preferred for internal microservice calls but not for public browser-facing APIs?
 
 ---
 

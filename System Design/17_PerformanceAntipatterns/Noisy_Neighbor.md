@@ -1,9 +1,18 @@
 ---
 title: Noisy Neighbor
 tags: [SystemDesign, Antipatterns, Performance, Scalability, ResourceIsolation]
+aliases: []
+domain: SystemDesign
+difficulty: Intermediate
+created: 2026-07-26
+related: []
+status: complete
 ---
 
 # ⚠️ Noisy Neighbor
+
+> [!abstract] TL;DR
+> The noisy neighbor problem occurs in shared environments when one workload monopolizes CPU, memory, or I/O resources, degrading performance for all co-located services.
 
 ## 🧠 Core Idea
 
@@ -119,6 +128,39 @@ Shared infrastructure → Enforce limits
 Multi-tenant system → Use isolation
 Performance critical service → Dedicated resources
 ```
+
+---
+
+## 📊 Architecture Diagram
+
+```mermaid
+graph TD
+    SharedHost-->|CPU+Memory+IO|ServiceA
+    SharedHost-->|CPU+Memory+IO|ServiceB
+    NoisyTenant-->|MonopolizesAll|SharedHost
+    ServiceA-->|Starved|DegradedPerformance
+    ServiceB-->|Starved|DegradedPerformance
+    Solution-->|Containerization|IsolatedResources
+    Solution-->|ResourceLimits|ControlledSharing
+```
+
+---
+
+## Related Concepts
+
+- [[_MOC_PerformanceAntipatterns|↑ Section MOC]]
+- [[Busy_Database]]
+- [[Load_Balancers]]
+- [[Microservices]]
+- [[Monitoring]]
+
+---
+
+## Review Questions
+
+1. In what shared infrastructure environments is the noisy neighbor problem most common and why?
+2. How do container resource limits (CPU, memory) help prevent the noisy neighbor effect in Kubernetes?
+3. What monitoring signals would alert you to a noisy neighbor problem before it causes a visible user-facing outage?
 
 ---
 
