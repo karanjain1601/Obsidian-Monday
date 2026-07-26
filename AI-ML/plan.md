@@ -1,6 +1,6 @@
 # AI-ML KnowledgeHub: Complete Topic Guide
 
-A guided tour of all 234 notes across 12 sections in the AI-ML vault. Covers everything from mathematical foundations through classical ML, deep learning, NLP, computer vision, generative AI, MLOps, infrastructure, data engineering, system design, evaluation, safety, and landmark papers. Targets engineers who want a production-grade, interview-ready understanding of the full AI/ML stack.
+A guided tour of all 265 notes across 12 sections in the AI-ML vault. Covers everything from mathematical foundations through classical ML, deep learning, NLP, computer vision, generative AI, MLOps, infrastructure, data engineering, system design, evaluation, safety, and landmark papers. Targets engineers who want a production-grade, interview-ready understanding of the full AI/ML stack.
 
 ---
 
@@ -26,6 +26,20 @@ The mathematical and computational bedrock everything else builds on. Do not ski
 
 - **NumPy Fundamentals** — ndarray internals (dtype, strides, contiguous memory); vectorized operations vs Python loops; broadcasting rules (step-by-step); indexing (basic, advanced, boolean); universal functions (ufuncs); in-place operations and memory safety; FFT with NumPy; random number generation and seeding for reproducibility; interop with PyTorch/TensorFlow tensors.
 
+- **Pandas** — Series and DataFrame internals; loc/iloc/at/iat indexing; groupby/agg/transform patterns; merge, join, and concat semantics; vectorized string and datetime operations; memory optimization (dtype downcast, categorical encoding); chaining with pipe(); time series resampling and rolling windows; Pandas vs Polars vs Spark for scale trade-offs.
+
+- **Scikit-Learn** — Estimator/Transformer/Pipeline API contract; fit/predict/transform lifecycle; ColumnTransformer for heterogeneous preprocessing; model selection with cross_val_score and GridSearchCV; Pipeline + make_pipeline best practices; metrics module; clone() and set_params() for nested pipelines; joblib for parallelism and model persistence; ONNX export.
+
+- **Data Visualization** — matplotlib Figure/Axes/Artist object hierarchy; seaborn distribution (histplot, kdeplot, ecdfplot), categorical (boxplot, violinplot, stripplot), and matrix (heatmap, clustermap) plots; plotly express for interactive charts; ML-specific plots: confusion matrix heatmap, ROC/PR curves, feature importance, learning curves, PDP; t-SNE/UMAP embedding scatter; colorblind-safe palettes; Streamlit and Gradio for ML dashboards.
+
+- **SQL for ML** — JOIN types and window functions (LAG/LEAD, ROW_NUMBER, running aggregates) for feature engineering; train/test split by date; stratified sampling with NTILE; point-in-time correctness pitfalls; data quality check patterns; BigQuery/Snowflake partition pruning and approximate functions; DuckDB for local analytics; pandas.read_sql, SQLAlchemy, and dbt integration; SQL vs Pandas vs Spark trade-off decision.
+
+### Statistics
+
+- **Exploratory Data Analysis (EDA)** — EDA workflow: shape/dtype audit → univariate (histograms, KDE, boxplots, skewness/kurtosis) → bivariate (scatter, correlation heatmap, violin by class) → missing-value analysis (missingno, MCAR/MAR/MNAR patterns) → outlier detection (IQR fence, z-score, Isolation Forest) → feature-target relationships (pairplots, mutual information); EDA for time series (ACF/PACF, lag plots, seasonality); automated profiling with ydata-profiling, sweetviz, dtale; confirmation bias and data-leakage pitfalls.
+
+- **Hypothesis Testing** — Null/alternative hypothesis; Type I error (α), Type II error (β), and statistical power; p-value interpretation and common misconceptions; parametric tests: one-sample/two-sample/paired t-test, one-way and two-way ANOVA; non-parametric alternatives: Mann-Whitney U, Wilcoxon signed-rank, Kruskal-Wallis; categorical tests: chi-square, Fisher's exact, McNemar; multiple testing correction (Bonferroni, Benjamini-Hochberg FDR); effect size (Cohen's d, eta-squared); A/B testing sample size calculation with statsmodels; frequentist vs Bayesian trade-offs.
+
 ---
 
 ## 01. Classical ML
@@ -35,6 +49,8 @@ Classical machine learning algorithms — the methods that work with tabular dat
 ### Supervised Learning
 
 - **Linear Regression** — Ordinary least squares derivation; the normal equation; geometric interpretation; assumptions (linearity, homoscedasticity, no multicollinearity); R², adjusted R², residual diagnostics; ridge and lasso as regularized variants; polynomial features; when linear regression beats neural nets.
+
+- **Polynomial Regression** — Why polynomial regression is still linear algebra (polynomial feature expansion on inputs); `PolynomialFeatures` transformer: degree, include_bias, interaction_only; feature explosion at high degree (n=10, d=3 → 286 features); validation curve for degree selection; Ridge polynomial regression as the standard production form; bias-variance U-curve across degrees; scaling requirement before expansion; alternatives: splines, GPR, RBF-kernel SVR.
 
 - **Logistic Regression** — Sigmoid as a probability model; log-odds interpretation; MLE derivation of cross-entropy loss; decision boundary geometry; multiclass extension (softmax / one-vs-rest); regularization (L1 for sparse features, L2 for stability); odds ratios for interpretability; calibration and Platt scaling.
 
@@ -94,6 +110,22 @@ Classical machine learning algorithms — the methods that work with tabular dat
 
 - **Handling Imbalanced Data** — Oversampling (SMOTE, ADASYN); undersampling (random, Tomek links, NearMiss); class-weighted loss functions; threshold tuning; one-class classification; cost-sensitive learning; evaluation pitfalls (never use accuracy); ensemble methods for imbalance (EasyEnsemble, BalancedRandomForest).
 
+### Reinforcement Learning
+
+- **Reinforcement Learning** — MDP formulation (state, action, reward, transition, discount factor γ); policy (deterministic and stochastic) and value functions (V, Q); Bellman equations and dynamic programming; model-free methods: Q-Learning (off-policy) and SARSA (on-policy); deep RL: DQN (experience replay, target network, ε-greedy exploration); Policy Gradient (REINFORCE, log-probability trick); Actor-Critic and A3C; PPO (clipped surrogate objective, the dominant RL algorithm); RL in LLM alignment (RLHF, RLVR for reasoning models).
+
+### Semi-Supervised and Self-Supervised Learning
+
+- **Semi-Supervised Learning** — Learning from few labels + many unlabeled examples; pseudo-labeling / self-training pipeline; label propagation and label spreading on graphs; FixMatch and MixMatch (consistency regularization + pseudo-labels); Mean Teacher (momentum-updated teacher network); confirmation bias pitfall; semi-supervised evaluation protocol; when to prefer SSL over data collection.
+
+### Anomaly Detection
+
+- **Anomaly Detection** — Point, contextual, and collective anomaly types; statistical baselines: z-score, IQR, Grubbs test; distance-based: LOF (Local Outlier Factor), KNN distance score; density-based: DBSCAN noise points; tree-based: Isolation Forest (short path length = anomaly); reconstruction-based: Autoencoder reconstruction error; time-series anomaly: LSTM prediction error, STL decomposition residuals; evaluation under extreme imbalance (precision@K, AUC-PR); fraud detection and network intrusion use cases.
+
+### Time Series
+
+- **Time Series Analysis** — Stationarity and ADF test; decomposition (trend, seasonality, residual); classical models: ARIMA, SARIMA, ETS, TBATS; Facebook Prophet (additive model with holidays); walk-forward cross-validation; deep learning for forecasting: LSTM/GRU multi-step prediction, N-BEATS, TFT (Temporal Fusion Transformer); foundation models: Chronos, TimesFM, MOIRAI; evaluation metrics: MAE, RMSE, MAPE, sMAPE, CRPS; prediction intervals and conformal prediction.
+
 ---
 
 ## 02. Deep Learning
@@ -103,6 +135,10 @@ Neural networks from first principles through modern architectures. The bridge b
 ### Fundamentals
 
 - **Neural Network Basics** — The perceptron and its limitations; multi-layer feedforward networks; universal approximation theorem (and what it doesn't guarantee); forward pass as function composition; parameter count intuition; depth vs width tradeoffs; inductive biases.
+
+- **Transfer Learning** — Feature extraction (freeze pretrained backbone, train only head) vs full fine-tuning vs gradual unfreezing; domain shift and domain adaptation; catastrophic forgetting and its mitigations (EWC, smaller LR); LLM-era transfer: LoRA and QLoRA as lightweight alternatives to full fine-tuning; zero-shot and few-shot transfer; ImageNet-pretrained backbones for medical/satellite imaging; when transfer hurts (negative transfer).
+
+- **Self-Supervised Learning** — Learning representations without human labels; pretext tasks: jigsaw puzzle, rotation prediction, inpainting; contrastive methods: SimCLR (NT-Xent loss, data augmentation pairs), MoCo (momentum encoder + queue), BYOL (no negative pairs, collapse prevention via stop-gradient); non-contrastive: Barlow Twins, VICReg; masked modeling: MAE (75% masking, pixel reconstruction), DINO/DINOv2 (knowledge distillation from momentum teacher); SSL for NLP (masked LM = BERT) and audio (wav2vec 2.0).
 
 - **Activation Functions** — Sigmoid: saturated gradients, not zero-centered; Tanh: zero-centered, still saturates; ReLU: dead neuron problem, not smooth; Leaky ReLU, PReLU, ELU; GELU (used in transformers); SiLU/Swish (LLaMA); Mish; Softmax for output layers; why ReLU became the default and why GELU replaced it in transformers.
 
@@ -117,6 +153,8 @@ Neural networks from first principles through modern architectures. The bridge b
 - **CNN Fundamentals** — Convolution as local feature detection; receptive field; padding (valid, same); stride; pooling (max, average, global); parameter sharing and translation equivariance; channel depth; feature maps as learned detectors; transposed convolution for upsampling; depthwise separable convolutions (efficiency gains).
 
 - **Famous CNN Architectures** — LeNet-5 (first practical CNN); AlexNet (ImageNet breakthrough, ReLU, dropout, GPU training); VGG (depth with 3×3 filters); GoogLeNet/Inception (parallel filter banks, auxiliary classifiers); ResNet (skip connections, batch normalization, training 1000+ layer networks); DenseNet (dense connections); EfficientNet (compound scaling); ConvNeXt (modernized pure CNN).
+
+- **Autoencoders** — Encoder-decoder bottleneck for unsupervised representation learning; undercomplete vs overcomplete autoencoders; regularization variants: Denoising AE (DAE, corrupted input → clean output), Sparse AE (L1 on activations), Contractive AE (Frobenius norm of Jacobian); Variational Autoencoder (VAE): reparameterization trick, ELBO loss, latent space interpolation; VQ-VAE: discrete codebook, used in DALL-E and Stable Diffusion's latent space; Sparse Autoencoders in mechanistic interpretability (dictionary learning on activations).
 
 - **RNN and LSTM** — Recurrent connections and hidden state; unrolling through time (BPTT); vanishing gradient in vanilla RNNs; LSTM: input/forget/output gates and cell state; GRU: simplified gating; bidirectional RNNs; stacked RNNs; sequence-to-sequence (seq2seq) with encoder-decoder; teacher forcing; beam search decoding.
 
@@ -202,6 +240,14 @@ Natural language processing — from raw text through classical models, pretrain
 
 - **Constitutional AI** — Principle-based self-critique; RLHF from AI feedback (RLAIF); critique → revision → SFT loop; preference labels from AI judge; scaling feedback without human bottleneck; constitutional principles as a governance mechanism.
 
+- **Generation Controls** — Temperature: sharpening/flattening the logit distribution; Top-k sampling: truncate to k highest-probability tokens; Top-p (nucleus) sampling: dynamic vocabulary based on cumulative probability; min-p for quality floor; frequency and presence penalties for repetition control; stop sequences and max tokens; beam search vs sampling; greedy decoding; logit processors and logit bias; structured output (JSON mode, grammar-constrained decoding).
+
+- **Context Windows and Tokens** — Tokenization recap (BPE, tiktoken); token counting and pricing across providers; context limit comparisons (GPT-4o 128K, Gemini 2.0 1M, Claude 3.5 2M); lost-in-the-middle problem and its implications for prompt design; KV cache memory math per token; context window extension techniques: YaRN, RoPE scaling, LongRoPE; strategies for long documents (chunking, summarization, retrieval); context window vs RAG decision.
+
+- **Streaming Responses** — Server-Sent Events (SSE) protocol; OpenAI and Anthropic streaming APIs; token-by-token delivery and TTFT vs TPOT latency; streaming tool calls and partial JSON; LangGraph stream modes (values, updates, tokens); nginx/proxy buffering pitfalls; client-side rendering of streamed markdown; streaming vs non-streaming trade-offs.
+
+- **Reasoning Models** — Test-time compute scaling: longer CoT → better accuracy on hard problems; o1/o3/o4-mini architecture: extended internal reasoning traces with reinforcement learning (RLVR with verifiable rewards); DeepSeek-R1 training recipe: cold-start SFT → GRPO → rejection sampling → DPO; "aha moment" emergent self-reflection; reasoning tokens and budget control (reasoning_effort, budget_tokens API params); when reasoning models win (math, code, multi-step logic) vs when they're overkill (factual recall, creative writing); chain-of-thought faithfulness and process reward models (PRM).
+
 - **LLM Inference Optimization** — KV cache: what is stored (keys + values for all past tokens), memory math (2 × layers × heads × d_head × seq_len × bytes per element); GQA to reduce KV cache size; continuous batching for high throughput; PagedAttention (non-contiguous KV blocks, near-zero fragmentation); speculative decoding (draft-verify for 2–3× speedup); quantized inference (GPTQ, AWQ, GGUF); vLLM vs SGLang vs TensorRT-LLM.
 
 ### Fine-Tuning
@@ -227,6 +273,8 @@ Natural language processing — from raw text through classical models, pretrain
 - **LlamaIndex** — Data-centric indexing philosophy; VectorStoreIndex, SummaryIndex, KnowledgeGraphIndex; query engine vs retriever; LlamaIndex Workflows (event-driven async); LlamaCloud for managed ingestion; agents as tools; response synthesizers; comparison to LangChain.
 
 - **DSPy** — Programming vs prompting (prompts as hyperparameters, not code); Signatures (input/output specification); Modules (ChainOfThought, Retrieve, ReAct); Teleprompters / optimizers (MIPROv2, BayesianSignatureOptimizer); few-shot prompt optimization via bootstrap; metric-driven compilation; production pattern for managing prompt drift across model updates.
+
+- **LangGraph** — StateGraph abstraction: nodes (Python functions), edges (deterministic or conditional), TypedDict state; MessageGraph for conversational agents; conditional routing with `add_conditional_edges`; persistence via checkpointers (SQLite, Redis) for resumable workflows; human-in-the-loop: `interrupt_before`, `interrupt_after`, `Command` for resumption; time-travel debugging; multi-agent patterns: supervisor orchestrator, hierarchical subgraph delegation; LangGraph vs LangChain LCEL vs raw code.
 
 ---
 
@@ -284,6 +332,14 @@ Visual AI from convolutional fundamentals through modern vision-language models 
 
 The applied layer for agents, retrieval, and efficient LLM inference — where foundation models become systems.
 
+### RAG (Retrieval-Augmented Generation)
+
+- **RAG Fundamentals** — Full RAG pipeline: document ingestion → chunking (fixed-size, recursive, semantic) → embedding → vector store → retrieval → context assembly → LLM generation; chunking strategies and overlap; hybrid search (BM25 + dense, RRF fusion); HyDE (Hypothetical Document Embeddings); reranking with cross-encoders; RAGAS evaluation framework (faithfulness, answer relevance, context precision/recall); advanced patterns: multi-hop RAG, corrective RAG, self-RAG; RAG vs fine-tuning vs prompting decision.
+
+### Prompt Engineering
+
+- **Prompt Engineering** — Anatomy of a prompt: persona, context, task, format, constraints; zero-shot vs few-shot (in-context learning); Chain-of-Thought (CoT): "think step by step", zero-shot CoT; Tree-of-Thought (ToT) for parallel exploration; ReAct (reasoning + acting in tool-use loops); structured output: JSON mode, XML tags; prompt injection defense: input sanitization, privilege separation; prompt vs fine-tuning vs RAG decision framework; prompt versioning and regression testing.
+
 ### Agents
 
 - **AI Agents Overview** — Agent formula: perception → reasoning → action → memory loop; tool-using agents vs embodied agents vs code agents; taxonomy of agency levels (zero autonomy → fully autonomous); production patterns: single-agent vs multi-agent; when agents add value vs when a single LLM call suffices.
@@ -297,6 +353,12 @@ The applied layer for agents, retrieval, and efficient LLM inference — where f
 - **Multi-Agent Systems** — Supervisor pattern (orchestrator + specialized sub-agents); swarm (peer agents, emergent coordination); pipeline (sequential hand-offs); blackboard (shared state); LangGraph multi-agent implementation; CrewAI role-based agents; AutoGen conversational agents; cross-vendor A2A protocol; failure modes (cascading errors, communication overhead).
 
 - **Tool Use and Function Calling** — Tool definition as JSON schema; tool choice (auto, any, specific); parallel tool calls; nested tool calls; tool result injection; Anthropic tool use API; OpenAI function calling; MCP (Model Context Protocol) as a standard tool protocol; tool error handling and retry loops; security considerations (injection via tool results).
+
+- **Model Context Protocol (MCP)** — Open standard for connecting AI assistants to data sources and tools; three-layer architecture: MCP Hosts (Claude Desktop, IDEs), MCP Clients (protocol handlers), MCP Servers (capability exposers); three primitives: Resources (data), Tools (actions), Prompts (templates); transport mechanisms: stdio (local) and HTTP+SSE (remote); security model and capability scoping; MCP vs OpenAI function calling vs LangChain tools; A2A (Agent-to-Agent) protocol complement.
+
+- **AutoGen** — Microsoft's conversational multi-agent framework; ConversableAgent API: `initiate_chat`, `register_reply`, `human_input_mode` (ALWAYS/NEVER/TERMINATE); core roles: AssistantAgent (LLM-backed), UserProxyAgent (code executor + human proxy), GroupChatManager; GroupChat orchestration with dynamic speaker selection; code execution: Docker sandbox vs local with `code_execution_config`; tool registration via `@register_for_llm` / `@register_for_execution` decorators; AutoGen AgentChat API (v0.4); AutoGen Studio no-code UI; termination conditions and `max_consecutive_auto_reply`.
+
+- **CrewAI** — Role-based multi-agent orchestration; core primitives: `Agent` (role, goal, backstory, tools, llm), `Task` (description, expected_output, agent, context), `Crew` (agents, tasks, process); process types: `Process.sequential`, `Process.hierarchical` (manager_llm), `Process.consensual`; built-in tools and custom `@tool` decorator; memory system: short-term (RAG), long-term (SQLite), entity memory; CrewAI Flows (v0.9+): event-driven state machine with `@start`, `@listen`, `@router`; CrewAI vs AutoGen vs LangGraph comparison.
 
 ### Inference Optimization
 
@@ -325,6 +387,14 @@ The applied layer for agents, retrieval, and efficient LLM inference — where f
 - **Chroma** — Embedded (in-process Python) and client-server modes; simple API (add, query, delete); metadata filtering; HNSWlib under the hood; ephemeral vs persistent; integrates natively with LangChain and LlamaIndex; best for prototyping and local development; limitations at production scale.
 
 - **pgvector** — PostgreSQL extension: vector type, ivfflat and hnsw index types; SQL + vector in one query (filter + rank in single query plan); familiar tooling (migrations, backups, ACID); pgvector + RLS for row-level tenant isolation; limitations (single-node unless Citus/Aurora); right choice when you already run Postgres and data volume is moderate.
+
+- **FAISS** — Facebook AI Similarity Search: library (not a DB) for efficient ANN on CPU/GPU; index types: IndexFlatL2/IP (exact brute-force, ground truth), IndexIVFFlat (inverted file, nprobe trade-off), IndexIVFPQ (product quantization for memory reduction), IndexHNSWFlat (graph-based, high recall); GPU variants for billion-scale search; `IndexIDMap` for external ID mapping; train → add → search → save/reload lifecycle; nprobe pitfall after reload; FAISS vs managed vector DBs (Pinecone, Qdrant).
+
+- **Qdrant** — Rust-based high-performance vector database; HNSW index with payload (metadata) filtering pushed inside graph traversal (avoid post-filter accuracy loss); named vectors and sparse vectors in same collection; quantization: scalar (INT8), product, binary (asymmetric rescoring); hybrid search: dense + sparse BM42 fusion with RRF; gRPC and REST API; Python client; Qdrant Cloud vs self-hosted Docker; payload indexing for fast filtering; Qdrant vs Weaviate vs Pinecone comparison.
+
+### Multimodal AI
+
+- **Multimodal AI** — Vision-Language Models (VLMs): GPT-4o, Claude 3.5, Gemini 2.0, LLaVA, Qwen-VL; image understanding capabilities: OCR, chart reading, spatial reasoning, object counting; Automatic Speech Recognition (ASR): Whisper architecture, word error rate; Text-to-Speech (TTS): VITS, Kokoro, ElevenLabs; video understanding: frame sampling, VideoLLaMA; multimodal RAG with ColPali (vision embeddings for document retrieval); production considerations: image preprocessing, token costs, NSFW filtering; audio-to-audio models.
 
 ---
 
@@ -367,6 +437,10 @@ The operational discipline of building, deploying, monitoring, and maintaining M
 - **Concept Drift** — P(Y|X) changes (label distribution changes); harder to detect without ground truth labels; proxy metrics (downstream outcomes); delayed labels and their handling; different drift types: sudden, gradual, recurring, incremental; when to retrain vs when to investigate.
 
 - **A/B Testing for ML** — Randomized experiment design; treatment assignment; minimum detectable effect and sample size calculation; sequential testing and optional stopping; metric selection (guardrail vs primary); interleaving experiments for ranking; multi-armed bandit as an alternative; the role of A/B in the ML feedback loop.
+
+- **LangSmith** — LangChain's LLMOps observability platform; tracing: automatic via LANGCHAIN_TRACING_V2 or manual `@traceable`; run trees showing full chain/agent execution; datasets: curate golden examples, run automated evals; evaluators: LLM-as-judge, exact match, embedding similarity; Prompt Hub for prompt versioning; online evaluation for production sampling; LangSmith vs LangFuse vs Arize Phoenix comparison.
+
+- **LLM Observability** — The three pillars: traces (request lineage), metrics (latency, cost, token usage), evaluations (quality scores); LangFuse: open-source, self-hostable, Generative AI observability with SDK + decorator tracing; Helicone: proxy-based logging (zero code change), request/response capture; Arize Phoenix: local-first with OTEL support, LLM evals and embedding drift; OpenTelemetry + OpenLLMetry for vendor-neutral instrumentation; key production metrics: TTFT, TPOT, cost-per-request, hallucination rate.
 
 ### Pipelines
 
@@ -446,6 +520,8 @@ The compute layer — GPU clusters, cloud platforms, distributed training, and m
 
 - **Neural Architecture Search (NAS)** — Motivation: manual architecture design is expensive; search space definition; search strategies: grid, random, reinforcement learning, evolutionary, Bayesian optimization; one-shot NAS (weight sharing: DARTS, SMASH); EfficientNet found by NAS; hardware-aware NAS (latency constraints); NAS for edge devices; MNASNet, OFA (Once-for-All).
 
+- **Ollama** — Run LLMs locally via GGUF format with automatic GPU/CPU dispatch; CLI: `ollama pull`, `ollama run`, `ollama list`, `ollama serve`; REST API (OpenAI-compatible `/api/generate`, `/api/chat`); Modelfile for custom system prompts, temperature, and base model; model library: Llama 3, Qwen 2.5, Gemma 2, Mistral, Phi-4, Code Llama; GPU acceleration: CUDA, ROCm, Metal; Ollama vs llama.cpp vs LM Studio vs vLLM comparison; embedding endpoint for local RAG pipelines.
+
 ---
 
 ## 08. Data Engineering for AI
@@ -521,6 +597,8 @@ Measuring model quality and ensuring AI systems behave safely and fairly.
 - **Evaluation Frameworks** — RAGAS for RAG evaluation (faithfulness, answer relevance, context precision/recall); Evals (OpenAI framework); LangSmith automated evaluators; Braintrust; Phoenix (Arize); confidence calibration and ECE (Expected Calibration Error); building a golden test set; regression testing in CI; eval-gated deployments.
 
 ### Interpretability
+
+- **Explainable AI (XAI)** — Interpretability taxonomy: ante-hoc (inherently interpretable: linear models, decision trees) vs post-hoc (explain black-box after training); local vs global explanations; model-agnostic (SHAP, LIME, permutation importance, PDP, ICE) vs model-specific (attention visualization, saliency maps, integrated gradients); NLP XAI: rationale extraction, probing classifiers, concept activation vectors (TCAV); LLM-specific: CoT as proxy explanation, faithfulness vs plausibility; regulatory context (EU AI Act Article 13 on transparency); XAI in practice: Grad-CAM for CV, TreeSHAP for tabular, contrastive explanations for decisions.
 
 - **SHAP** — SHapley Additive exPlanations: game-theoretic feature attribution satisfying efficiency, symmetry, dummy, additivity axioms; TreeSHAP for exact O(TL²M) computation on tree ensembles; DeepSHAP / GradientSHAP for neural nets; KernelSHAP as model-agnostic (slower); SHAP summary plot, dependence plot, waterfall plot; limitations (assumes feature independence in kernel version; expensive for large models).
 
