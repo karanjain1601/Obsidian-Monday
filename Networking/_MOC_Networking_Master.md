@@ -10,7 +10,7 @@ status: complete
 # 🌐 Networking — Master Map of Content
 
 > [!abstract] About This Vault
-> A production-focused computer networking reference: **37 notes across 6 sections**, covering the full stack from physical signaling and Ethernet framing up through TCP/IP internals, application protocols, transport security, wireless/cellular, and software-defined cloud networking. Every note pairs an intuition-first analogy with detailed diagrams, packet-header breakdowns, configuration snippets, trade-off tables, and review questions. Designed for staff-level engineers who debug outages, design addressing and routing, secure data in transit, and scale networked systems. Start at the section matching your goal, or follow one of the four learning paths below.
+> A production-focused computer networking reference: **48 notes across 8 sections**, covering the full stack from physical signaling and Ethernet framing up through TCP/IP internals, application protocols, transport security, wireless/cellular, software-defined cloud networking, routing protocols (OSPF, BGP, EIGRP, VLANs, MPLS), and network automation (Ansible, Python, SNMP, monitoring). Every note pairs an intuition-first analogy with detailed diagrams, configuration snippets, trade-off tables, and review questions.
 
 ## Vault Architecture
 
@@ -24,6 +24,21 @@ graph TD
     Master --> S04["04 Network Security"]
     Master --> S05["05 Wireless & Mobile"]
     Master --> S06["06 SDN & Cloud Networking"]
+    Master --> S07["07 Routing Protocols"]
+    Master --> S08["08 Network Automation"]
+
+    S07 --> R1["Routing Fundamentals"]
+    S07 --> R2["OSPF"]
+    S07 --> R3["BGP"]
+    S07 --> R4["RIP & EIGRP"]
+    S07 --> R5["VLAN & Switching"]
+    S07 --> R6["WAN & MPLS"]
+
+    S08 --> A1["Automation Overview"]
+    S08 --> A2["Ansible for Networks"]
+    S08 --> A3["Python Network Programming"]
+    S08 --> A4["SNMP & Monitoring"]
+    S08 --> A5["Troubleshooting"]
 
     style Master fill:#7c3aed,color:#fff
     style S01 fill:#2563eb,color:#fff
@@ -32,6 +47,8 @@ graph TD
     style S04 fill:#dc2626,color:#fff
     style S05 fill:#d97706,color:#fff
     style S06 fill:#0891b2,color:#fff
+    style S07 fill:#059669,color:#fff
+    style S08 fill:#7c3aed,color:#fff
 ```
 
 ## Sections at a Glance
@@ -44,6 +61,8 @@ graph TD
 | 04 | Network Security | 5 | [[_MOC_Network_Security]] | Intermediate → Advanced |
 | 05 | Wireless & Mobile | 5 | [[_MOC_Wireless_Mobile]] | Intermediate |
 | 06 | SDN & Cloud Networking | 5 | [[_MOC_SDN_Cloud_Networking]] | Advanced |
+| 07 | Routing Protocols | 6 | [[_MOC_Routing_Protocols]] | Intermediate → Advanced |
+| 08 | Network Automation | 5 | [[_MOC_Network_Automation]] | Intermediate → Advanced |
 
 ---
 
@@ -107,5 +126,7 @@ This vault is the networking deep dive that grounds systems-level design and pro
 - [[_MOC_Network_Security]] — Protecting data in transit: TLS 1.3 handshake, firewalls, VPN protocols, DDoS mitigation, and zero-trust architecture.
 - [[_MOC_Wireless_Mobile]] — Shared, unlicensed air: Wi-Fi 6/6E/7, Bluetooth/BLE, 5G NR architecture, Mobile IP, and IoT protocols.
 - [[_MOC_SDN_Cloud_Networking]] — Programmable networks at scale: SDN/OpenFlow, NFV, cloud VPC networking, service mesh, and network automation.
+- [[_MOC_Routing_Protocols]] — Dynamic routing at depth: static vs dynamic routing, OSPF neighbor states and LSA types, BGP path-vector and best-path algorithm, EIGRP DUAL, VLANs/STP/802.1Q, MPLS label switching, and SD-WAN.
+- [[_MOC_Network_Automation]] — Automating the network: IaC principles, Ansible network modules, Netmiko/NAPALM/Nornir in Python, SNMP/NetFlow/sFlow monitoring, Prometheus SNMP Exporter, and systematic troubleshooting methodology.
 
 #MOC #Networking #MasterMOC

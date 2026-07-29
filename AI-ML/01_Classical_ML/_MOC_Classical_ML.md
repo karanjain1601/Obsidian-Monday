@@ -140,12 +140,23 @@ graph TD
 - What metrics should you report for an imbalanced binary classification problem?
 - Why can XGBoost outperform a vanilla Random Forest on the same dataset?
 
+### Reinforcement Learning
+
+| Note | Core Idea | Difficulty |
+|------|-----------|------------|
+| [[RL_Fundamentals]] | MDP formalism, Bellman equations, V(s) vs Q(s,a), on-policy vs off-policy | Intermediate |
+| [[Q_Learning_and_SARSA]] | Tabular TD algorithms; off-policy Q-Learning vs on-policy SARSA; ε-greedy exploration | Intermediate |
+| [[Deep_Q_Networks]] | DQN: neural Q-function + experience replay + target network; Double/Dueling/PER/Rainbow variants | Advanced |
+| [[Policy_Gradient_Methods]] | REINFORCE, Actor-Critic, PPO; optimize π directly; continuous actions; RLHF foundation | Advanced |
+| [[Multi_Agent_and_Inverse_RL]] | MARL (CTDE, MADDPG, QMIX), IRL, GAIL, RLHF connection | Advanced |
+
 ---
 
 ## Connections to Other Sections
 
 - [[_MOC_Foundations]] — probability theory (Naive Bayes, MLE), optimization (gradient boosting), and linear algebra (PCA, SVM kernels) are prerequisites from the Foundations section
 - [[_MOC_Deep_Learning]] — ensemble ideas recur in transformer blocks; decision tree intuitions help with understanding attention-based feature selection
+- [[_MOC_AI_ML_Master]] — Reinforcement Learning section (RL Fundamentals through Multi-Agent & Inverse RL) is the gateway to deep RL and RLHF
 
 ---
 

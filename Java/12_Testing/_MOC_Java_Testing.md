@@ -1,5 +1,6 @@
 ---
 title: "Java Testing — Map of Content"
+aliases: ["_MOC_Testing", "Java Testing MOC"]
 tags:
   - Java
   - Testing

@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[35_Java_Networking/_MOC_Java_Networking|← Java Networking]]
-- [[37_Java_Patterns/_MOC_Java_Patterns|→ Java Patterns]]
+- [[_MOC_Java_Networking|← Java Networking]]
+- [[_MOC_Java_Patterns|→ Java Patterns]]
 
 #MOC #java #functional #lambda #streams #optional #method-references

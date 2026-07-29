@@ -1,6 +1,6 @@
 ---
 title: "System Properties"
-aliases: ["LTI Properties", "Linearity Time-Invariance", "System Classification"]
+aliases: ["LTI Properties", "Linearity Time-Invariance", "System Classification", "CT_System_Properties"]
 tags: [signals-and-systems, ct-signals, beginner]
 domain: Signals and Systems
 difficulty: beginner

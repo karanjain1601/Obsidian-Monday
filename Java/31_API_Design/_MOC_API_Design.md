@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[30_Database_Advanced/_MOC_Database_Advanced|← Database Advanced]]
-- [[32_Distributed_Systems_Java/_MOC_Distributed_Systems|→ Distributed Systems]]
+- [[_MOC_Database_Advanced|← Database Advanced]]
+- [[_MOC_Distributed_Systems|→ Distributed Systems]]
 
 #MOC #java #api #rest #graphql #grpc #versioning #rate-limiting

@@ -78,12 +78,12 @@ graph TD
 
 | # | Section | Notes | Focus |
 |---|---------|-------|-------|
-| 01 | [[01_Blockchain_Fundamentals/_MOC_Blockchain_Fundamentals\|Blockchain Fundamentals]] | 5 | Ledgers, trilemma, hashing, consensus, P2P, crypto primitives |
-| 02 | [[02_Applied_Cryptography/_MOC_Applied_Cryptography\|Applied Cryptography]] | 5 | ECDSA, ZKPs, commitments, MPC, post-quantum |
-| 03 | [[03_Bitcoin_Protocol/_MOC_Bitcoin_Protocol\|Bitcoin Protocol]] | 5 | UTXO, Script, mining, Lightning, Taproot |
-| 04 | [[04_Ethereum_EVM/_MOC_Ethereum_EVM\|Ethereum & EVM]] | 5 | EVM internals, Solidity, gas, ABI, upgrades |
-| 05 | [[05_DeFi_Protocols/_MOC_DeFi_Protocols\|DeFi Protocols]] | 5 | AMMs, lending, MEV, oracles, derivatives |
-| 06 | [[06_Web3_Development/_MOC_Web3_Development\|Web3 Development]] | 5 | ethers.js/viem, Hardhat/Foundry, Graph, IPFS, bridges |
+| 01 | [[_MOC_Blockchain_Fundamentals\|Blockchain Fundamentals]] | 5 | Ledgers, trilemma, hashing, consensus, P2P, crypto primitives |
+| 02 | [[_MOC_Applied_Cryptography\|Applied Cryptography]] | 5 | ECDSA, ZKPs, commitments, MPC, post-quantum |
+| 03 | [[_MOC_Bitcoin_Protocol\|Bitcoin Protocol]] | 5 | UTXO, Script, mining, Lightning, Taproot |
+| 04 | [[_MOC_Ethereum_EVM\|Ethereum & EVM]] | 5 | EVM internals, Solidity, gas, ABI, upgrades |
+| 05 | [[_MOC_DeFi_Protocols\|DeFi Protocols]] | 5 | AMMs, lending, MEV, oracles, derivatives |
+| 06 | [[_MOC_Web3_Development\|Web3 Development]] | 5 | ethers.js/viem, Hardhat/Foundry, Graph, IPFS, bridges |
 
 ---
 
@@ -92,40 +92,40 @@ graph TD
 ### Path A — Smart Contract Engineer
 > Goal: Write, test, deploy, and upgrade production Solidity contracts.
 
-1. [[01_Blockchain_Fundamentals/Distributed_Ledgers_and_Trilemma|Distributed Ledgers & Trilemma]] — understand the foundation
-2. [[01_Blockchain_Fundamentals/Cryptographic_Primitives_Blockchain|Cryptographic Primitives]] — keys, addresses, signing
-3. [[02_Applied_Cryptography/ECDSA_and_Digital_Signatures|ECDSA & Digital Signatures]] — how tx auth works
-4. [[04_Ethereum_EVM/EVM_Architecture|EVM Architecture]] — what your code actually runs on
-5. [[04_Ethereum_EVM/Solidity_Programming|Solidity Programming]] — language deep dive
-6. [[04_Ethereum_EVM/Gas_and_Optimization|Gas & Optimization]] — production cost management
-7. [[04_Ethereum_EVM/ABI_and_Contract_Interaction|ABI & Contract Interaction]] — integration patterns
-8. [[04_Ethereum_EVM/Upgradeable_Contracts|Upgradeable Contracts]] — proxy patterns
-9. [[06_Web3_Development/Hardhat_and_Foundry|Hardhat & Foundry]] — testing toolchain
-10. [[05_DeFi_Protocols/MEV_and_Arbitrage|MEV & Arbitrage]] — adversarial awareness
+1. [[Distributed_Ledgers_and_Trilemma|Distributed Ledgers & Trilemma]] — understand the foundation
+2. [[Cryptographic_Primitives_Blockchain|Cryptographic Primitives]] — keys, addresses, signing
+3. [[ECDSA_and_Digital_Signatures|ECDSA & Digital Signatures]] — how tx auth works
+4. [[EVM_Architecture|EVM Architecture]] — what your code actually runs on
+5. [[Solidity_Programming|Solidity Programming]] — language deep dive
+6. [[Gas_and_Optimization|Gas & Optimization]] — production cost management
+7. [[ABI_and_Contract_Interaction|ABI & Contract Interaction]] — integration patterns
+8. [[Upgradeable_Contracts|Upgradeable Contracts]] — proxy patterns
+9. [[Hardhat_and_Foundry|Hardhat & Foundry]] — testing toolchain
+10. [[MEV_and_Arbitrage|MEV & Arbitrage]] — adversarial awareness
 
 ### Path B — Protocol / DeFi Researcher
 > Goal: Understand DeFi mechanisms, audit protocol economics, and reason about attacks.
 
-1. [[01_Blockchain_Fundamentals/Consensus_Mechanisms|Consensus Mechanisms]] — PoW/PoS/BFT
-2. [[01_Blockchain_Fundamentals/Hash_Functions_and_Merkle_Trees|Hash Functions & Merkle Trees]] — data integrity
-3. [[02_Applied_Cryptography/Zero_Knowledge_Proofs|Zero-Knowledge Proofs]] — ZK rollups & privacy
-4. [[05_DeFi_Protocols/AMMs_and_Liquidity_Pools|AMMs & Liquidity Pools]] — x*y=k, IL, concentrated
-5. [[05_DeFi_Protocols/Lending_and_Borrowing|Lending & Borrowing]] — health factors, flash loans
-6. [[05_DeFi_Protocols/Oracles_and_Data_Feeds|Oracles & Data Feeds]] — Chainlink, TWAP
-7. [[05_DeFi_Protocols/MEV_and_Arbitrage|MEV & Arbitrage]] — PBS/Flashbots
-8. [[05_DeFi_Protocols/Derivatives_and_Perpetuals|Derivatives & Perpetuals]] — perp mechanics
-9. [[06_Web3_Development/Cross_Chain_Bridges|Cross-Chain Bridges]] — bridge security
+1. [[Consensus_Mechanisms|Consensus Mechanisms]] — PoW/PoS/BFT
+2. [[Hash_Functions_and_Merkle_Trees|Hash Functions & Merkle Trees]] — data integrity
+3. [[Zero_Knowledge_Proofs|Zero-Knowledge Proofs]] — ZK rollups & privacy
+4. [[AMMs_and_Liquidity_Pools|AMMs & Liquidity Pools]] — x*y=k, IL, concentrated
+5. [[Lending_and_Borrowing|Lending & Borrowing]] — health factors, flash loans
+6. [[Oracles_and_Data_Feeds|Oracles & Data Feeds]] — Chainlink, TWAP
+7. [[MEV_and_Arbitrage|MEV & Arbitrage]] — PBS/Flashbots
+8. [[Derivatives_and_Perpetuals|Derivatives & Perpetuals]] — perp mechanics
+9. [[Cross_Chain_Bridges|Cross-Chain Bridges]] — bridge security
 
 ### Path C — Bitcoin / L2 Engineer
 > Goal: Build on or audit Bitcoin's stack including Lightning and Taproot.
 
-1. [[01_Blockchain_Fundamentals/Distributed_Ledgers_and_Trilemma|Distributed Ledgers & Trilemma]]
-2. [[01_Blockchain_Fundamentals/Consensus_Mechanisms|Consensus Mechanisms]] — PoW Nakamoto
-3. [[03_Bitcoin_Protocol/UTXO_Model|UTXO Model]] — coin selection, dust
-4. [[03_Bitcoin_Protocol/Bitcoin_Script|Bitcoin Script]] — P2PKH → P2TR
-5. [[03_Bitcoin_Protocol/Mining_and_Difficulty|Mining & Difficulty]] — SHA-256d, retarget
-6. [[03_Bitcoin_Protocol/Taproot_and_SegWit|Taproot & SegWit]] — BIP340/341/342
-7. [[03_Bitcoin_Protocol/Lightning_Network|Lightning Network]] — channels, HTLCs, routing
+1. [[Distributed_Ledgers_and_Trilemma|Distributed Ledgers & Trilemma]]
+2. [[Consensus_Mechanisms|Consensus Mechanisms]] — PoW Nakamoto
+3. [[UTXO_Model|UTXO Model]] — coin selection, dust
+4. [[Bitcoin_Script|Bitcoin Script]] — P2PKH → P2TR
+5. [[Mining_and_Difficulty|Mining & Difficulty]] — SHA-256d, retarget
+6. [[Taproot_and_SegWit|Taproot & SegWit]] — BIP340/341/342
+7. [[Lightning_Network|Lightning Network]] — channels, HTLCs, routing
 
 ---
 
@@ -141,12 +141,12 @@ graph TD
 
 ## Section MOC Index
 
-- [[01_Blockchain_Fundamentals/_MOC_Blockchain_Fundamentals|01 — Blockchain Fundamentals MOC]]
-- [[02_Applied_Cryptography/_MOC_Applied_Cryptography|02 — Applied Cryptography MOC]]
-- [[03_Bitcoin_Protocol/_MOC_Bitcoin_Protocol|03 — Bitcoin Protocol MOC]]
-- [[04_Ethereum_EVM/_MOC_Ethereum_EVM|04 — Ethereum & EVM MOC]]
-- [[05_DeFi_Protocols/_MOC_DeFi_Protocols|05 — DeFi Protocols MOC]]
-- [[06_Web3_Development/_MOC_Web3_Development|06 — Web3 Development MOC]]
+- [[_MOC_Blockchain_Fundamentals|01 — Blockchain Fundamentals MOC]]
+- [[_MOC_Applied_Cryptography|02 — Applied Cryptography MOC]]
+- [[_MOC_Bitcoin_Protocol|03 — Bitcoin Protocol MOC]]
+- [[_MOC_Ethereum_EVM|04 — Ethereum & EVM MOC]]
+- [[_MOC_DeFi_Protocols|05 — DeFi Protocols MOC]]
+- [[_MOC_Web3_Development|06 — Web3 Development MOC]]
 
 ---
 

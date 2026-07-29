@@ -5,6 +5,7 @@ aliases:
   - Support Vector Classifier
   - SVR
   - SVC
+  - Kernel_Methods
 tags:
   - ai-ml
   - classical-ml

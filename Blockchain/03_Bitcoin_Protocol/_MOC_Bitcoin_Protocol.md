@@ -78,7 +78,7 @@ graph TD
 ## Related Sections
 
 - [[_MOC_Blockchain_Master|↑ Blockchain Master MOC]]
-- [[02_Applied_Cryptography/_MOC_Applied_Cryptography|← Applied Cryptography]]
-- [[04_Ethereum_EVM/_MOC_Ethereum_EVM|→ Ethereum & EVM]]
+- [[_MOC_Applied_Cryptography|← Applied Cryptography]]
+- [[_MOC_Ethereum_EVM|→ Ethereum & EVM]]
 
 #MOC #Blockchain #BitcoinProtocol

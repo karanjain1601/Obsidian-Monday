@@ -1,5 +1,6 @@
 ---
 title: "JUnit 5 and Assertions"
+aliases: ["JUnit5_Basics", "JUnit5 Basics"]
 tags:
   - Java
   - Testing

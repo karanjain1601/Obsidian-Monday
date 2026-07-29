@@ -1,6 +1,6 @@
 ---
 title: "Inverse Laplace Transform"
-aliases: ["ILT", "partial fraction expansion", "PFE", "inverse LT"]
+aliases: ["ILT", "partial fraction expansion", "PFE", "inverse LT", "Inverse_Laplace_Transform", "Partial_Fraction_Expansion"]
 tags: [signals-and-systems, laplace-transform, intermediate]
 domain: Signals and Systems
 difficulty: intermediate

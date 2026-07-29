@@ -1,6 +1,6 @@
 ﻿---
 title: Recursion Fundamentals
-aliases: []
+aliases: [Call_Stack, Recursion Basics]
 tags: [DSA, Recursion]
 domain: DSA
 difficulty: Beginner

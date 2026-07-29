@@ -60,7 +60,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[27_Observability_Java/_MOC_Observability_Java|← Observability Java]]
-- [[29_Security_Advanced/_MOC_Security_Advanced|→ Security Advanced]]
+- [[_MOC_Observability_Java|← Observability Java]]
+- [[_MOC_Security_Advanced|→ Security Advanced]]
 
 #MOC #java #testing #integration #testcontainers #contracts #performance

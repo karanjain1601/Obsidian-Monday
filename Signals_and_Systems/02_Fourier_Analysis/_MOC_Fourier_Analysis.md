@@ -1,6 +1,6 @@
 ---
 title: "MOC — Fourier Analysis"
-aliases: ["Fourier Analysis MOC", "Spectral Analysis MOC", "02 Fourier Analysis"]
+aliases: ["Fourier Analysis MOC", "Spectral Analysis MOC", "02 Fourier Analysis", "_MOC_DTFT_DFT", "_MOC_Fourier_Series_Transform"]
 tags: [MOC, signals-and-systems, fourier-analysis]
 domain: Signals and Systems
 created: 2026-07-27

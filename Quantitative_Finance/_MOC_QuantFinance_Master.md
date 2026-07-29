@@ -1,6 +1,6 @@
 ---
 title: "Quantitative Finance — Master Map of Content"
-aliases: [MOC QuantFinance Master, Quant Finance Vault Home, QF Master]
+aliases: [MOC QuantFinance Master, Quant Finance Vault Home, QF Master, _MOC_QF_Master, _MOC_Quantitative_Finance, _MOC_Quantitative_Finance_Master, _MOC_QuantitativeFinance_Master]
 tags: [MOC, QuantitativeFinance, MasterMOC]
 domain: Quantitative Finance
 created: 2026-07-26

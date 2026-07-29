@@ -1,6 +1,6 @@
 ---
 title: "Difference Equations"
-aliases: ["LCCDE", "Linear Constant-Coefficient Difference Equation", "IIR vs FIR", "Recursive Filter"]
+aliases: ["LCCDE", "Linear Constant-Coefficient Difference Equation", "IIR vs FIR", "Recursive Filter", "DT_LTI_Systems", "DT_LTI_Systems_Difference_Equations"]
 tags: [signals-and-systems, dt-signals, advanced]
 domain: Signals and Systems
 difficulty: advanced

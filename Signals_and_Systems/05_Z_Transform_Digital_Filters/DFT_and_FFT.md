@@ -1,6 +1,6 @@
 ---
 title: "DFT and FFT"
-aliases: ["Discrete Fourier Transform", "Fast Fourier Transform", "DFT", "FFT", "Radix-2 FFT"]
+aliases: ["Discrete Fourier Transform", "Fast Fourier Transform", "DFT", "FFT", "Radix-2 FFT", "Windowing_and_Spectral_Analysis"]
 tags: [signals-and-systems, dft, fft, intermediate]
 domain: Signals and Systems
 difficulty: intermediate

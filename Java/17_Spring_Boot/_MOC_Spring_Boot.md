@@ -1,6 +1,6 @@
 ---
 title: "Spring Boot — Map of Content"
-aliases: ["MOC Spring Boot"]
+aliases: ["MOC Spring Boot", "Spring_Boot_Core"]
 tags: [MOC, java, spring, spring-boot]
 domain: Java
 created: 2026-07-26

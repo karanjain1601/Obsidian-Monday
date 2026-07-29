@@ -60,7 +60,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[36_Functional_Java/_MOC_Functional_Java|← Functional Java]]
-- [[38_Java_Internals/_MOC_Java_Internals|→ Java Internals]]
+- [[_MOC_Functional_Java|← Functional Java]]
+- [[_MOC_Java_Internals|→ Java Internals]]
 
 #MOC #java #design-patterns #builder #observer #strategy #decorator #template-method

@@ -1,6 +1,6 @@
 ﻿---
 title: Sorting Algorithms — Overview & Decision Guide
-aliases: [Sorting Reference, Sorting Comparison, Sorting Cheatsheet]
+aliases: [Sorting Reference, Sorting Comparison, Sorting Cheatsheet, Sorting_Algorithms]
 tags: [DSA, Sorting, Reference, Algorithms]
 domain: DSA
 difficulty: Beginner

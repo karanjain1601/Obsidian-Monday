@@ -76,12 +76,12 @@ graph TD
 
 | # | Section | Notes | Core Concept | Difficulty |
 |---|---------|-------|--------------|------------|
-| 01 | [[01_Digital_Logic/_MOC_Digital_Logic\|⚡ Digital Logic]] | 5 | Boolean → FSM → IEEE 754 | Beginner→Int |
-| 02 | [[02_CPU_Architecture/_MOC_CPU_Architecture\|🔧 CPU Architecture]] | 5 | ISA → Pipeline → OOO | Intermediate |
-| 03 | [[03_Memory_Systems/_MOC_Memory_Systems\|🗄️ Memory Systems]] | 5 | Cache → DRAM → Consistency | Intermediate→Adv |
-| 04 | [[04_IO_Systems/_MOC_IO_Systems\|🔌 I/O Systems]] | 5 | PCIe → DMA → NVMe | Intermediate |
-| 05 | [[05_Assembly_RISCV/_MOC_Assembly_RISCV\|📟 Assembly & RISC-V]] | 5 | ISA Formats → ABI → Extensions | Intermediate |
-| 06 | [[06_Parallel_Computing/_MOC_Parallel_Computing\|⚡ Parallel Computing]] | 5 | SIMD → MESI → CUDA | Advanced |
+| 01 | [[_MOC_Digital_Logic\|⚡ Digital Logic]] | 5 | Boolean → FSM → IEEE 754 | Beginner→Int |
+| 02 | [[_MOC_CPU_Architecture\|🔧 CPU Architecture]] | 5 | ISA → Pipeline → OOO | Intermediate |
+| 03 | [[_MOC_Memory_Systems\|🗄️ Memory Systems]] | 5 | Cache → DRAM → Consistency | Intermediate→Adv |
+| 04 | [[_MOC_IO_Systems\|🔌 I/O Systems]] | 5 | PCIe → DMA → NVMe | Intermediate |
+| 05 | [[_MOC_Assembly_RISCV\|📟 Assembly & RISC-V]] | 5 | ISA Formats → ABI → Extensions | Intermediate |
+| 06 | [[_MOC_Parallel_Computing\|⚡ Parallel Computing]] | 5 | SIMD → MESI → CUDA | Advanced |
 
 ---
 
@@ -121,23 +121,23 @@ DRAM_Architecture [Rowhammer] → Cache_Coherence
 
 | Concept | Appears In |
 |---------|------------|
-| ISA formats (R/I/S/B/U/J) | [[02_CPU_Architecture/ISA_Design_RISC_vs_CISC\|ISA Design]] + [[05_Assembly_RISCV/RISCV_ISA_Fundamentals\|RISC-V ISA]] |
-| Cache lines & alignment | [[03_Memory_Systems/Cache_Hierarchy\|Cache]] + [[06_Parallel_Computing/SIMD_and_Vector_ISA\|SIMD]] + [[06_Parallel_Computing/Multi_Core_Programming\|Multi-Core]] |
-| Memory ordering | [[03_Memory_Systems/Memory_Consistency_Models\|Consistency]] + [[06_Parallel_Computing/Memory_Barriers_and_Ordering\|Barriers]] + [[06_Parallel_Computing/Cache_Coherence_MESI\|MESI]] |
-| MMIO & DMA | [[04_IO_Systems/Memory_Mapped_IO\|MMIO]] + [[04_IO_Systems/Interrupts_and_DMA\|DMA]] + [[03_Memory_Systems/Cache_Hierarchy\|Cache coherency]] |
-| TLB & page tables | [[03_Memory_Systems/Virtual_Memory_and_TLB\|VM/TLB]] + [[04_IO_Systems/Interrupts_and_DMA\|IOMMU]] |
-| IEEE 754 | [[01_Digital_Logic/Arithmetic_Circuits_and_IEEE754\|Arithmetic]] + [[05_Assembly_RISCV/RISCV_Extensions\|F/D extensions]] |
+| ISA formats (R/I/S/B/U/J) | [[ISA_Design_RISC_vs_CISC\|ISA Design]] + [[RISCV_ISA_Fundamentals\|RISC-V ISA]] |
+| Cache lines & alignment | [[Cache_Hierarchy\|Cache]] + [[SIMD_and_Vector_ISA\|SIMD]] + [[Multi_Core_Programming\|Multi-Core]] |
+| Memory ordering | [[Memory_Consistency_Models\|Consistency]] + [[Memory_Barriers_and_Ordering\|Barriers]] + [[Cache_Coherence_MESI\|MESI]] |
+| MMIO & DMA | [[Memory_Mapped_IO\|MMIO]] + [[Interrupts_and_DMA\|DMA]] + [[Cache_Hierarchy\|Cache coherency]] |
+| TLB & page tables | [[Virtual_Memory_and_TLB\|VM/TLB]] + [[Interrupts_and_DMA\|IOMMU]] |
+| IEEE 754 | [[Arithmetic_Circuits_and_IEEE754\|Arithmetic]] + [[RISCV_Extensions\|F/D extensions]] |
 
 ---
 
 ## Section MOC Index
 
-- [[01_Digital_Logic/_MOC_Digital_Logic|⚡ Digital Logic MOC]]
-- [[02_CPU_Architecture/_MOC_CPU_Architecture|🔧 CPU Architecture MOC]]
-- [[03_Memory_Systems/_MOC_Memory_Systems|🗄️ Memory Systems MOC]]
-- [[04_IO_Systems/_MOC_IO_Systems|🔌 I/O Systems MOC]]
-- [[05_Assembly_RISCV/_MOC_Assembly_RISCV|📟 Assembly & RISC-V MOC]]
-- [[06_Parallel_Computing/_MOC_Parallel_Computing|⚡ Parallel Computing MOC]]
+- [[_MOC_Digital_Logic|⚡ Digital Logic MOC]]
+- [[_MOC_CPU_Architecture|🔧 CPU Architecture MOC]]
+- [[_MOC_Memory_Systems|🗄️ Memory Systems MOC]]
+- [[_MOC_IO_Systems|🔌 I/O Systems MOC]]
+- [[_MOC_Assembly_RISCV|📟 Assembly & RISC-V MOC]]
+- [[_MOC_Parallel_Computing|⚡ Parallel Computing MOC]]
 
 ---
 

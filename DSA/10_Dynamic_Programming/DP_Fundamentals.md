@@ -1,6 +1,6 @@
 ﻿---
 title: DP Fundamentals
-aliases: []
+aliases: [Dynamic_Programming_Fundamentals, DP Intro]
 tags: [DSA, DynamicProgramming]
 domain: DSA
 difficulty: Intermediate

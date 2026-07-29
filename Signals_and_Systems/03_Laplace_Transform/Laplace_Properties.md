@@ -1,6 +1,6 @@
 ---
 title: "Laplace Transform Properties"
-aliases: ["LT properties", "Laplace rules", "differentiation property Laplace", "IVT FVT"]
+aliases: ["LT properties", "Laplace rules", "differentiation property Laplace", "IVT FVT", "Laplace_Transform_Properties"]
 tags: [signals-and-systems, laplace-transform, intermediate]
 domain: Signals and Systems
 difficulty: intermediate

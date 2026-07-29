@@ -1,5 +1,6 @@
 ---
 title: "Mockito"
+aliases: ["Mockito_Essentials", "Mockito Basics"]
 tags:
   - Java
   - Testing

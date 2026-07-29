@@ -1,5 +1,6 @@
 ---
 title: "Design Patterns — Map of Content"
+aliases: ["Java_Patterns", "Design Patterns MOC"]
 tags: [Java, DesignPatterns, MOC]
 domain: Java
 created: 2026-07-26

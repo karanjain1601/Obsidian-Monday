@@ -1,6 +1,6 @@
 ---
 title: "Spring Kafka"
-aliases: ["KafkaTemplate", "@KafkaListener", "Kafka Consumer Groups", "Kafka Partitions", "Apache Kafka Spring"]
+aliases: ["KafkaTemplate", "@KafkaListener", "Kafka Consumer Groups", "Kafka Partitions", "Apache Kafka Spring", "Kafka_Streams"]
 tags: [java, spring, messaging, advanced]
 domain: Java
 difficulty: advanced

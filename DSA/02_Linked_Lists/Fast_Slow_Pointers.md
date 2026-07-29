@@ -1,6 +1,6 @@
 ﻿---
 title: Fast & Slow Pointers
-aliases: [Floyd's cycle detection, tortoise and hare, fast slow pointers]
+aliases: [Floyd's cycle detection, tortoise and hare, fast slow pointers, Floyd_Cycle_Detection]
 tags: [DSA, linked-lists, two-pointers, Floyd, cycle-detection]
 domain: DSA
 difficulty: Intermediate

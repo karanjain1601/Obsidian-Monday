@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[31_API_Design/_MOC_API_Design|← API Design]]
-- [[33_Java_Generics/_MOC_Java_Generics|→ Java Generics]]
+- [[_MOC_API_Design|← API Design]]
+- [[_MOC_Java_Generics|→ Java Generics]]
 
 #MOC #java #distributed-systems #cap #consensus #saga #eventual-consistency

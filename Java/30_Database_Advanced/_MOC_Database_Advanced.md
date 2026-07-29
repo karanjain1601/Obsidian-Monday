@@ -60,7 +60,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[29_Security_Advanced/_MOC_Security_Advanced|← Security Advanced]]
-- [[31_API_Design/_MOC_API_Design|→ API Design]]
+- [[_MOC_Security_Advanced|← Security Advanced]]
+- [[_MOC_API_Design|→ API Design]]
 
 #MOC #java #database #transactions #sharding #cqrs #flyway #multi-tenancy

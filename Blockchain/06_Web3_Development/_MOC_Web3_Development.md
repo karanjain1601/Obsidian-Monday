@@ -77,7 +77,7 @@ graph TD
 ## Related Sections
 
 - [[_MOC_Blockchain_Master|↑ Blockchain Master MOC]]
-- [[05_DeFi_Protocols/_MOC_DeFi_Protocols|← DeFi Protocols]]
-- [[04_Ethereum_EVM/_MOC_Ethereum_EVM|← Ethereum & EVM]]
+- [[_MOC_DeFi_Protocols|← DeFi Protocols]]
+- [[_MOC_Ethereum_EVM|← Ethereum & EVM]]
 
 #MOC #Blockchain #Web3Development

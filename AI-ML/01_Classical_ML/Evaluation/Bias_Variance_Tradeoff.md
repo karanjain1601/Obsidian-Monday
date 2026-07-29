@@ -4,6 +4,7 @@ aliases:
   - Bias Variance
   - Underfitting and Overfitting
   - Bias Variance Decomposition
+  - Overfitting
 tags:
   - ai-ml
   - classical-ml

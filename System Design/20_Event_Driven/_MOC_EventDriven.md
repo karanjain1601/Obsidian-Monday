@@ -1,5 +1,6 @@
 ---
 title: "Event-Driven Architecture — Map of Content"
+aliases: ["_MOC_Event_Driven", "Event Driven MOC"]
 tags: [MOC, SystemDesign, EventDriven]
 domain: SystemDesign
 created: 2026-07-26

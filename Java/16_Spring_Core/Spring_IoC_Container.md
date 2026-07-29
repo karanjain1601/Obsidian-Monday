@@ -1,6 +1,6 @@
 ---
 title: "Spring IoC Container"
-aliases: ["ApplicationContext", "Spring Container", "Spring IoC"]
+aliases: ["ApplicationContext", "Spring Container", "Spring IoC", "Spring_Core_IoC"]
 tags: [java, spring, spring-core, beginner]
 domain: Java
 difficulty: beginner

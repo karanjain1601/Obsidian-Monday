@@ -1,6 +1,6 @@
 ---
 title: "Reactive Programming — Map of Content"
-aliases: ["MOC Reactive Programming", "Project Reactor", "Spring WebFlux", "Reactive Streams"]
+aliases: ["MOC Reactive Programming", "Project Reactor", "Spring WebFlux", "Reactive Streams", "_MOC_Spring_WebFlux"]
 tags: [MOC, java, spring, reactive]
 domain: Java
 created: 2026-07-26

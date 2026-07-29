@@ -60,7 +60,7 @@ graph TD
 ### Path 1 — Speech Engineer (ASR/TTS Production)
 **Signal Processing → ASR → TTS → Foundation Models**
 
-[[_MOC_Audio_Signal_Processing]] → [[Digital_Audio_Fundamentals]] → [[Spectrograms_Features]] → [[_MOC_ASR]] → [[ASR_Deep_Learning]] → [[CTC_and_Attention_ASR]] → [[Whisper_Architecture]] → [[_MOC_TTS]] → [[Neural_TTS]] → [[FastSpeech_and_Vocoders]] → [[_MOC_Audio_Foundation_Models]] → [[Wav2Vec2_HuBERT]]
+[[_MOC_Audio_Signal_Processing]] → [[Digital_Audio_Fundamentals]] → [[Spectrograms_Features]] → [[_MOC_ASR]] → [[ASR_Deep_Learning]] → [[CTC_and_Attention_ASR]] → [[Whisper_Architecture]] → [[_MOC_TTS]] → [[Tacotron_and_Neural_TTS]] → [[FastSpeech_and_Vocoders]] → [[_MOC_Audio_Foundation_Models]] → [[Wav2Vec2_HuBERT]]
 
 ### Path 2 — Voice AI / Speaker Systems
 **Signal Processing → ASR → Speaker Recognition → Diarization**
@@ -70,12 +70,12 @@ graph TD
 ### Path 3 — Audio ML / Music AI
 **Signal Processing → Audio Classification → Music → Foundation Models**
 
-[[Digital_Audio_Fundamentals]] → [[Spectrograms_Features]] → [[_MOC_Audio_Classification]] → [[Environmental_Sound_Classification]] → [[Music_Classification_MIR]] → [[Audio_Tagging]] → [[_MOC_Audio_Foundation_Models]] → [[AudioCraft_MusicGen]] → [[Multimodal_Audio_Language]]
+[[Digital_Audio_Fundamentals]] → [[Spectrograms_Features]] → [[_MOC_Audio_Classification]] → [[Environmental_Sound_Classification]] → [[Music_Classification_MIR]] → [[Audio_Tagging_Weak_Supervision]] → [[_MOC_Audio_Foundation_Models]] → [[AudioCraft_MusicGen]] → [[Multimodal_Audio_Language_Models]]
 
 ### Path 4 — Researcher (Self-Supervised Audio)
 **Signal Processing → Foundation Models → All Applications**
 
-[[Spectrograms_Features]] → [[_MOC_Audio_Foundation_Models]] → [[Wav2Vec2_HuBERT]] → [[AudioLM]] → [[AudioCraft_MusicGen]] → [[Multimodal_Audio_Language]] → [[_MOC_ASR]] → [[Whisper_Architecture]]
+[[Spectrograms_Features]] → [[_MOC_Audio_Foundation_Models]] → [[Wav2Vec2_HuBERT]] → [[AudioLM]] → [[AudioCraft_MusicGen]] → [[Multimodal_Audio_Language_Models]] → [[_MOC_ASR]] → [[Whisper_Architecture]]
 
 ---
 

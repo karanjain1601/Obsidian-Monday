@@ -1,4 +1,5 @@
 ---
+aliases: ["Streams_and_Pipelines", "Stream Pipeline"]
 tags:
   - Java
   - Streams

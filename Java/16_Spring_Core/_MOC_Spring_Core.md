@@ -1,6 +1,6 @@
 ---
 title: "Spring Core — Map of Content"
-aliases: ["MOC Spring Core", "Spring IoC", "Spring DI"]
+aliases: ["MOC Spring Core", "Spring IoC", "Spring DI", "_MOC_Spring_Framework"]
 tags: [MOC, java, spring, spring-core]
 domain: Java
 created: 2026-07-26

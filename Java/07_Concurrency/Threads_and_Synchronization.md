@@ -1,5 +1,6 @@
 ---
 title: "Threads and Synchronization"
+aliases: ["Concurrency_Basics", "Java Concurrency Basics"]
 tags: [Java, Concurrency, Threads, Synchronization, JMM]
 domain: Java
 difficulty: Advanced

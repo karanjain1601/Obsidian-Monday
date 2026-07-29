@@ -12,7 +12,7 @@ status: complete
 > [!info] How to use this map
 > This section treats Python as a complete engineering discipline — not just scripting glue. Start with **Language** to build a strong mental model of the runtime, use **Tooling** to set up your workflow, then branch into **DSA**, **Backend**, or **AI/ML APIs** depending on your goal. Come back to the advanced Language notes (Concurrency, Internals, Decorators) after you have real use cases to anchor them.
 
-This vault covers 37 notes across 5 subsections: the Python language core and runtime internals, algorithmic problem-solving in Python, production backend development, LLM/ML API integration, and the tooling ecosystem. It sits inside the broader [[_MOC_AI_ML_Master|AI/ML Master Vault]].
+This vault covers 40 notes across 5 subsections: the Python language core and runtime internals, algorithmic problem-solving in Python, production backend development, LLM/ML API integration, and the tooling ecosystem. It sits inside the broader [[_MOC_AI_ML_Master|AI/ML Master Vault]].
 
 ---
 
@@ -20,7 +20,7 @@ This vault covers 37 notes across 5 subsections: the Python language core and ru
 
 ```mermaid
 graph TD
-    LANG["Language\n8 notes"]
+    LANG["Language\n11 notes"]
     DSA["DSA\n12 notes"]
     BACK["Backend\n10 notes"]
     AIML["AI / ML APIs\n3 notes"]
@@ -52,62 +52,72 @@ graph TD
 
 ### Phase 1 — Language Foundation
 1. [[Python_Collections]] — learn what data structures exist and their O(n) guarantees before writing a single algorithm
-2. [[Python_Data_Model]] — understand the dunder-method contract that every Python framework is built on
-3. [[Generators_and_Iterators]] — lazy evaluation and the iterator protocol; required for reading large datasets efficiently
-4. [[Context_Managers]] — resource safety pattern used in DB sessions, file I/O, and PyTorch training loops
-5. [[Type_Hints_and_Static_Analysis]] — modern typed Python; prerequisite for FastAPI, Pydantic, and clean API clients
+2. [[Python_OOP]] — classes, inheritance, MRO, dunder methods, dataclasses, and ABCs; the object model before everything else
+3. [[Python_Exception_Handling]] — try/except/else/finally, custom exceptions, chaining, and context managers for cleanup
+4. [[Python_Regular_Expressions]] — re module patterns, groups, lookaheads, compiled patterns, and common pitfalls
+5. [[Python_Data_Model]] — understand the dunder-method contract that every Python framework is built on
+6. [[Generators_and_Iterators]] — lazy evaluation and the iterator protocol; required for reading large datasets efficiently
+7. [[Context_Managers]] — resource safety pattern used in DB sessions, file I/O, and PyTorch training loops
+8. [[Type_Hints_and_Static_Analysis]] — modern typed Python; prerequisite for FastAPI, Pydantic, and clean API clients
 
 ### Phase 2 — Tooling Baseline
-6. [[Python_Dev_Tools]] — install ruff, mypy, and pre-commit before writing any project code
-7. [[Python_Packaging]] — poetry/hatch, venv, and PyPI workflow; know how your project is built
-8. [[Python_Testing]] — pytest fixtures, parametrize, and mocking; needed to validate every subsequent section
+1. [[Python_Dev_Tools]] — install ruff, mypy, and pre-commit before writing any project code
+2. [[Python_Packaging]] — poetry/hatch, venv, and PyPI workflow; know how your project is built
+3. [[Python_Testing]] — pytest fixtures, parametrize, and mocking; needed to validate every subsequent section
 
 ### Phase 3 — DSA (Interview and Algorithm Track)
-9. [[Arrays_and_Strings]] — two pointers and sliding window; the most common interview pattern
-10. [[Linked_Lists]] — dummy-head and fast/slow pointer techniques
-11. [[Stacks_and_Queues]] — monotonic stack and BFS; return here when solving tree/graph problems
-12. [[Sorting_and_Searching]] — binary search templates and `bisect`; used in nearly every medium+ problem
-13. [[Binary_Trees]] — traversals, BST, LCA, and the heap property
-14. [[Heaps_and_Priority_Queues]] — `heapq` patterns, lazy deletion, and the median-of-a-stream trick
-15. [[Graphs]] — BFS/DFS, Dijkstra, Union-Find, and grid problems
-16. [[Recursion_and_Backtracking]] — the backtracking template before tackling DP
-17. [[Dynamic_Programming]] — `@lru_cache`, tabulation fill-order, and the seven DP pattern families
-18. [[Greedy_Algorithms]] — exchange argument and interval scheduling; complements DP
-19. [[Bit_Manipulation]] — XOR patterns and bitmask DP; Python arbitrary precision as a superpower
-20. [[Trie_and_String_Algorithms]] — Trie class, KMP, Rabin-Karp; for hard string problems
+
+1. [[Arrays_and_Strings]] — two pointers and sliding window; the most common interview pattern
+2. [[Linked_Lists]] — dummy-head and fast/slow pointer techniques
+3. [[Stacks_and_Queues]] — monotonic stack and BFS; return here when solving tree/graph problems
+4. [[Sorting_and_Searching]] — binary search templates and `bisect`; used in nearly every medium+ problem
+5. [[Binary_Trees]] — traversals, BST, LCA, and the heap property
+6. [[Heaps_and_Priority_Queues]] — `heapq` patterns, lazy deletion, and the median-of-a-stream trick
+7. [[Graphs]] — BFS/DFS, Dijkstra, Union-Find, and grid problems
+8. [[Recursion_and_Backtracking]] — the backtracking template before tackling DP
+9. [[Dynamic_Programming]] — `@lru_cache`, tabulation fill-order, and the seven DP pattern families
+10. [[Greedy_Algorithms]] — exchange argument and interval scheduling; complements DP
+11. [[Bit_Manipulation]] — XOR patterns and bitmask DP; Python arbitrary precision as a superpower
+12. [[Trie_and_String_Algorithms]] — Trie class, KMP, Rabin-Karp; for hard string problems
 
 ### Phase 4 — Backend Web
-21. [[REST_API_Design]] — REST constraints and URL design principles before touching a framework
-22. [[FastAPI_Deep_Dive]] — dependency injection, middleware, WebSockets, and testing patterns
-23. [[Authentication_and_Authorization]] — bcrypt/Argon2, JWT, OAuth2, and RBAC
-24. [[SQLAlchemy_and_Databases]] — Core/ORM, session lifecycle, Alembic migrations, and async
-25. [[Django_Fundamentals]] — MVT, QuerySet, migrations, CBVs; the full-stack alternative to FastAPI
-26. [[Django_REST_Framework]] — serializers, viewsets, and routers on top of Django
-27. [[Async_Python_Web]] — httpx, aiohttp, asyncpg, and aiofiles for async I/O
-28. [[Redis_with_Python]] — redis-py, caching patterns, pub/sub, and rate limiting
-29. [[Celery_and_Task_Queues]] — Celery workers, Redis broker, beat scheduler, and Flower monitoring
-30. [[WebSockets_and_Real_Time]] — WebSocket protocol, FastAPI WS, Socket.IO, and SSE
+
+1. [[REST_API_Design]] — REST constraints and URL design principles before touching a framework
+2. [[FastAPI_Deep_Dive]] — dependency injection, middleware, WebSockets, and testing patterns
+3. [[Authentication_and_Authorization]] — bcrypt/Argon2, JWT, OAuth2, and RBAC
+4. [[SQLAlchemy_and_Databases]] — Core/ORM, session lifecycle, Alembic migrations, and async
+5. [[Django_Fundamentals]] — MVT, QuerySet, migrations, CBVs; the full-stack alternative to FastAPI
+6. [[Django_REST_Framework]] — serializers, viewsets, and routers on top of Django
+7. [[Async_Python_Web]] — httpx, aiohttp, asyncpg, and aiofiles for async I/O
+8. [[Redis_with_Python]] — redis-py, caching patterns, pub/sub, and rate limiting
+9. [[Celery_and_Task_Queues]] — Celery workers, Redis broker, beat scheduler, and Flower monitoring
+10. [[WebSockets_and_Real_Time]] — WebSocket protocol, FastAPI WS, Socket.IO, and SSE
 
 ### Phase 5 — AI/ML API Integration
-31. [[ML_Project_Structure]] — project layout, Hydra config, and reproducibility before writing ML code
-32. [[OpenAI_API_Python]] — openai v1 client, streaming, function calling, and embeddings
-33. [[Anthropic_API_Python]] — anthropic client, tool use, prompt caching, streaming, and batch API
+
+1. [[ML_Project_Structure]] — project layout, Hydra config, and reproducibility before writing ML code
+2. [[OpenAI_API_Python]] — openai v1 client, streaming, function calling, and embeddings
+3. [[Anthropic_API_Python]] — anthropic client, tool use, prompt caching, streaming, and batch API
 
 ### Phase 6 — Advanced Language (return with real context)
-34. [[Decorators_and_Metaprogramming]] — functools, metaclasses, dataclasses; makes more sense after seeing frameworks use them
-35. [[Concurrency_in_Python]] — GIL mechanics, threading, multiprocessing, asyncio, and TaskGroup
-36. [[Python_Internals]] — CPython bytecode, reference counting, GC, `__slots__`, and profiling
-37. [[Python_Logging_and_Observability]] — logging module, structlog, OpenTelemetry, and Sentry
+
+1. [[Decorators_and_Metaprogramming]] — functools, metaclasses, dataclasses; makes more sense after seeing frameworks use them
+2. [[Concurrency_in_Python]] — GIL mechanics, threading, multiprocessing, asyncio, and TaskGroup
+3. [[Python_Internals]] — CPython bytecode, reference counting, GC, `__slots__`, and profiling
+4. [[Python_Logging_and_Observability]] — logging module, structlog, OpenTelemetry, and Sentry
 
 ---
 
 ## All Notes in This Section
 
-### Language (8 notes)
+### Language (11 notes)
 
 | Note | Core Idea | Difficulty |
 |------|-----------|------------|
 | [[Python_Collections]] | `list`/`dict`/`set` internals, `deque`, `Counter`, `defaultdict`, `heapq` time complexities | Intermediate |
+| [[Python_OOP]] | Classes, inheritance, C3 MRO, dunder methods, dataclasses, ABCs, `__slots__`, and properties | Intermediate |
+| [[Python_Exception_Handling]] | `try/except/else/finally`, custom exception hierarchy, `raise ... from`, and `ExceptionGroup` | Beginner |
+| [[Python_Regular_Expressions]] | `re` module patterns, groups, named groups, lookaheads, compiled patterns, and flags | Intermediate |
 | [[Python_Data_Model]] | Dunder methods let your objects speak native Python; ABCs and Protocols make contracts explicit | Intermediate |
 | [[Generators_and_Iterators]] | Iterator protocol, `yield from`, `itertools`, and async generators for lazy, memory-efficient pipelines | Intermediate |
 | [[Context_Managers]] | `__enter__`/`__exit__`, `@contextmanager`, `ExitStack`, and async context managers | Intermediate |

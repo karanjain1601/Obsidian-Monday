@@ -1,5 +1,6 @@
 ---
 title: "Interfaces and Modern Types"
+aliases: ["Interfaces_and_Default_Methods", "Java Interfaces"]
 tags: [Java, OOP, Interfaces, Records, Sealed]
 domain: Java
 difficulty: Intermediate

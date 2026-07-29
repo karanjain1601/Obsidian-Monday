@@ -62,7 +62,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[26_Cloud_Native_Java/_MOC_Cloud_Native_Java|→ Cloud Native Java]]
-- [[28_Testing_Advanced/_MOC_Testing_Advanced|→ Testing Advanced]]
+- [[_MOC_Cloud_Native_Java|→ Cloud Native Java]]
+- [[_MOC_Testing_Advanced|→ Testing Advanced]]
 
 #MOC #java #observability #monitoring #logging #metrics #tracing

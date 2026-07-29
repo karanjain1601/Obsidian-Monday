@@ -1,5 +1,6 @@
 ---
 title: "Application Layer — Map of Content"
+aliases: ["_MOC_Application_Layer", "Application Layer MOC"]
 tags: [MOC, SystemDesign, ApplicationLayer]
 domain: SystemDesign
 created: 2026-07-26

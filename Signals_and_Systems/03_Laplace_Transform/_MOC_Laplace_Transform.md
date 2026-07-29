@@ -1,6 +1,6 @@
 ---
 title: "MOC — Laplace Transform"
-aliases: ["Laplace MOC", "Section 03 MOC", "LT Section"]
+aliases: ["Laplace MOC", "Section 03 MOC", "LT Section", "_MOC_Laplace_CT_Systems"]
 tags: [MOC, signals-and-systems, laplace-transform]
 domain: Signals and Systems
 section: "03 — Laplace Transform"

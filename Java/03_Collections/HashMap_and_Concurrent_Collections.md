@@ -1,4 +1,5 @@
 ---
+aliases: ["Maps_and_Hashing", "Java HashMap"]
 tags:
   - Java
   - Collections

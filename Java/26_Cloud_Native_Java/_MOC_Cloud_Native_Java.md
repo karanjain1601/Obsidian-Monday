@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[27_Observability_Java/_MOC_Observability_Java|→ Observability]]
-- [[29_Security_Advanced/_MOC_Security_Advanced|→ Security Advanced]]
+- [[_MOC_Observability_Java|→ Observability]]
+- [[_MOC_Security_Advanced|→ Security Advanced]]
 
 #MOC #java #cloud #kubernetes #docker #graalvm

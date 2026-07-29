@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[32_Distributed_Systems_Java/_MOC_Distributed_Systems|← Distributed Systems]]
-- [[34_Java_Annotations/_MOC_Java_Annotations|→ Java Annotations]]
+- [[_MOC_Distributed_Systems|← Distributed Systems]]
+- [[_MOC_Java_Annotations|→ Java Annotations]]
 
 #MOC #java #generics #type-erasure #wildcards #bounded-types

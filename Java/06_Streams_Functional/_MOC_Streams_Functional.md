@@ -1,4 +1,6 @@
 ---
+title: "Streams & Functional — Map of Content"
+aliases: ["_MOC_Java_Streams", "Java Streams MOC"]
 tags:
   - Java
   - Streams

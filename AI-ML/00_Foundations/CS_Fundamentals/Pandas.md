@@ -5,6 +5,7 @@ aliases:
   - pandas DataFrame
   - pd
   - pandas data manipulation
+  - Pandas_for_ML
 tags:
   - pandas
   - data-manipulation

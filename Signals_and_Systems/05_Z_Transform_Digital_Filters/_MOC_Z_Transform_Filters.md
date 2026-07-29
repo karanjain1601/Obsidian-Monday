@@ -1,6 +1,6 @@
 ---
 title: "MOC — Z-Transform & Digital Filters"
-aliases: ["Z-Transform MOC", "Digital Filters MOC", "Section 05 MOC"]
+aliases: ["Z-Transform MOC", "Digital Filters MOC", "Section 05 MOC", "_MOC_Z_Transform", "_MOC_DFT_FFT", "_MOC_Digital_Filters", "_MOC_DT_LTI_Systems", "_MOC_DTFT_Sampling"]
 tags: [signals-and-systems, z-transform, digital-filters, MOC]
 domain: Signals and Systems
 difficulty: intermediate

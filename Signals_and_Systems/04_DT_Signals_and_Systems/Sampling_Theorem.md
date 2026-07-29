@@ -1,6 +1,6 @@
 ---
 title: "Nyquist-Shannon Sampling Theorem"
-aliases: ["Sampling Theorem", "Nyquist Rate", "Aliasing", "ADC Pipeline"]
+aliases: ["Sampling Theorem", "Nyquist Rate", "Aliasing", "ADC Pipeline", "DTFT_and_Sampling", "Sampling_and_Reconstruction"]
 tags: [signals-and-systems, dt-signals, intermediate]
 domain: Signals and Systems
 difficulty: intermediate

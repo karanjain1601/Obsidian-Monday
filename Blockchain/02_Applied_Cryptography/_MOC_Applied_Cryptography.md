@@ -78,7 +78,7 @@ graph TD
 ## Related Sections
 
 - [[_MOC_Blockchain_Master|↑ Blockchain Master MOC]]
-- [[01_Blockchain_Fundamentals/_MOC_Blockchain_Fundamentals|← Blockchain Fundamentals]]
-- [[03_Bitcoin_Protocol/_MOC_Bitcoin_Protocol|→ Bitcoin Protocol]]
+- [[_MOC_Blockchain_Fundamentals|← Blockchain Fundamentals]]
+- [[_MOC_Bitcoin_Protocol|→ Bitcoin Protocol]]
 
 #MOC #Blockchain #AppliedCryptography

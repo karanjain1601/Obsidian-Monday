@@ -10,7 +10,7 @@ status: complete
 # 🛡️ Cybersecurity Master Map of Content
 
 > [!abstract] Vault Overview
-> A 37-note comprehensive cybersecurity knowledge vault spanning security foundations, network defence, web application security, applied cryptography, penetration testing, and digital forensics/incident response. Designed for security engineers, pentesters, and defenders from intermediate to advanced level.
+> A comprehensive cybersecurity knowledge vault spanning security foundations, network defence, web application security, applied cryptography, penetration testing, digital forensics/IR, cloud security, identity & authentication, endpoint security, cyber threat intelligence, and AI red teaming. Designed for security engineers, pentesters, and defenders from intermediate to advanced level.
 
 ---
 
@@ -26,6 +26,11 @@ graph TD
     MASTER --> F04["04 Applied Cryptography"]
     MASTER --> F05["05 Penetration Testing"]
     MASTER --> F06["06 DFIR"]
+    MASTER --> F07["07 Cloud Security"]
+    MASTER --> F08["08 Identity & Authentication"]
+    MASTER --> F09["09 Endpoint Security"]
+    MASTER --> F10["10 Threat Intelligence"]
+    MASTER --> F11["AI Red Teaming"]
 
     F01 --> CIA["CIA Triad & Models"]
     F01 --> TM["Threat Modeling"]
@@ -63,6 +68,38 @@ graph TD
     F06 --> MAL["Malware Analysis"]
     F06 --> IRP["IR Playbooks"]
 
+    F07 --> CLOUDFUND["Cloud Security Fundamentals"]
+    F07 --> AWSSEC["AWS Security"]
+    F07 --> GCPAZ["GCP & Azure Security"]
+    F07 --> K8SSEC["Container & K8s Security"]
+    F07 --> CLOUDIAM["Cloud Identity & Access"]
+    F07 --> CSPM2["CSPM & Compliance"]
+
+    F08 --> AUTHPROT["Authentication Protocols"]
+    F08 --> SSOFED["SSO & Federation"]
+    F08 --> DIRSVCS["Directory Services"]
+    F08 --> MFA4["Multi-Factor Auth"]
+    F08 --> PKICERT["PKI & Certificates"]
+    F08 --> PAM2["PAM & Privileged Access"]
+
+    F09 --> EPOVER["Endpoint Security Overview"]
+    F09 --> AVEDR["AV & EDR"]
+    F09 --> OSHRD["OS Hardening"]
+    F09 --> DLPD["DLP & Data Protection"]
+    F09 --> APPCTL["Application Control"]
+
+    F10 --> CTIOV["CTI Overview"]
+    F10 --> OSINT2["OSINT Techniques"]
+    F10 --> SIEM2["SIEM & SOAR"]
+    F10 --> HUNT["Threat Hunting"]
+    F10 --> IOC["Indicators of Compromise"]
+
+    F11 --> AIRT["AI RT Overview"]
+    F11 --> PINJ["Prompt Injection"]
+    F11 --> LLMV["LLM Vuln Assessment"]
+    F11 --> ADML["Adversarial ML"]
+    F11 --> ARTM["AI RT Methodology"]
+
     style MASTER fill:#1a1a2e,color:#fff
     style F01 fill:#16213e,color:#eee
     style F02 fill:#0f3460,color:#eee
@@ -70,6 +107,11 @@ graph TD
     style F04 fill:#e94560,color:#fff
     style F05 fill:#f5a623,color:#111
     style F06 fill:#2ecc71,color:#111
+    style F07 fill:#0d7377,color:#fff
+    style F08 fill:#323232,color:#eee
+    style F09 fill:#6a1040,color:#eee
+    style F10 fill:#1b4332,color:#eee
+    style F11 fill:#7f1d1d,color:#eee
 ```
 
 ---
@@ -84,6 +126,11 @@ graph TD
 | 04 | [[04_Applied_Cryptography/_MOC_Applied_Cryptography\|Applied Cryptography]] | 5 | AES, RSA/ECC, MACs, TLS 1.3, PQC | Advanced |
 | 05 | [[05_Penetration_Testing/_MOC_Penetration_Testing\|Penetration Testing]] | 5 | OSINT, Exploitation, PrivEsc, C2, Reports | Advanced |
 | 06 | [[06_Digital_Forensics_IR/_MOC_DFIR\|Digital Forensics & IR]] | 5 | NIST IR, Memory, SIEM, Malware, Playbooks | Advanced |
+| 07 | [[07_Cloud_Security/_MOC_Cloud_Security\|Cloud Security]] | 6 | Shared Responsibility, AWS/GCP/Azure, K8s, IAM, CSPM | Intermediate–Advanced |
+| 08 | [[08_Identity_and_Authentication/_MOC_Identity_and_Authentication\|Identity & Authentication]] | 6 | Kerberos, SAML/OIDC, AD, MFA/FIDO2, PKI, PAM | Intermediate–Advanced |
+| 09 | [[09_Endpoint_Security/_MOC_Endpoint_Security\|Endpoint Security]] | 5 | AV/EDR, OS Hardening, DLP, AppLocker/WDAC, Credential Guard | Intermediate–Advanced |
+| 10 | [[10_Threat_Intelligence/_MOC_Threat_Intelligence\|Threat Intelligence]] | 5 | CTI lifecycle, OSINT, SIEM/SOAR, Threat Hunting, IoCs/YARA | Intermediate–Advanced |
+| 11 | [[AI_Red_Teaming/_MOC_AI_Red_Teaming\|AI Red Teaming]] | 5 | OWASP LLM Top 10, Prompt Injection, Adversarial ML, PyRIT, Garak | Advanced |
 
 ---
 
@@ -104,8 +151,14 @@ graph TD
 2. [[04_Applied_Cryptography/Hash_Functions_and_MACs|Hashes & MACs]] → [[04_Applied_Cryptography/TLS_Protocol_Deep_Dive|TLS Deep Dive]]
 3. [[02_Network_Security/TLS_and_SSL|TLS Handshake]] → [[04_Applied_Cryptography/Post_Quantum_Cryptography|Post-Quantum Crypto]]
 
-### Path D — Full-Spectrum (12 weeks)
-Foundations (2w) → Network Security (2w) → Web Security (2w) → Cryptography (2w) → Pentest (2w) → DFIR (2w)
+### Path D — SOC Analyst / Threat Intel Analyst
+
+1. [[01_Security_Foundations/MITRE_ATT_CK|MITRE ATT&CK]] → [[09_Endpoint_Security/Endpoint_Security_Overview|Endpoint Security Overview]] → [[09_Endpoint_Security/Antivirus_and_EDR|AV & EDR]]
+2. [[10_Threat_Intelligence/Threat_Intelligence_Overview|CTI Overview]] → [[10_Threat_Intelligence/OSINT_Techniques|OSINT Techniques]] → [[10_Threat_Intelligence/Indicators_of_Compromise|IoCs & YARA]]
+3. [[10_Threat_Intelligence/SIEM_and_SOAR|SIEM & SOAR]] → [[10_Threat_Intelligence/Threat_Hunting|Threat Hunting]]
+
+### Path E — Full-Spectrum (16 weeks)
+Foundations (2w) → Network Security (2w) → Web Security (2w) → Cryptography (2w) → Pentest (2w) → DFIR (2w) → Endpoint Security (2w) → Threat Intelligence (2w)
 
 ---
 
@@ -115,7 +168,7 @@ Foundations (2w) → Network Security (2w) → Web Security (2w) → Cryptograph
 |---------------|------------|
 | [[../System Design/_MOC_SystemDesign_Master|System Design]] | Zero Trust architecture, secure API design patterns |
 | [[../Database/_MOC_Database_Master|Database]] | SQL injection context, encryption at rest, access controls |
-| [[../AI-ML/_MOC_AI_ML_Master|AI/ML]] | Adversarial ML, LLM security, AI-assisted threat detection |
+| [[../AI-ML/_MOC_AI_ML_Master|AI/ML]] | Adversarial ML, LLM security, AI-assisted threat detection, alignment context for AI red teaming |
 
 ---
 
@@ -127,6 +180,11 @@ Foundations (2w) → Network Security (2w) → Web Security (2w) → Cryptograph
 - [[04_Applied_Cryptography/_MOC_Applied_Cryptography|04 Applied Cryptography MOC]]
 - [[05_Penetration_Testing/_MOC_Penetration_Testing|05 Penetration Testing MOC]]
 - [[06_Digital_Forensics_IR/_MOC_DFIR|06 DFIR MOC]]
+- [[07_Cloud_Security/_MOC_Cloud_Security|07 Cloud Security MOC]]
+- [[08_Identity_and_Authentication/_MOC_Identity_and_Authentication|08 Identity & Authentication MOC]]
+- [[09_Endpoint_Security/_MOC_Endpoint_Security|09 Endpoint Security MOC]]
+- [[10_Threat_Intelligence/_MOC_Threat_Intelligence|10 Threat Intelligence MOC]]
+- [[AI_Red_Teaming/_MOC_AI_Red_Teaming|11 AI Red Teaming MOC]]
 
 ---
 

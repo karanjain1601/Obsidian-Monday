@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[33_Java_Generics/_MOC_Java_Generics|← Java Generics]]
-- [[35_Java_Networking/_MOC_Java_Networking|→ Java Networking]]
+- [[_MOC_Java_Generics|← Java Generics]]
+- [[_MOC_Java_Networking|→ Java Networking]]
 
 #MOC #java #annotations #reflection #apt #spring

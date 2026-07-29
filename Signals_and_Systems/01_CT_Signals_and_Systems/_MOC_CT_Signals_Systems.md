@@ -1,6 +1,6 @@
 ---
 title: "Continuous-Time Signals and Systems — Map of Content"
-aliases: [MOC CT Signals Systems, CT Signals Section]
+aliases: [MOC CT Signals Systems, CT Signals Section, _MOC_CT_Signals, _MOC_LTI_Systems]
 tags: [MOC, signals-and-systems, ct-signals]
 domain: Signals and Systems
 created: 2026-07-27

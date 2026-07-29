@@ -61,7 +61,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[34_Java_Annotations/_MOC_Java_Annotations|← Java Annotations]]
-- [[36_Functional_Java/_MOC_Functional_Java|→ Functional Java]]
+- [[_MOC_Java_Annotations|← Java Annotations]]
+- [[_MOC_Functional_Java|→ Functional Java]]
 
 #MOC #java #networking #sockets #http #websocket #nio #tls

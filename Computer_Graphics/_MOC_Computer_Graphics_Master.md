@@ -51,31 +51,31 @@ graph TD
 
 | # | Section | Notes | Key Concepts | Difficulty |
 |---|---------|-------|--------------|------------|
-| 01 | [[01_2D_Graphics/_MOC_2D_Graphics\|📐 2D Graphics]] | 5 | Bresenham, Anti-aliasing, Bézier, SVG, Canvas | Beginner → Intermediate |
-| 02 | [[02_3D_Fundamentals/_MOC_3D_Fundamentals\|🧊 3D Fundamentals]] | 5 | MVP Matrix, Projection, Frustum, Z-buffer | Intermediate |
-| 03 | [[03_Rendering_Pipeline/_MOC_Rendering_Pipeline\|⚙️ Rendering Pipeline]] | 5 | OpenGL, Vulkan, DX12, Framebuffers, Deferred | Intermediate → Advanced |
-| 04 | [[04_Shaders/_MOC_Shaders\|✨ Shaders]] | 5 | GLSL, Fragment, Compute, HLSL, Optimization | Intermediate → Advanced |
-| 05 | [[05_Lighting_and_Materials/_MOC_Lighting_and_Materials\|💡 Lighting & Materials]] | 5 | Phong, PBR, Ray Tracing, GI, Textures | Advanced |
-| 06 | [[06_Animation_and_Simulation/_MOC_Animation_and_Simulation\|🎬 Animation & Simulation]] | 5 | Skinning, Morph Targets, Physics, Cloth, Proc Gen | Advanced |
+| 01 | [[_MOC_2D_Graphics\|📐 2D Graphics]] | 5 | Bresenham, Anti-aliasing, Bézier, SVG, Canvas | Beginner → Intermediate |
+| 02 | [[_MOC_3D_Fundamentals\|🧊 3D Fundamentals]] | 5 | MVP Matrix, Projection, Frustum, Z-buffer | Intermediate |
+| 03 | [[_MOC_Rendering_Pipeline\|⚙️ Rendering Pipeline]] | 5 | OpenGL, Vulkan, DX12, Framebuffers, Deferred | Intermediate → Advanced |
+| 04 | [[_MOC_Shaders\|✨ Shaders]] | 5 | GLSL, Fragment, Compute, HLSL, Optimization | Intermediate → Advanced |
+| 05 | [[_MOC_Lighting_and_Materials\|💡 Lighting & Materials]] | 5 | Phong, PBR, Ray Tracing, GI, Textures | Advanced |
+| 06 | [[_MOC_Animation_and_Simulation\|🎬 Animation & Simulation]] | 5 | Skinning, Morph Targets, Physics, Cloth, Proc Gen | Advanced |
 
 ---
 
 ## Learning Paths
 
 ### Path A — Absolute Beginner
-1. [[01_2D_Graphics/Rasterization_Algorithms|Rasterization Algorithms]] → [[01_2D_Graphics/Anti_Aliasing|Anti-Aliasing]] → [[01_2D_Graphics/Bezier_and_Bsplines|Bézier Curves]] → [[01_2D_Graphics/SVG_and_Vector_Graphics|SVG]] → [[01_2D_Graphics/Canvas_2D_API|Canvas 2D API]]
+1. [[Rasterization_Algorithms|Rasterization Algorithms]] → [[Anti_Aliasing|Anti-Aliasing]] → [[Bezier_and_Bsplines|Bézier Curves]] → [[SVG_and_Vector_Graphics|SVG]] → [[Canvas_2D_API|Canvas 2D API]]
 
 ### Path B — 3D Graphics Foundation
-1. [[02_3D_Fundamentals/Coordinate_Systems_and_Handedness|Coordinate Systems]] → [[02_3D_Fundamentals/3D_Transforms_and_Matrices|3D Transforms]] → [[02_3D_Fundamentals/Projection_and_Viewing|Projection & Viewing]] → [[02_3D_Fundamentals/Frustum_Culling_and_Clipping|Frustum Culling]] → [[02_3D_Fundamentals/Depth_Buffering_and_Precision|Depth Buffering]]
+1. [[Coordinate_Systems_and_Handedness|Coordinate Systems]] → [[3D_Transforms_and_Matrices|3D Transforms]] → [[Projection_and_Viewing|Projection & Viewing]] → [[Frustum_Culling_and_Clipping|Frustum Culling]] → [[Depth_Buffering_and_Precision|Depth Buffering]]
 
 ### Path C — GPU Programming
-1. [[03_Rendering_Pipeline/OpenGL_Core_Profile|OpenGL Core]] → [[04_Shaders/GLSL_Vertex_Shaders|GLSL Vertex]] → [[04_Shaders/Fragment_Shaders_and_Effects|Fragment Shaders]] → [[03_Rendering_Pipeline/Vulkan_Architecture|Vulkan]] → [[04_Shaders/Compute_Shaders_GPGPU|Compute Shaders]]
+1. [[OpenGL_Core_Profile|OpenGL Core]] → [[GLSL_Vertex_Shaders|GLSL Vertex]] → [[Fragment_Shaders_and_Effects|Fragment Shaders]] → [[Vulkan_Architecture|Vulkan]] → [[Compute_Shaders_GPGPU|Compute Shaders]]
 
 ### Path D — Visual Realism
-1. [[05_Lighting_and_Materials/Phong_and_Blinn_Phong|Phong Lighting]] → [[05_Lighting_and_Materials/Physically_Based_Rendering|PBR]] → [[05_Lighting_and_Materials/Texture_Mapping_and_UV|Texture Mapping]] → [[05_Lighting_and_Materials/Global_Illumination|Global Illumination]] → [[05_Lighting_and_Materials/Ray_Tracing_and_Path_Tracing|Ray Tracing]]
+1. [[Phong_and_Blinn_Phong|Phong Lighting]] → [[Physically_Based_Rendering|PBR]] → [[Texture_Mapping_and_UV|Texture Mapping]] → [[Global_Illumination|Global Illumination]] → [[Ray_Tracing_and_Path_Tracing|Ray Tracing]]
 
 ### Path E — Real-Time Animation
-1. [[06_Animation_and_Simulation/Skeletal_Animation_and_Skinning|Skeletal Animation]] → [[06_Animation_and_Simulation/Morph_Targets_and_Blend_Shapes|Morph Targets]] → [[06_Animation_and_Simulation/Rigid_Body_Physics|Rigid Body Physics]] → [[06_Animation_and_Simulation/Cloth_and_Fluid_Simulation|Cloth & Fluid]] → [[06_Animation_and_Simulation/Procedural_Generation|Procedural Generation]]
+1. [[Skeletal_Animation_and_Skinning|Skeletal Animation]] → [[Morph_Targets_and_Blend_Shapes|Morph Targets]] → [[Rigid_Body_Physics|Rigid Body Physics]] → [[Cloth_and_Fluid_Simulation|Cloth & Fluid]] → [[Procedural_Generation|Procedural Generation]]
 
 ---
 
@@ -91,12 +91,12 @@ graph TD
 
 ## Section MOC Index
 
-- [[01_2D_Graphics/_MOC_2D_Graphics|↗ 2D Graphics MOC]] — Rasterization, anti-aliasing, curves, web graphics
-- [[02_3D_Fundamentals/_MOC_3D_Fundamentals|↗ 3D Fundamentals MOC]] — Math, matrices, projection, depth
-- [[03_Rendering_Pipeline/_MOC_Rendering_Pipeline|↗ Rendering Pipeline MOC]] — OpenGL, Vulkan, DX12, Metal, framebuffers
-- [[04_Shaders/_MOC_Shaders|↗ Shaders MOC]] — GLSL, HLSL, compute, optimization
-- [[05_Lighting_and_Materials/_MOC_Lighting_and_Materials|↗ Lighting & Materials MOC]] — Phong, PBR, ray tracing, GI, textures
-- [[06_Animation_and_Simulation/_MOC_Animation_and_Simulation|↗ Animation & Simulation MOC]] — Skinning, physics, cloth, procedural
+- [[_MOC_2D_Graphics|↗ 2D Graphics MOC]] — Rasterization, anti-aliasing, curves, web graphics
+- [[_MOC_3D_Fundamentals|↗ 3D Fundamentals MOC]] — Math, matrices, projection, depth
+- [[_MOC_Rendering_Pipeline|↗ Rendering Pipeline MOC]] — OpenGL, Vulkan, DX12, Metal, framebuffers
+- [[_MOC_Shaders|↗ Shaders MOC]] — GLSL, HLSL, compute, optimization
+- [[_MOC_Lighting_and_Materials|↗ Lighting & Materials MOC]] — Phong, PBR, ray tracing, GI, textures
+- [[_MOC_Animation_and_Simulation|↗ Animation & Simulation MOC]] — Skinning, physics, cloth, procedural
 
 ---
 

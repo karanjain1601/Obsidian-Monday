@@ -60,7 +60,7 @@ graph TD
 
 ## Related Sections
 - [[_MOC_Java_Master|↑ Java Master MOC]]
-- [[28_Testing_Advanced/_MOC_Testing_Advanced|← Testing Advanced]]
-- [[30_Database_Advanced/_MOC_Database_Advanced|→ Database Advanced]]
+- [[_MOC_Testing_Advanced|← Testing Advanced]]
+- [[_MOC_Database_Advanced|→ Database Advanced]]
 
 #MOC #java #security #owasp #cryptography #saml #vault

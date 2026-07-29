@@ -10,12 +10,19 @@ status: complete
 # 🗺️ Cloud Design Patterns — Map of Content
 
 > [!abstract] What's in this section?
-Enterprise-grade cloud architectural patterns organized into three practical categories: **Messaging** (how data flows asynchronously between components), **Data Management** (how data is stored, indexed, and accessed efficiently), and **Design & Implementation** (how services are composed, deployed, and configured). These 19 patterns address structural challenges common to cloud-native systems — from absorbing traffic spikes without cold-start delay (Queue-Based Load Leveling) to protecting clean domain models from legacy integrations (Anti-Corruption Layer). Many patterns here deliberately complement foundational patterns already covered in other vault sections (Pub/Sub, CQRS, Cache-Aside); cross-references are listed at the bottom rather than duplicated here.
+Enterprise-grade cloud architectural patterns organized into four practical categories: **Availability** (resilience, fault isolation, rate control, and coordination), **Messaging** (how data flows asynchronously between components), **Data Management** (how data is stored, indexed, and accessed efficiently), and **Design & Implementation** (how services are composed, deployed, and configured). These 23 patterns address structural challenges common to cloud-native systems — from isolating failures with the Bulkhead pattern to absorbing traffic spikes without cold-start delay (Queue-Based Load Leveling) to protecting clean domain models from legacy integrations (Anti-Corruption Layer). Many patterns here deliberately complement foundational patterns already covered in other vault sections (Pub/Sub, CQRS, Circuit Breaker); cross-references are listed at the bottom rather than duplicated here.
 
 ## Concept Map
 
 ```mermaid
 graph TD
+    subgraph AV["🛡️ Availability — Resilience and Resource Control"]
+        BH[Bulkhead]
+        CA[Cache-Aside]
+        TH[Throttling]
+        LE[Leader Election]
+    end
+
     subgraph MSG["📨 Messaging — Data Flow Through the System"]
         CC[Competing Consumers]
         QLL[Queue-Based Load Leveling]
@@ -44,6 +51,10 @@ graph TD
         AMB[Ambassador Pattern]
     end
 
+    BH -->|"pairs with: stop calls after failure"| AMB
+    TH -->|"overflow can be absorbed by"| QLL
+    LE -->|"leader coordinates via"| SAS
+
     QLL -->|"extends with priority tiers"| PQ
     QLL -->|"consumer-side complement"| CC
     CC -->|"extends with ordering guarantee"| SC
@@ -62,7 +73,14 @@ graph TD
 
 Recommended reading order with one-line note descriptions.
 
-### Messaging — Start Here
+### Availability — Start Here
+
+1. **[[Bulkhead]]** — Partition service dependencies into isolated resource pools so that a slow or failing downstream cannot exhaust threads shared by healthy dependencies.
+2. **[[Cache_Aside]]** — Load data into a cache lazily on first request; serve subsequent reads from the fast cache; invalidate on write — the application manages all cache interactions.
+3. **[[Throttling]]** — Control the rate of incoming requests with token bucket or leaky bucket algorithms to prevent overload and enforce fair resource consumption per consumer.
+4. **[[Leader_Election]]** — Designate one service instance as the leader to coordinate shared work (scheduled jobs, distributed locks); followers take over automatically on leader failure.
+
+### Messaging
 
 1. **[[Competing_Consumers]]** — Multiple workers share one queue; the first free worker claims the next message, enabling horizontal throughput scaling.
 2. **[[Queue_Based_Load_Leveling]]** — A durable queue acts as a shock absorber between producers and consumers, smoothing out traffic spikes without expensive elastic scaling.
@@ -94,6 +112,10 @@ Recommended reading order with one-line note descriptions.
 
 | Note | Category | What you'll learn |
 |------|----------|-------------------|
+| [[Bulkhead]] | Availability | Isolate dependency pools so a slow service can't exhaust shared threads/connections |
+| [[Cache_Aside]] | Availability | Lazy-load cache on demand; fall back to store on miss; invalidate on write |
+| [[Throttling]] | Availability | Token bucket / leaky bucket rate limiting to control resource consumption |
+| [[Leader_Election]] | Availability | Elect one instance to coordinate shared work; automatic failover to followers |
 | [[Competing_Consumers]] | Messaging | Horizontal throughput scaling via parallel workers on a shared queue |
 | [[Queue_Based_Load_Leveling]] | Messaging | Queues as traffic-spike shock absorbers between producers and consumers |
 | [[Priority_Queue_Pattern]] | Messaging | Tiered queues and consumer pools for SLA-differentiated message processing |
@@ -116,27 +138,30 @@ Recommended reading order with one-line note descriptions.
 
 ## Key Questions This Section Answers
 
-1. **My backend gets overwhelmed during traffic spikes — how do I absorb bursts without cold-start delays from elastic scaling?** → [[Queue_Based_Load_Leveling]]
-2. **How do I guarantee all events for order #5001 are processed in sequence while different orders run in parallel?** → [[Sequential_Convoy]]
-3. **My premium enterprise customers' requests are delayed by free-tier bulk jobs — how do I fix this architecturally?** → [[Priority_Queue_Pattern]]
-4. **A page load requires data from 8 microservices — how do I cut the mobile round-trip cost from 8 calls to 1?** → [[Gateway_Aggregation]]
-5. **I need retries, circuit breaking, and tracing on a legacy Python service without modifying its code — how?** → [[Ambassador_Pattern]]
-6. **My Kafka messages reference 50MB PDF payloads that far exceed the 1MB default limit — what's the pattern?** → [[Claim_Check]]
-7. **How do I integrate a 15-year-old ERP system without letting its bizarre field names and status codes corrupt my order domain model?** → [[Anti_Corruption_Layer]]
+1. **The `Recommendations` service is slow and blocking threads — how do I prevent it from making `Payments` unresponsive?** → [[Bulkhead]]
+2. **My free-tier users are hammering the API and degrading service for paying customers — how do I enforce per-user request limits?** → [[Throttling]]
+3. **My product catalogue DB is getting 50,000 read RPS but data changes infrequently — how do I serve reads without hitting the DB each time?** → [[Cache_Aside]]
+4. **I have a scheduled nightly job deployed across 10 replicas — how do I ensure only one replica runs the job?** → [[Leader_Election]]
+5. **My backend gets overwhelmed during traffic spikes — how do I absorb bursts without cold-start delays from elastic scaling?** → [[Queue_Based_Load_Leveling]]
+6. **How do I guarantee all events for order #5001 are processed in sequence while different orders run in parallel?** → [[Sequential_Convoy]]
+7. **My premium enterprise customers' requests are delayed by free-tier bulk jobs — how do I fix this architecturally?** → [[Priority_Queue_Pattern]]
+8. **A page load requires data from 8 microservices — how do I cut the mobile round-trip cost from 8 calls to 1?** → [[Gateway_Aggregation]]
+9. **I need retries, circuit breaking, and tracing on a legacy Python service without modifying its code — how?** → [[Ambassador_Pattern]]
+10. **My Kafka messages reference 50MB PDF payloads that far exceed the 1MB default limit — what's the pattern?** → [[Claim_Check]]
+11. **How do I integrate a 15-year-old ERP system without letting its bizarre field names and status codes corrupt my order domain model?** → [[Anti_Corruption_Layer]]
 
 ## Patterns Already Covered Elsewhere
 
-These canonical patterns belong to this domain but already exist in other vault sections — reference them, do not duplicate:
+These canonical patterns belong to this domain but already have their primary notes in other vault sections — reference them rather than duplicate:
 
 | Pattern | Vault Location |
 |---------|---------------|
 | Publisher / Subscriber | [[PubSub_Pattern]] in `20_Event_Driven` |
 | CQRS | [[CQRS]] in `20_Event_Driven` |
 | Event Sourcing | [[Event_Sourcing]] in `20_Event_Driven` |
-| Cache-Aside | [[Cache_Aside]] in `13_Caching` |
+| Circuit Breaker | [[Circuit_Breaker]] in `19_API_Gateway` |
 | Strangler Fig | [[Strangler_Fig_Pattern]] in `11_ApplicationLayer` |
 | Sidecar | [[Sidecar_Pattern]] in `11_ApplicationLayer` |
-| Leader Election | [[Consensus_and_Raft]] in `24_Distributed_Systems` |
 | BFF (Backend for Frontend) | [[BFF_Pattern]] in `11_ApplicationLayer` |
 | Database Sharding | [[Database_Sharding]] in `12_Databases` |
 

@@ -4,6 +4,7 @@ aliases:
   - NumPy
   - ndarray
   - NumPy Arrays
+  - Broadcasting_Rules
 tags:
   - numpy
   - arrays

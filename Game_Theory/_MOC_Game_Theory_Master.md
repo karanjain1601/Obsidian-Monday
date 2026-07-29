@@ -70,12 +70,12 @@ graph TD
 
 | # | Section | Key Concepts | Difficulty | Notes |
 |---|---------|-------------|-----------|-------|
-| 01 | [[01_Fundamentals/_MOC_GT_Fundamentals\|Fundamentals]] | Normal/extensive form, strategies, dominance, information | Beginner | 4 |
-| 02 | [[02_Static_Games/_MOC_Static_Games\|Static Games]] | Nash equilibrium, mixed strategies, minimax, correlated eq. | Intermediate | 4 |
-| 03 | [[03_Dynamic_Games/_MOC_Dynamic_Games\|Dynamic Games]] | SPE, backward induction, repeated games, signaling | Intermediate | 5 |
-| 04 | [[04_Cooperative_Games/_MOC_Cooperative_Games\|Cooperative Games]] | Shapley value, core, bargaining, power indices | Intermediate | 4 |
-| 05 | [[05_Mechanism_Design/_MOC_Mechanism_Design\|Mechanism Design]] | Revelation principle, VCG, auctions, matching | Advanced | 4 |
-| 06 | [[06_Evolutionary_Computational/_MOC_Evolutionary_Computational\|Evolutionary & Computational]] | ESS, replicator dynamics, PoA, algorithmic GT | Advanced | 4 |
+| 01 | [[_MOC_GT_Fundamentals\|Fundamentals]] | Normal/extensive form, strategies, dominance, information | Beginner | 4 |
+| 02 | [[_MOC_Static_Games\|Static Games]] | Nash equilibrium, mixed strategies, minimax, correlated eq. | Intermediate | 4 |
+| 03 | [[_MOC_Dynamic_Games\|Dynamic Games]] | SPE, backward induction, repeated games, signaling | Intermediate | 5 |
+| 04 | [[_MOC_Cooperative_Games\|Cooperative Games]] | Shapley value, core, bargaining, power indices | Intermediate | 4 |
+| 05 | [[_MOC_Mechanism_Design\|Mechanism Design]] | Revelation principle, VCG, auctions, matching | Advanced | 4 |
+| 06 | [[_MOC_Evolutionary_Computational\|Evolutionary & Computational]] | ESS, replicator dynamics, PoA, algorithmic GT | Advanced | 4 |
 
 ---
 
@@ -107,15 +107,15 @@ All sections in order 01 → 02 → 03 → 04 → 05 → 06
 
 | Theorem | Statement | Section |
 |---------|-----------|---------|
-| **Nash 1950** | Every finite game has ≥1 NE (in mixed strategies) | [[02_Static_Games/Nash_Equilibrium\|Nash Equilibrium]] |
-| **Von Neumann 1928** | maxₓminᵧ xᵀAy = minᵧmaxₓ xᵀAy for zero-sum | [[02_Static_Games/Minimax_Theorem\|Minimax]] |
-| **Zermelo 1913** | Chess/checkers determined: one player has winning strategy | [[03_Dynamic_Games/Backward_Induction\|Backward Induction]] |
-| **Folk Theorem** | Any feasible individually-rational payoff is an SPE for patient players | [[03_Dynamic_Games/Repeated_Games_and_Folk_Theorems\|Repeated Games]] |
-| **Bondareva-Shapley** | Core non-empty iff game is balanced | [[04_Cooperative_Games/Core_and_Stability\|Core & Stability]] |
-| **Myerson 1979** | Revelation principle: any mechanism payoff-equiv. to truthful direct | [[05_Mechanism_Design/Revelation_Principle_and_IC\|Revelation Principle]] |
-| **Gibbard-Satterthwaite** | Any DSIC non-dictatorial social choice over ≥3 alternatives is impossible | [[05_Mechanism_Design/Revelation_Principle_and_IC\|Revelation Principle]] |
-| **Gale-Shapley 1962** | Deferred acceptance produces stable matching | [[05_Mechanism_Design/Matching_Markets\|Matching Markets]] |
-| **Roughgarden 2009** | Smoothness framework: PoA ≤ 1/(1-μ) for (λ,μ)-smooth games | [[06_Evolutionary_Computational/Price_of_Anarchy\|Price of Anarchy]] |
+| **Nash 1950** | Every finite game has ≥1 NE (in mixed strategies) | [[Nash_Equilibrium\|Nash Equilibrium]] |
+| **Von Neumann 1928** | maxₓminᵧ xᵀAy = minᵧmaxₓ xᵀAy for zero-sum | [[Minimax_Theorem\|Minimax]] |
+| **Zermelo 1913** | Chess/checkers determined: one player has winning strategy | [[Backward_Induction\|Backward Induction]] |
+| **Folk Theorem** | Any feasible individually-rational payoff is an SPE for patient players | [[Repeated_Games_and_Folk_Theorems\|Repeated Games]] |
+| **Bondareva-Shapley** | Core non-empty iff game is balanced | [[Core_and_Stability\|Core & Stability]] |
+| **Myerson 1979** | Revelation principle: any mechanism payoff-equiv. to truthful direct | [[Revelation_Principle_and_IC\|Revelation Principle]] |
+| **Gibbard-Satterthwaite** | Any DSIC non-dictatorial social choice over ≥3 alternatives is impossible | [[Revelation_Principle_and_IC\|Revelation Principle]] |
+| **Gale-Shapley 1962** | Deferred acceptance produces stable matching | [[Matching_Markets\|Matching Markets]] |
+| **Roughgarden 2009** | Smoothness framework: PoA ≤ 1/(1-μ) for (λ,μ)-smooth games | [[Price_of_Anarchy\|Price of Anarchy]] |
 
 ---
 
@@ -147,12 +147,12 @@ graph BT
 
 ## Section MOC Index
 
-- [[01_Fundamentals/_MOC_GT_Fundamentals|01 — Fundamentals MOC]]
-- [[02_Static_Games/_MOC_Static_Games|02 — Static Games MOC]]
-- [[03_Dynamic_Games/_MOC_Dynamic_Games|03 — Dynamic Games MOC]]
-- [[04_Cooperative_Games/_MOC_Cooperative_Games|04 — Cooperative Games MOC]]
-- [[05_Mechanism_Design/_MOC_Mechanism_Design|05 — Mechanism Design MOC]]
-- [[06_Evolutionary_Computational/_MOC_Evolutionary_Computational|06 — Evolutionary & Computational MOC]]
+- [[_MOC_GT_Fundamentals|01 — Fundamentals MOC]]
+- [[_MOC_Static_Games|02 — Static Games MOC]]
+- [[_MOC_Dynamic_Games|03 — Dynamic Games MOC]]
+- [[_MOC_Cooperative_Games|04 — Cooperative Games MOC]]
+- [[_MOC_Mechanism_Design|05 — Mechanism Design MOC]]
+- [[_MOC_Evolutionary_Computational|06 — Evolutionary & Computational MOC]]
 
 ---
 
