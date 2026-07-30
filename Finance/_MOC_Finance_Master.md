@@ -10,7 +10,7 @@ status: complete
 # 💰 Finance — Master Map of Content
 
 > [!abstract] About This Vault
-> A complete core-finance reference: **37 notes across 6 sections**, covering the theory and practice taught in MBA finance courses and the CFA curriculum. This vault runs the full stack — from financial markets and instruments, through corporate finance (TVM, capital budgeting, WACC, capital structure), valuation (DCF, comps, precedents, LBO), investment analysis (fundamental analysis, financial statements, fixed income), risk and return (portfolio theory, CAPM, behavioral finance), and hands-on financial modeling (three-statement model, M&A, LBO, scenario analysis). Every note pairs an intuition-first analogy with real-world examples (Apple buybacks, Amazon AWS SOTP, Microsoft/Activision), worked numerical examples, mermaid diagrams, and review questions. Start at the section matching your goal, or follow one of the four learning paths below.
+> A complete finance reference: **65 notes across 13 sections**, covering the theory and practice taught in MBA finance courses and the CFA curriculum — now extended from the professional core into personal and applied finance. The original stack runs from financial markets and instruments, through corporate finance (TVM, capital budgeting, WACC, capital structure), valuation (DCF, comps, precedents, LBO), investment analysis, risk and return (portfolio theory, CAPM), and financial modeling. The **2026 expansion** adds **personal finance, behavioral finance, financial accounting, fixed income & bonds, derivatives & options, FinTech & payments, and international finance & FX**. Every note pairs an intuition-first analogy with real-world examples, worked numerical examples, mermaid diagrams, and review questions. Cross-linked to [[Quantitative_Finance]], [[Macroeconomics]], [[_MOC_Psychology_Master]] (behavioral), and the History vault's [[Financial_History_and_Crises]]. Start at the section matching your goal, or follow one of the five learning paths below.
 
 ---
 
@@ -26,6 +26,13 @@ graph TD
     Master --> S04["04 Investment Analysis"]
     Master --> S05["05 Risk & Return"]
     Master --> S06["06 Financial Modeling"]
+    Master --> S07["07 Personal Finance"]
+    Master --> S08["08 Behavioral Finance"]
+    Master --> S09["09 Financial Accounting"]
+    Master --> S10["10 Fixed Income & Bonds"]
+    Master --> S11["11 Derivatives & Options"]
+    Master --> S12["12 FinTech & Payments"]
+    Master --> S13["13 International Finance & FX"]
 
     S01 --> FM1["Market Structure\n& Participants"]
     S01 --> FM2["Equity Markets"]
@@ -63,6 +70,48 @@ graph TD
     S06 --> MO4["Mergers &\nAcquisitions"]
     S06 --> MO5["Financial\nForecasting"]
 
+    S07 --> PF1["Budgeting & Saving"]
+    S07 --> PF2["Compounding"]
+    S07 --> PF3["Debt & Credit"]
+    S07 --> PF4["Retirement & FIRE"]
+    S07 --> PF5["Insurance"]
+
+    S08 --> BF1["Foundations"]
+    S08 --> BF2["Prospect Theory"]
+    S08 --> BF3["Investing Biases"]
+    S08 --> BF4["Anomalies & Bubbles"]
+    S08 --> BF5["Nudges"]
+
+    S09 --> FA1["Income Statement"]
+    S09 --> FA2["Balance Sheet"]
+    S09 --> FA3["Cash Flow Statement"]
+    S09 --> FA4["Accrual / GAAP & IFRS"]
+    S09 --> FA5["Ratio Analysis"]
+
+    S10 --> FI1["Bond Fundamentals"]
+    S10 --> FI2["Pricing & Yields"]
+    S10 --> FI3["Duration & Convexity"]
+    S10 --> FI4["Yield Curve"]
+    S10 --> FI5["Credit Risk"]
+
+    S11 --> D1["Forwards & Futures"]
+    S11 --> D2["Options Basics"]
+    S11 --> D3["Black-Scholes"]
+    S11 --> D4["The Greeks"]
+    S11 --> D5["Swaps & Hedging"]
+
+    S12 --> FT1["Payment Rails"]
+    S12 --> FT2["Digital Banking"]
+    S12 --> FT3["Lending Tech"]
+    S12 --> FT4["Blockchain & DeFi"]
+    S12 --> FT5["Regtech & Data"]
+
+    S13 --> IF1["FX Markets"]
+    S13 --> IF2["Exchange-Rate Regimes"]
+    S13 --> IF3["Balance of Payments"]
+    S13 --> IF4["Capital Flows & Crises"]
+    S13 --> IF5["Currency Risk"]
+
     style Master fill:#7c3aed,color:#fff
     style S01 fill:#2563eb,color:#fff
     style S02 fill:#059669,color:#fff
@@ -70,6 +119,13 @@ graph TD
     style S04 fill:#dc2626,color:#fff
     style S05 fill:#7c3aed,color:#fff
     style S06 fill:#0891b2,color:#fff
+    style S07 fill:#2563eb,color:#fff
+    style S08 fill:#059669,color:#fff
+    style S09 fill:#d97706,color:#fff
+    style S10 fill:#dc2626,color:#fff
+    style S11 fill:#db2777,color:#fff
+    style S12 fill:#0891b2,color:#fff
+    style S13 fill:#4a9eff,color:#fff
 ```
 
 ---
@@ -84,6 +140,13 @@ graph TD
 | 04 | Investment Analysis | 5 | [[_MOC_Investment_Analysis]] | Intermediate |
 | 05 | Risk & Return | 5 | [[_MOC_Risk_Return]] | Intermediate → Advanced |
 | 06 | Financial Modeling | 5 | [[_MOC_Financial_Modeling]] | Intermediate → Advanced |
+| 07 | Personal Finance | 5 | [[_MOC_Personal_Finance]] | Beginner |
+| 08 | Behavioral Finance | 5 | [[_MOC_Behavioral_Finance]] | Intermediate |
+| 09 | Financial Accounting | 5 | [[_MOC_Financial_Accounting]] | Beginner → Intermediate |
+| 10 | Fixed Income & Bonds | 5 | [[_MOC_Fixed_Income]] | Intermediate → Advanced |
+| 11 | Derivatives & Options | 5 | [[_MOC_Derivatives]] | Advanced |
+| 12 | FinTech & Payments | 5 | [[_MOC_FinTech]] | Intermediate |
+| 13 | International Finance & FX | 5 | [[_MOC_International_Finance]] | Intermediate → Advanced |
 
 ---
 
@@ -131,6 +194,14 @@ graph TD
 
 ---
 
+### Path 5 — Personal Investor & Everyday Finance (2026 expansion)
+
+> Best for: managing your own money and understanding the instruments and forces behind the headlines.
+
+[[_MOC_Personal_Finance]] → [[The_Power_of_Compounding]] → [[Budgeting_and_Saving]] → [[Retirement_Planning_and_FIRE]] → [[_MOC_Behavioral_Finance]] → [[Prospect_Theory_and_Loss_Aversion]] → [[Cognitive_Biases_in_Investing]] → [[_MOC_Financial_Accounting]] → [[Financial_Ratio_Analysis]] → [[_MOC_Fixed_Income]] → [[Bond_Fundamentals]] → [[_MOC_Derivatives]] → [[Options_Basics]] → [[_MOC_International_Finance]]
+
+---
+
 ## Cross-Vault Links
 
 This vault covers core finance theory; related vaults handle quantitative methods and macro context:
@@ -149,5 +220,14 @@ This vault covers core finance theory; related vaults handle quantitative method
 - [[_MOC_Investment_Analysis]] — How to analyze investments: fundamental analysis, financial statement analysis, equity research, fixed income analysis, and alternatives.
 - [[_MOC_Risk_Return]] — The risk-return framework: diversification, portfolio theory, CAPM and factor models, behavioral finance, and performance measurement.
 - [[_MOC_Financial_Modeling]] — Building financial models: three-statement model, Excel best practices, scenario/sensitivity analysis, M&A modeling, and forecasting.
+
+**2026 expansion:**
+- [[_MOC_Personal_Finance]] — Managing your own money: budgeting, compounding, debt, retirement/FIRE, and insurance.
+- [[_MOC_Behavioral_Finance]] — Why real investors err: prospect theory, biases, anomalies, bubbles, and nudges.
+- [[_MOC_Financial_Accounting]] — Reading the books: the three statements, accrual accounting, GAAP/IFRS, and ratio analysis.
+- [[_MOC_Fixed_Income]] — Bonds in depth: fundamentals, pricing & yields, duration/convexity, the yield curve, and credit risk.
+- [[_MOC_Derivatives]] — Forwards, futures, options, Black-Scholes, the Greeks, swaps, and hedging.
+- [[_MOC_FinTech]] — The technology layer: payment rails, digital banking, lending tech, DeFi, and regtech.
+- [[_MOC_International_Finance]] — Cross-border finance: FX markets, exchange-rate regimes, balance of payments, capital flows, and currency risk.
 
 #MOC #Finance #MasterMOC
