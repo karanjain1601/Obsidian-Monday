@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant Test as Test Case
+  participant Framework
+  participant Auth
+  participant ACV
+
+  Test->>Framework: start step
+  Framework->>Auth: request token
+  Auth-->>Framework: token
+  Framework->>ACV: API request with token
+  ACV-->>Framework: response
+  Framework->>Test: assert and record

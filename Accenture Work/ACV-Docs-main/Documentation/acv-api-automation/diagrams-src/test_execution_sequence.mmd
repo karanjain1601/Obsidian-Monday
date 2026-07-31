@@ -1,0 +1,13 @@
+sequenceDiagram
+  participant CI
+  participant Runner
+  participant Framework
+  participant ACV
+  CI->>Runner: start test job
+  Runner->>Framework: load config, auth
+  Runner->>Framework: execute suites (parallel)
+  Framework->>ACV: call API
+  ACV-->>Framework: response
+  Framework->>Runner: record result
+  Runner->>Report: generate artifacts
+  Runner-->>CI: publish artifacts

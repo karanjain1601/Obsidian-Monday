@@ -279,7 +279,7 @@ Detailed trace:
 - **Off-by-one in match reporting**: Match ends at index i (0-indexed), so start index = `i - m + 1`.
 - **Empty pattern**: Define behavior explicitly — typically matches everywhere.
 - **pi for the entire search string**: When computing pi on the concatenated string `P#T`, pi values in the T portion that equal m indicate matches. pi values that equal numbers < m in the P prefix portion are just building up pi — don't confuse these as matches.
-- **KMP is NOT the fastest in practice**: For very large texts and alphabets, Boyer-Moore or Aho-Corasick may be preferred. KMP is O(n+m) worst case, which is optimal, but with a larger constant than Z-algorithm in practice.
+- **KMP is NOT the fastest in practice**: For very large texts and alphabets, Boyer-Moore or [[Aho_Corasick|Aho-Corasick]] may be preferred. KMP is O(n+m) worst case, which is optimal, but with a larger constant than Z-algorithm in practice.
 
 ## Related Concepts
 

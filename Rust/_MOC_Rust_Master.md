@@ -10,7 +10,7 @@ status: complete
 # Rust Master MOC
 
 > [!abstract] About This Vault
-> **25 notes across 5 sections** — a complete Rust knowledge vault covering the ownership system, type-driven design, error handling, fearless concurrency, and the production web ecosystem. Each note includes real Rust code, pitfalls from experience, and review questions for active recall.
+> **29 notes across 5 sections** — a complete Rust knowledge vault covering the ownership system, type-driven design, error handling, fearless concurrency, and the production web ecosystem. Each note includes real Rust code, pitfalls from experience, and review questions for active recall.
 
 ---
 
@@ -41,6 +41,11 @@ graph TD
     style STRUCT fill:#7b68ee,color:#fff
     style ERR fill:#e07b39,color:#fff
     style CONC fill:#3a9e6a,color:#fff
+    TOOL --> DB["Rust_Database\nsqlx · Diesel · SeaORM"]
+    TOOL --> CLI2["Rust_CLI\nclap · indicatif"]
+    TOOL --> RWASM["Rust_WebAssembly\nwasm-bindgen · Leptos"]
+    TOOL --> EMB["Rust_Embedded\nno_std · RTIC · probe-rs"]
+
     style TOOL fill:#9e3a7a,color:#fff
 ```
 
@@ -54,7 +59,7 @@ graph TD
 | **02 Structs, Enums, Traits** | 5 | Structs, enums, generics, collections, module system | Beginner → Intermediate |
 | **03 Error Handling & Smart Pointers** | 5 | Result, Box/Rc/Arc/RefCell, dyn Trait, iterators, macros | Intermediate |
 | **04 Concurrency & Async** | 5 | OS threads, async/await, Tokio, Axum, performance | Intermediate → Advanced |
-| **05 Tooling & Ecosystem** | 4 | Cargo, Serde, web stack (reqwest/sqlx/tracing), testing | Beginner → Intermediate |
+| **05 Tooling & Ecosystem** | 8 | Cargo, Serde, web stack (reqwest/sqlx/tracing), testing, databases, CLI, WASM, embedded | Beginner → Advanced |
 
 ---
 
@@ -117,7 +122,7 @@ Rust's fearless concurrency: compile-time data race prevention, async/await for 
 
 ## Section 05 — Tooling & Ecosystem
 
-The full Rust toolchain and production web stack.
+The full Rust toolchain, production web stack, and specialty domains.
 
 | Note | Key Topics |
 |------|-----------|
@@ -125,6 +130,10 @@ The full Rust toolchain and production web stack.
 | [[Rust_Serde]] | Serialize/Deserialize derive, field attributes, enum representations, serde_json Value, custom serialization |
 | [[Rust_Web_Ecosystem]] | reqwest, sqlx (compile-time queries), deadpool-redis, tracing, OpenTelemetry, Prometheus metrics |
 | [[Rust_Testing]] | Unit tests, integration tests, doc tests, #[should_panic], mockall, proptest |
+| [[Rust_Database]] | sqlx async compile-time queries, Diesel QueryDSL + migrations, SeaORM ActiveModel, connection pools |
+| [[Rust_CLI]] | clap derive API, subcommands, ValueEnum, shell completions, indicatif progress bars, dialoguer |
+| [[Rust_WebAssembly]] | wasm-bindgen, wasm-pack, web-sys/js-sys, Leptos, WASM in Node.js, wasm-opt size optimization |
+| [[Rust_Embedded]] | no_std/no_main, embedded-hal traits, cortex-m-rt, RTIC tasks/resources, probe-rs, defmt |
 
 ---
 
@@ -200,6 +209,14 @@ Ownership_and_Borrowing      ← prerequisite: understand Send/Sync foundations
 | Choosing a channel type | [[Tokio_Runtime]] — mpsc/oneshot/broadcast/watch table |
 | Making JSON work | [[Rust_Serde]] |
 | Testing code with database calls | [[Rust_Testing]] — mockall section |
+| sqlx compile-time query checking | [[Rust_Database]] |
+| Diesel vs sqlx vs SeaORM | [[Rust_Database]] |
+| clap derive API subcommands | [[Rust_CLI]] |
+| Shell completion generation | [[Rust_CLI]] |
+| wasm-bindgen JS↔Rust bridge | [[Rust_WebAssembly]] |
+| Leptos reactive components | [[Rust_WebAssembly]] |
+| no_std bare-metal setup | [[Rust_Embedded]] |
+| RTIC task priorities and resources | [[Rust_Embedded]] |
 
 ---
 

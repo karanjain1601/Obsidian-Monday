@@ -10,7 +10,7 @@ status: complete
 # 🌐 Web Development — Master Map of Content
 
 > [!abstract] About This Vault
-> A production-focused reference for engineers building browser UIs, single-page and full-stack applications, and cross-platform apps from a single codebase. **79 notes across 13 sections**, covering the full stack progression: markup and styling, the JavaScript runtime, TypeScript's type system, Angular, React, Flutter, Node.js backend, Vue 3, the modern build toolchain, Next.js, React Native mobile development, GraphQL, and Design Systems. Every note pairs an intuition-first analogy with code examples, Mermaid diagrams, trade-off tables, common pitfalls, and review questions. Follow one of the learning paths below, or jump directly to the section that matches your goal.
+> A production-focused reference for engineers building browser UIs, single-page and full-stack applications, and cross-platform apps from a single codebase. **87 notes across 13 sections**, covering the full stack progression: markup and styling, the JavaScript runtime, TypeScript's type system, Angular, React, Flutter, Node.js backend, Vue 3, the modern build toolchain, Next.js, React Native mobile development, GraphQL, and Design Systems. Every note pairs an intuition-first analogy with code examples, Mermaid diagrams, trade-off tables, common pitfalls, and review questions. Follow one of the learning paths below, or jump directly to the section that matches your goal.
 
 ## Vault Architecture
 
@@ -40,6 +40,9 @@ graph TD
     S08 --> V3["Reactivity & Composition API"]
     S08 --> V4["Router & Pinia"]
     S08 --> V5["Testing & Performance"]
+    S08 --> V6["Nuxt Framework"]
+    S08 --> V7["Vue Forms"]
+    S08 --> V8["Vue Advanced"]
 
     S09 --> B1["Build Tools Overview"]
     S09 --> B2["Vite & Rollup"]
@@ -66,6 +69,9 @@ graph TD
     S10 --> NX4["Optimization"]
     S10 --> NX5["Auth + Deploy"]
     S10 --> NX6["Fullstack Patterns"]
+    S10 --> NX7["Server Actions"]
+    S10 --> NX8["Middleware"]
+    S10 --> NX9["i18n"]
 
     Master --> S10["10 Next.js"]
     Master --> S11["11 React Native"]
@@ -105,11 +111,11 @@ graph TD
 | 03 | TypeScript | 5 | [[_MOC_TypeScript]] | Intermediate |
 | 04 | Angular | 5 | [[_MOC_Angular]] | Intermediate → Advanced |
 | 05 | React | 5 | [[_MOC_React]] | Intermediate → Advanced |
-| 06 | Flutter | 5 | [[_MOC_Flutter]] | Intermediate → Advanced |
+| 06 | Flutter | 11 | [[_MOC_Flutter]] | Intermediate → Advanced |
 | 07 | Node.js | 6 | [[_MOC_NodeJS]] | Intermediate |
-| 08 | Vue | 5 | [[_MOC_Vue]] | Intermediate |
+| 08 | Vue | 8 | [[_MOC_Vue]] | Intermediate |
 | 09 | Build Tools | 4 | [[_MOC_Build_Tools]] | Beginner → Intermediate |
-| 10 | Next.js | 6 | [[_MOC_NextJS]] | Intermediate → Advanced |
+| 10 | Next.js | 9 | [[_MOC_NextJS]] | Intermediate → Advanced |
 | 11 | React Native | 6 | [[_MOC_React_Native]] | Intermediate → Advanced |
 | 12 | GraphQL | 6 | [[_MOC_GraphQL]] | Intermediate → Advanced |
 | 13 | Design System | 5 | [[_MOC_Design_System]] | Intermediate |
@@ -180,9 +186,9 @@ graph TD
 - [[_MOC_React]] — Meta's composable UI library: fundamentals, hooks, state management, performance, and Next.js.
 - [[_MOC_Flutter]] — Google's cross-platform UI toolkit: architecture, Dart, widgets, state management, and navigation.
 - [[_MOC_NodeJS]] — Server-side JavaScript: event loop, CommonJS/ESM, streams, Express, database integration, and production deployment.
-- [[_MOC_Vue]] — Vue 3's Composition API: reactivity system, SFCs, Vue Router 4, Pinia state management, and Vitest testing.
+- [[_MOC_Vue]] — Vue 3's Composition API: reactivity system, SFCs, Vue Router 4, Pinia state management, Vitest testing, Nuxt 3 SSR/SSG framework, form validation (Vee-Validate/FormKit/Vuelidate), and advanced patterns (Teleport, Provide/Inject, Custom Directives, render functions).
 - [[_MOC_Build_Tools]] — The JavaScript toolchain: module systems, Vite/Rollup, Webpack 5, and package manager tradeoffs.
-- [[_MOC_NextJS]] — Next.js App Router, rendering strategies (SSG/ISR/SSR/CSR), image/font/script optimization, Auth.js, deployment, and fullstack patterns.
+- [[_MOC_NextJS]] — Next.js App Router, rendering strategies (SSG/ISR/SSR/CSR), image/font/script optimization, Auth.js, deployment, fullstack patterns, Server Actions (useFormState/useFormStatus/revalidatePath), Edge Middleware (auth/A-B/geo), and i18n with next-intl.
 - [[_MOC_React_Native]] — Meta's cross-platform mobile framework: Expo workflow, core components, StyleSheet + Flexbox, React Navigation, Expo SDK device APIs, and EAS Build/deploy.
 - [[_MOC_GraphQL]] — GraphQL query language for APIs: SDL type system, resolver chains, DataLoader N+1 solution, Apollo Server/Client integration, federation, persisted queries, and the Relay specification.
 - [[_MOC_Design_System]] — The shared language between design and engineering: design tokens (global/alias/component tiers, Style Dictionary, dark mode), component library (Atomic Design, React CVA + forwardRef, Vue defineProps + slots), WCAG 2.1/2.2 accessibility (POUR, ARIA, axe-core), and Storybook documentation with Chromatic visual regression testing.

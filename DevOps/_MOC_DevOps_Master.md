@@ -10,7 +10,7 @@ status: complete
 # 🚀 DevOps & Platform Engineering — Master MOC
 
 > [!abstract] Vault Overview
-> 72 notes across 13 sections covering Git internals, CI/CD pipelines, containers, Kubernetes, IaC, cloud platforms, observability, Linux/OS internals, networking protocols, web servers, secrets management, service meshes, and Git/GitHub workflows. Designed for platform engineers, SREs, and DevOps practitioners targeting production-grade system design.
+> 77 notes across 13 sections covering Git internals, CI/CD pipelines, containers, Kubernetes, IaC, cloud platforms, observability, Linux/OS internals, networking protocols, web servers, secrets management, service meshes, and Git/GitHub workflows. Designed for platform engineers, SREs, and DevOps practitioners targeting production-grade system design.
 
 ---
 
@@ -159,11 +159,11 @@ graph TD
 
 | # | Section | Notes | Core Concepts | Difficulty |
 |---|---------|-------|---------------|------------|
-| 01 | [[_MOC_Git_Version_Control\|Git & Version Control]] | 5 | Merkle DAG, branching strategies, rebase, hooks, monorepos | Intermediate |
-| 02 | [[_MOC_CICD_Pipelines\|CI/CD Pipelines]] | 5 | DORA metrics, GitHub Actions, GitOps, release strategies | Intermediate |
+| 01 | [[_MOC_Git_Version_Control\|Git & Version Control]] | 6 | Merkle DAG, branching strategies, rebase, hooks, monorepos, advanced git (LFS/bisect/worktree) | Intermediate |
+| 02 | [[_MOC_CICD_Pipelines\|CI/CD Pipelines]] | 7 | DORA metrics, GitHub Actions, GitOps, release strategies, FluxCD, artifact management | Intermediate |
 | 03 | [[_MOC_Containers_Docker\|Containers & Docker]] | 5 | namespaces/cgroups, multi-stage builds, OCI specs, security | Intermediate |
 | 04 | [[_MOC_Kubernetes\|Kubernetes]] | 5 | Pod lifecycle, CNI, Helm, Operators, CRDs | Advanced |
-| 05 | [[_MOC_Infrastructure_as_Code\|Infrastructure as Code]] | 5 | Terraform, CDK, Ansible, Pulumi, drift detection | Intermediate |
+| 05 | [[_MOC_Infrastructure_as_Code\|Infrastructure as Code]] | 7 | Terraform, CDK, Ansible, Pulumi, drift detection, Chef/Puppet, Terraform security | Intermediate |
 | 06 | [[_MOC_Cloud_Platforms\|Cloud Platforms]] | 5 | AWS/GCP/Azure, multi-cloud, FinOps | Advanced |
 | 07 | [[_MOC_Monitoring_Observability\|Monitoring & Observability]] | 5 | Prometheus, Grafana, traces, SLOs, error budgets | Advanced |
 | 08 | [[08_Linux_and_OS/_MOC_Linux_and_OS\|Linux & OS]] | 6 | FHS, permissions, shell scripting, performance analysis, security hardening | Intermediate–Advanced |

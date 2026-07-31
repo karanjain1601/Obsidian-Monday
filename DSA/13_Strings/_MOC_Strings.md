@@ -40,7 +40,7 @@ graph TD
 ## Learning Path
 
 1. [[String_Fundamentals]] — Immutability, the `s += c` O(n²) trap, `Counter`/26-array frequency counting, two-pointer palindromes, expand-around-center
-2. [[String_Matching_Overview]] — The decision hub: naive vs KMP/Z vs Rabin-Karp vs suffix structures vs Aho-Corasick; preprocess-the-pattern vs preprocess-the-text
+2. [[String_Matching_Overview]] — The decision hub: naive vs KMP/Z vs Rabin-Karp vs suffix structures vs [[Aho_Corasick|Aho-Corasick]]; preprocess-the-pattern vs preprocess-the-text
 3. [[Rabin_Karp]] — Polynomial rolling hash; O(1) window roll; multi-pattern and 2D matching; collision verification
 4. [[Manacher_Algorithm]] — Longest palindromic substring in O(n) via the `#` transform and mirror reuse
 5. [[Suffix_Tree]] — Compressed trie of all suffixes; O(m) substring search, longest repeated / common substring; Ukkonen described

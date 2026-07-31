@@ -163,7 +163,7 @@ $$\hat{S}_{xx}(f_k) = \frac{1}{N f_s} |X[k]|^2$$
 
 Average multiple FFT frames (Welch's method) to reduce variance.
 
-**Short-Time Fourier Transform (STFT)**:
+**[[STFT_and_Windowing|Short-Time Fourier Transform (STFT)]]**:
 $$\text{STFT}(m, k) = \sum_{n=0}^{N-1} x[n + mH] \, w[n] \, W_N^{kn}$$
 
 where w[n] is an analysis window, H is the hop size, and m is the frame index. STFT produces a **time-frequency spectrogram** — essential for audio, speech, and seismic analysis.

@@ -10,7 +10,7 @@ status: complete
 # Swift & SwiftUI — Master Map of Content
 
 > [!abstract] About
-> A 21-note knowledge vault covering the Swift language, protocol-oriented programming, SwiftUI declarative UI, and the Apple ecosystem toolchain. Built around Swift's two key differentiators: **optionals** (compile-time nil safety) and **ARC** (deterministic memory management without GC pauses). All notes include working Swift code, common pitfalls, and review questions.
+> A 24-note knowledge vault covering the Swift language, protocol-oriented programming, SwiftUI declarative UI, the Apple ecosystem toolchain, server-side Swift (Vapor), app architecture patterns (MVVM, Clean Architecture, Coordinator, DI), and ARC memory management in depth. Built around Swift's two key differentiators: **optionals** (compile-time nil safety) and **ARC** (deterministic memory management without GC pauses). All notes include working Swift code, common pitfalls, and review questions.
 
 ---
 
@@ -19,6 +19,7 @@ status: complete
 ```mermaid
 graph TD
     Overview["Swift Overview\nARC · SPM · Xcode"] --> Types["Types & Variables\nOptionals · let/var"]
+    Overview --> ARC["Swift ARC\nretain cycles · weak/unowned\ncapture lists · Instruments"]
     Types --> Control["Control Flow\nswitch · guard · defer"]
     Control --> Functions["Functions & Closures\n@escaping · @autoclosure"]
     Functions --> Collections["Collections\nArray · Set · Dict · COW"]
@@ -41,6 +42,8 @@ graph TD
     SPM --> Persistence["Core Data & SwiftData\n@Model · @Query"]
     Persistence --> Networking["Networking\nURLSession · Codable · Alamofire"]
     Networking --> Testing["Swift Testing\n@Test · #expect · XCTest"]
+    SPM --> Server["Swift Server\nVapor · Hummingbird · Fluent\nLeaf · SwiftNIO"]
+    SPM --> Architecture["Swift Architecture\nMVVM · Clean · Coordinator\nDI · Swinject · Factory"]
 ```
 
 ---
@@ -57,6 +60,7 @@ graph TD
 | [[Swift_Functions_and_Closures]] | argument labels, `@escaping`, `@autoclosure`, capturing, trailing closure | Intermediate |
 | [[Swift_Collections]] | Array/Set/Dictionary, functional ops, copy-on-write | Beginner |
 | [[Swift_Error_Handling]] | `throws`/`try`, `Result<T,E>`, typed throws (Swift 6), defer | Intermediate |
+| [[Swift_ARC]] | Retain counting, strong/weak/unowned, retain cycles, capture lists, Instruments | Intermediate |
 
 ### 02 — OOP and Protocols
 
@@ -87,6 +91,8 @@ graph TD
 | [[Core_Data_and_SwiftData]] | @Model, @Query, NSPersistentContainer, NSFetchRequest, migration | Intermediate |
 | [[Swift_Networking]] | URLSession async, Codable, streaming, WebSocket, Alamofire | Intermediate |
 | [[Swift_Testing]] | Swift Testing (@Test, #expect), XCTest, parameterized, XCUIApplication | Intermediate |
+| [[Swift_Server]] | Vapor routing/middleware, Fluent ORM, Leaf templates, Hummingbird, SwiftNIO | Intermediate |
+| [[Swift_Architecture]] | MVVM (@Observable), Clean Architecture layers, Coordinator, DI (Factory, Swinject) | Intermediate |
 
 ---
 
@@ -128,7 +134,7 @@ Build HTTP APIs and microservices with Swift + Vapor.
 3. **Week 5** — [[Swift_Package_Manager]] (modular Vapor project structure)
 4. **Week 6** — [[Swift_Networking]] (consuming external APIs from Vapor routes)
 5. **Week 7** — [[Swift_Error_Handling]] + [[Swift_Testing]] (vapor testing with XCTVapor)
-6. **Week 8** — Vapor routing, middleware, Fluent ORM (beyond this vault)
+6. **Week 8** — [[Swift_Server]] (Vapor routing, middleware, Fluent ORM, Leaf templates)
 
 ---
 
@@ -136,13 +142,16 @@ Build HTTP APIs and microservices with Swift + Vapor.
 
 | Concept | Primary Note | Also in |
 |---|---|---|
-| ARC / memory management | [[Swift_Overview]] | [[Swift_Structs_and_Classes]], [[Swift_Concurrency]] |
+| ARC / memory management | [[Swift_ARC]] | [[Swift_Overview]], [[Swift_Structs_and_Classes]], [[Swift_Concurrency]] |
 | Optionals | [[Swift_Types_and_Variables]] | [[Swift_Error_Handling]], [[SwiftUI_Fundamentals]] |
 | `@State` / `@Binding` | [[SwiftUI_Fundamentals]] | [[SwiftUI_State_and_Data]], [[SwiftUI_Lists_and_Data]] |
 | `async`/`await` | [[Swift_Concurrency]] | [[Swift_Networking]], [[Swift_Testing]], [[SwiftUI_State_and_Data]] |
 | `Codable` | [[Swift_Protocols_and_Extensions]] | [[Swift_Networking]], [[Core_Data_and_SwiftData]] |
 | `some` / `any` | [[Swift_Generics]] | [[SwiftUI_Fundamentals]], [[Swift_Protocols_and_Extensions]] |
 | Copy-on-write | [[Swift_Collections]] | [[Swift_Structs_and_Classes]] |
-| `@Observable` / `@Model` | [[SwiftUI_State_and_Data]] | [[Core_Data_and_SwiftData]] |
+| `@Observable` / `@Model` | [[SwiftUI_State_and_Data]] | [[Core_Data_and_SwiftData]], [[Swift_Architecture]] |
+| Vapor / Hummingbird | [[Swift_Server]] | [[Swift_Concurrency]], [[Swift_Networking]] |
+| MVVM / Clean Architecture | [[Swift_Architecture]] | [[SwiftUI_State_and_Data]], [[Swift_Protocols_and_Extensions]] |
+| Retain cycles / weak refs | [[Swift_ARC]] | [[Swift_Functions_and_Closures]], [[Swift_Structs_and_Classes]] |
 
 #Swift #SwiftUI #MOC #Index

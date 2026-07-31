@@ -1,0 +1,33 @@
+[Unit]
+Description=ACV Documentation static site (Python stdlib HTTPS)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Bind privileged port 443 without running as root
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+NoNewPrivileges=yes
+User=acvdocs
+Group=acvdocs
+
+ExecStart=/usr/bin/python3 /opt/acv-docs/serve-https.py \
+  --root /var/www/acv-docs \
+  --cert /etc/pki/acv-docs/fullchain.pem \
+  --key  /etc/pki/acv-docs/privkey.pem \
+  --bind 0.0.0.0 \
+  --port 443
+
+Restart=on-failure
+RestartSec=3
+
+# Hardening
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ReadOnlyPaths=/var/www/acv-docs /etc/pki/acv-docs /opt/acv-docs
+
+[Install]
+WantedBy=multi-user.target

@@ -12,7 +12,7 @@ status: complete
 # Scala Master MOC
 
 > [!abstract] About
-> 25 notes across 4 sections — JVM functional-OOP hybrid language with a strong type system. Scala unifies object-oriented programming with principled functional programming (immutability, algebraic types, higher-kinded typeclasses) on the JVM, compiling also to JavaScript and native binaries. It is the language of Apache Spark, Akka, and the Cats/ZIO functional effect ecosystem.
+> 23 notes across 4 sections — JVM functional-OOP hybrid language with a strong type system. Scala unifies object-oriented programming with principled functional programming (immutability, algebraic types, higher-kinded typeclasses) on the JVM, compiling also to JavaScript (Scala.js) and native binaries. It is the language of Apache Spark, Akka, and the Cats/ZIO functional effect ecosystem. Includes database access (Slick, Doobie, Quill), JSON handling (Circe, uPickle), advanced FP (Monocle, Shapeless, Chimney), and frontend (Scala.js, Laminar).
 
 ---
 
@@ -39,12 +39,16 @@ graph TD
     F2 --> N09["Typeclasses\ngiven/using, Cats"]:::note
     F2 --> N10["Generics_and_Variance\n+A, -A, F[_]"]:::note
     F2 --> N11["Error_Handling_FP\nEither, Validated, EitherT"]:::note
+    F2 --> N20["Advanced_FP\nMonocle, Shapeless, Chimney"]:::note
 
     F3 --> N12["Futures_and_Promises\nFuture, EC, Promise"]:::note
     F3 --> N13["Akka_Actors_Intro\nactor model, Typed"]:::note
     F3 --> N14["Spark_Basics\nDataFrame, Dataset, SQL"]:::note
     F3 --> N15["Play_Framework\nMVC, routes, JSON, Slick"]:::note
     F3 --> N16["Build_Tools\nsbt, Mill, Scala CLI"]:::note
+    F3 --> N21["ScalaJS\nBrowser, Laminar, Facades"]:::note
+    F3 --> N22["Scala_Database\nSlick, Doobie, Quill, HikariCP"]:::note
+    F3 --> N23["Scala_JSON\nCirce, uPickle, Play JSON"]:::note
 
     F4 --> N17["Scala_Testing\nScalaTest, ScalaCheck, munit"]:::note
     F4 --> N18["Style_Guide\nimmutability, expressions, scalafmt"]:::note
@@ -79,6 +83,7 @@ graph TD
 | [[Scala_Typeclasses]] | Typeclass pattern, given/using, context bounds, Cats Functor/Monad | Advanced |
 | [[Scala_Generics_and_Variance]] | Covariant +A, contravariant -A, bounds <: >:, F[_] HKT | Advanced |
 | [[Scala_Error_Handling_FP]] | Either short-circuit, Validated accumulation, EitherT, railway | Intermediate |
+| [[Scala_Advanced_FP]] | Monocle (Lens, Prism, Traversal), Shapeless (HList, Generic), Chimney | Advanced |
 
 ### Section 03 — Concurrency and Ecosystem
 
@@ -89,6 +94,9 @@ graph TD
 | [[Scala_Spark_Basics]] | SparkSession, DataFrame/Dataset, transformations vs actions, SQL | Intermediate |
 | [[Play_Framework]] | routes DSL, Action/Controller, Play JSON, Slick, async | Intermediate |
 | [[Scala_Build_Tools]] | sbt DSL, libraryDependencies, Mill, Scala CLI, ecosystem libs | Beginner |
+| [[ScalaJS]] | Compilation to JS, Facades, Laminar (FRP), scalajs-react, cross-project | Advanced |
+| [[Scala_Database]] | Slick (lifted embedding), Doobie (pure FP JDBC), Quill (compile-time), HikariCP | Intermediate |
+| [[Scala_JSON]] | Circe (auto derivation, cursors), uPickle, Play JSON, custom codecs | Intermediate |
 
 ### Section 04 — Testing and Style
 

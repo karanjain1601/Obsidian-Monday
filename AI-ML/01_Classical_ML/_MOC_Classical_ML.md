@@ -86,6 +86,7 @@ graph TD
 | Note | Core Idea | Difficulty |
 |------|-----------|------------|
 | [[Linear_Regression]] | Fit a hyperplane by minimizing MSE; normal equation or gradient descent | Beginner |
+| [[Polynomial_Regression]] | Extend linear regression with polynomial feature expansion; bias-variance trade-off in curve fitting | Beginner |
 | [[Logistic_Regression]] | Binary/multiclass classification via sigmoid/softmax; MLE under Bernoulli model | Beginner |
 | [[Decision_Trees]] | Recursive feature splits using Gini/entropy; interpretable, prone to overfitting | Beginner |
 | [[Random_Forests]] | Bagging ensemble of decorrelated trees; robust and fast to train | Intermediate |

@@ -10,7 +10,7 @@ status: complete
 # Go (Golang) — Master Map of Content
 
 > [!abstract] About This Vault
-> 26 notes across 5 sections covering the complete Go ecosystem — from language fundamentals through concurrency, web APIs, databases, and production operations. Designed for backend engineers and systems programmers moving to Go or deepening their expertise.
+> 30 notes across 5 sections covering the complete Go ecosystem — from language fundamentals through concurrency, web APIs, databases, and production operations. Designed for backend engineers and systems programmers moving to Go or deepening their expertise.
 
 ---
 
@@ -62,6 +62,10 @@ graph TD
     T2["Go_Performance"] --- T
     T3["Go_Observability"] --- T
     T4["Go_Production_Patterns"] --- T
+    T5["Go_CLI_Development"] --- T
+    T6["Go_Reflection"] --- T
+    T7["Go_CGO"] --- T
+    T8["Go_WebAssembly"] --- T
 ```
 
 ---
@@ -74,7 +78,7 @@ graph TD
 | [[#02 Structs and Interfaces]] | 5 | Composition, interfaces, generics, collections, modules |
 | [[#03 Concurrency]] | 6 | Goroutines, channels, sync, context, patterns, I/O |
 | [[#04 Web and Databases]] | 5 | HTTP server, Gin, SQL, gRPC, testing |
-| [[#05 Tooling and Production]] | 4 | Toolchain, profiling, observability, Docker |
+| [[#05 Tooling and Production]] | 8 | Toolchain, profiling, observability, Docker, CLI, reflection, CGO, WASM |
 
 ---
 
@@ -181,7 +185,7 @@ graph TD
 
 ### 05 Tooling and Production
 
-> Shipping Go to production — quality, performance, observability.
+> Shipping Go to production — quality, performance, observability, CLI tools, and advanced runtime features.
 
 | Note | Difficulty | Summary |
 |---|---|---|
@@ -189,6 +193,10 @@ graph TD
 | [[Go_Performance]] | Advanced | pprof (CPU/heap), escape analysis, sync.Pool, strings.Builder |
 | [[Go_Observability]] | Advanced | slog structured logging, Prometheus metrics, OpenTelemetry tracing, healthchecks |
 | [[Go_Production_Patterns]] | Advanced | Graceful shutdown, 12-factor config, multi-stage Docker, dependency injection |
+| [[Go_CLI_Development]] | Intermediate | flag package, Cobra subcommands + persistent flags, urfave/cli, BubbleTea TUI (Elm arch) |
+| [[Go_Reflection]] | Advanced | reflect.TypeOf/ValueOf, Kind, struct tag parsing, dynamic value creation, pitfalls |
+| [[Go_CGO]] | Advanced | import "C" preamble, C↔Go type mapping, memory rules, purego alternative |
+| [[Go_WebAssembly]] | Advanced | GOOS=js/wasip1, syscall/js, js.FuncOf, TinyGo, wazero, WASI target |
 
 ---
 
@@ -206,6 +214,14 @@ graph TD
 | Prometheus high-cardinality pitfall | [[Go_Observability]] |
 | Escape analysis flags | [[Go_Performance]] |
 | Multi-stage Docker for Go | [[Go_Production_Patterns]] |
+| Cobra command lifecycle | [[Go_CLI_Development]] |
+| BubbleTea TUI (Elm Architecture) | [[Go_CLI_Development]] |
+| reflect.Kind vs reflect.Type | [[Go_Reflection]] |
+| Struct tag parsing at runtime | [[Go_Reflection]] |
+| CGO memory management rules | [[Go_CGO]] |
+| CGO vs purego for C libraries | [[Go_CGO]] |
+| Go WASM browser loading | [[Go_WebAssembly]] |
+| TinyGo vs standard Go WASM | [[Go_WebAssembly]] |
 
 ---
 

@@ -28,7 +28,7 @@ status: complete
 # 🏢 Multi-Agent Systems
 
 > [!abstract] TL;DR
-> Multi-agent systems (MAS) coordinate multiple specialized AI agents to solve tasks that benefit from parallelism, specialization, or verification. Patterns include orchestrator-worker (one agent delegates to others), peer-to-peer (agents converse as equals), and hierarchical (nested orchestrators). Frameworks like AutoGen and CrewAI provide the communication and coordination infrastructure.
+> Multi-agent systems (MAS) coordinate multiple specialized AI agents to solve tasks that benefit from parallelism, specialization, or verification. Patterns include orchestrator-worker (one agent delegates to others), peer-to-peer (agents converse as equals), and hierarchical (nested orchestrators). Frameworks like [[AutoGen]] and [[CrewAI]] provide the communication and coordination infrastructure.
 
 ## Intuition — Analogy First
 

@@ -1,0 +1,10 @@
+flowchart TD
+  A[CI Trigger] --> B[Checkout]
+  B --> C[Install deps]
+  C --> D[Run Smoke Tests]
+  D --> E{Smoke OK?}
+  E -- Yes --> F[Run Full Suite]
+  E -- No --> Z[Fail early + notify]
+  F --> G[Aggregate Results]
+  G --> H[Publish Reports]
+  H --> I[Update DB]

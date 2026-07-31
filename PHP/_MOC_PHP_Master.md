@@ -13,7 +13,7 @@ status: complete
 # PHP and Laravel — Master MOC
 
 > [!abstract] About
-> 22 notes across 3 sections covering the full PHP 8.x language, the Laravel framework, and the broader PHP ecosystem. Emphasis on PHP 8.x modern features (match, named args, enums, readonly, first-class callables) versus old PHP patterns, and Laravel's architecture (service container, Eloquent, Blade, Sanctum, queues).
+> 24 notes across 3 sections covering the full PHP 8.x language, the Laravel framework, and the broader PHP ecosystem. Emphasis on PHP 8.x modern features (match, named args, enums, readonly, first-class callables) versus old PHP patterns, and Laravel's architecture (service container, Eloquent, Blade, Sanctum, queues, events, scheduling, file storage, monitoring).
 
 ---
 
@@ -39,6 +39,10 @@ graph TD
         Blade["Blade & Views\n(components, Livewire, Inertia)"]
         Auth["Auth & Middleware\n(Sanctum, Spatie, CSRF)"]
         Jobs["Jobs, Testing & Deployment\n(queues, Pest, Forge)"]
+        Events["Events & Listeners\n(Observer, Broadcasting, Reverb)"]
+        Schedule["Task Scheduling\n(Artisan scheduler, cron, onOneServer)"]
+        FileStorage["File Storage\n(Storage facade, S3, signed URLs)"]
+        Monitoring["Monitoring\n(Telescope, Pulse, Horizon, Debugbar)"]
     end
 
     subgraph Ecosystem["03 PHP Ecosystem"]
@@ -46,6 +50,10 @@ graph TD
         DB["Database Access\n(PDO, migrations, Doctrine vs Eloquent)"]
         API["API Development\n(Resources, rate limiting, pagination)"]
         Testing["PHP Testing\n(PHPUnit, Pest, Faker, Xdebug)"]
+        Sessions["Sessions & Cookies\n(drivers, flash, HttpOnly, SameSite)"]
+        Security["PHP Security\n(XSS, CSRF, SQLi, password_hash)"]
+        PSR["PSR Standards\n(PSR-4/7/11/12/15, PHP-FIG)"]
+        Performance["PHP Performance\n(OPcache, preloading, PHP-FPM, profiling)"]
     end
 
     Master --> Foundations
@@ -69,6 +77,14 @@ graph TD
     DB --> API
     Testing --> Jobs
     Testing --> API
+    Sessions --> Auth
+    Security --> Auth
+    PSR --> Composer
+    Performance --> LOverview
+    Events --> Jobs
+    Schedule --> Jobs
+    FileStorage --> API
+    Monitoring --> Jobs
 ```
 
 ---
@@ -96,6 +112,10 @@ graph TD
 | [[Laravel_Blade_and_Views]] | Intermediate | Blade directives, components, layouts, Livewire, Inertia.js |
 | [[Laravel_Auth_and_Middleware]] | Intermediate | Auth facade, Sanctum, middleware, CSRF, Spatie Permission |
 | [[Laravel_Jobs_Testing_Deployment]] | Advanced | Queues, scheduled tasks, Pest, facades fake, Forge/Vapor |
+| [[Laravel_Events_Listeners]] | Intermediate | Event/Listener, Observers, Broadcasting, Pusher, Reverb, subscribers |
+| [[Laravel_Task_Scheduling]] | Intermediate | Artisan scheduler, cron expressions, onOneServer, withoutOverlapping |
+| [[Laravel_File_Storage]] | Intermediate | Storage facade, S3/GCS drivers, file uploads, signed URLs, streaming |
+| [[Laravel_Monitoring]] | Intermediate | Telescope, Debugbar, Pulse, Horizon, health checks |
 
 ### 03 — PHP Ecosystem
 
@@ -105,6 +125,10 @@ graph TD
 | [[PHP_Database_Access]] | Intermediate | PDO, prepared statements, migrations, Doctrine vs Eloquent, SQLite tests |
 | [[PHP_API_Development]] | Intermediate | API Resources, versioning, rate limiting, pagination, Swagger, GraphQL |
 | [[PHP_Testing]] | Intermediate | PHPUnit, Pest, datasets, mocks, Faker, Xdebug coverage |
+| [[PHP_Sessions_and_Cookies]] | Intermediate | Session lifecycle, cookie security, drivers (file/DB/Redis), flash data |
+| [[PHP_Security]] | Intermediate | XSS prevention, CSRF, SQL injection, bcrypt/argon2, headers, validation |
+| [[PHP_PSR_Standards]] | Intermediate | PHP-FIG, PSR-1/4/7/11/12/15/17, autoloading, HTTP message interfaces |
+| [[PHP_Performance]] | Advanced | OPcache, preloading, PHP-FPM tuning, Xdebug/Blackfire, Octane |
 
 ---
 
@@ -128,10 +152,16 @@ Sequential path for developers learning PHP for backend web development:
    - [[Composer_and_Packages]] — project setup, dependencies, PSR-4
    - [[PHP_Database_Access]] — PDO, prepared statements, migrations
 
-4. **Testing** (Week 4)
-   - [[PHP_Testing]] — PHPUnit, Pest, Faker, mocks
+4. **Web Fundamentals** (Week 4)
+   - [[PHP_Sessions_and_Cookies]] — state management, session drivers
+   - [[PHP_Security]] — XSS, CSRF, SQL injection, password hashing
 
-**Milestone:** Build a pure PHP REST API with PDO, Composer autoloading, and PHPUnit tests.
+5. **Testing and Standards** (Week 5)
+   - [[PHP_Testing]] — PHPUnit, Pest, Faker, mocks
+   - [[PHP_PSR_Standards]] — PHP-FIG standards, autoloading, HTTP interfaces
+   - [[PHP_Performance]] — OPcache, profiling, PHP-FPM tuning
+
+**Milestone:** Build a pure PHP REST API with PDO, Composer autoloading, CSRF protection, and PHPUnit tests.
 
 ---
 
@@ -154,10 +184,16 @@ Path for developers targeting the full Laravel stack:
 
 4. **Production Skills** (Week 4)
    - [[Laravel_Jobs_Testing_Deployment]] — queues, tests, deployment
-   - [[PHP_Testing]] — Pest, fakes, coverage
-   - [[PHP_Database_Access]] — advanced migrations, Doctrine comparison
+   - [[Laravel_Events_Listeners]] — event-driven architecture, broadcasting
+   - [[Laravel_Task_Scheduling]] — cron, scheduler, onOneServer
+   - [[Laravel_File_Storage]] — file uploads, S3, signed URLs
 
-**Milestone:** Ship a full-stack Laravel app with authentication, Eloquent relationships, queue-based email, and 80%+ test coverage.
+5. **Observability** (Week 5)
+   - [[Laravel_Monitoring]] — Telescope, Pulse, Horizon, health checks
+   - [[PHP_Performance]] — OPcache, N+1 queries, profiling
+   - [[PHP_Security]] — hardening for production
+
+**Milestone:** Ship a full-stack Laravel app with authentication, Eloquent relationships, queue-based email, event broadcasting, scheduled tasks, and 80%+ test coverage.
 
 ---
 
@@ -178,12 +214,15 @@ Path for developers building Laravel REST APIs:
 3. **API Design** (Week 3)
    - [[PHP_API_Development]] — API Resources, versioning, pagination, OpenAPI
    - [[PHP_Database_Access]] — migrations, seeds, testing with SQLite
+   - [[Laravel_File_Storage]] — file upload endpoints, S3 integration
 
 4. **Quality & Scale** (Week 4)
    - [[Laravel_Jobs_Testing_Deployment]] — async processing, deployment
    - [[PHP_Testing]] — feature tests, HTTP fakes, Pest datasets
+   - [[PHP_Security]] — input validation, headers, SQL injection
+   - [[Laravel_Monitoring]] — Telescope, Horizon for queue visibility
 
-**Milestone:** Build a versioned, documented, rate-limited API with Sanctum authentication, API Resources, cursor pagination, and full Pest test suite.
+**Milestone:** Build a versioned, documented, rate-limited API with Sanctum authentication, API Resources, cursor pagination, S3 file uploads, and full Pest test suite.
 
 ---
 

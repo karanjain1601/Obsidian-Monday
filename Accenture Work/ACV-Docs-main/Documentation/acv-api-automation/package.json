@@ -1,0 +1,14 @@
+{
+  "name": "acv-api-automation-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static documentation site for ACV API Automation",
+  "scripts": {
+    "build": "node build-site.js",
+    "serve": "npx serve site",
+    "dev": "node build-site.js && npx serve site"
+  },
+  "dependencies": {
+    "marked": "^15.0.0"
+  }
+}

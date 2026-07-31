@@ -71,7 +71,7 @@ All LCEL chains automatically support:
 | **Document loaders** | Load from sources | PDF, web, S3, database, Notion |
 | **Text splitters** | Chunk documents | `RecursiveCharacterTextSplitter`, `TokenTextSplitter` |
 | **Embeddings** | Create vector representations | `OpenAIEmbeddings`, `HuggingFaceEmbeddings` |
-| **VectorStores** | Store and search vectors | FAISS, Chroma, Pinecone, Weaviate |
+| **VectorStores** | Store and search vectors | [[FAISS]], Chroma, Pinecone, Weaviate |
 | **Retrievers** | Fetch relevant documents | `VectorStoreRetriever`, `MultiQueryRetriever` |
 | **Agents** | LLM-driven tool selection | `create_react_agent`, `create_openai_tools_agent` |
 | **Memory** | Conversation history | `ConversationBufferMemory`, `ConversationSummaryMemory` |

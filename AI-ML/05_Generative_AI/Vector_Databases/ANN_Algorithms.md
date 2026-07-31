@@ -28,7 +28,7 @@ status: complete
 # ⚡ ANN Algorithms for Vector Search
 
 > [!abstract] TL;DR
-> Exact K-nearest-neighbor search scales as O(n·d) — too slow for millions of vectors. Approximate Nearest Neighbor (ANN) algorithms sacrifice a small fraction of accuracy for orders-of-magnitude speedup. **HNSW** (graph-based, default in most vector DBs) and **IVF** (cluster-based, used in FAISS) are the two dominant approaches. Understanding them lets you tune vector DBs for your latency/recall trade-off.
+> Exact K-nearest-neighbor search scales as O(n·d) — too slow for millions of vectors. Approximate Nearest Neighbor (ANN) algorithms sacrifice a small fraction of accuracy for orders-of-magnitude speedup. **HNSW** (graph-based, default in most vector DBs) and **IVF** (cluster-based, used in [[FAISS]]) are the two dominant approaches. Understanding them lets you tune vector DBs for your latency/recall trade-off.
 
 ## Intuition — Analogy First
 
@@ -44,7 +44,7 @@ status: complete
 
 ### 1. HNSW (Hierarchical Navigable Small World)
 
-The **default algorithm** in Pinecone, Weaviate, Qdrant, Chroma, pgvector.
+The **default algorithm** in Pinecone, Weaviate, [[Qdrant]], Chroma, pgvector.
 
 HNSW builds a **multi-layer graph**:
 - **Layer 0**: all vectors, densely connected (many neighbors)

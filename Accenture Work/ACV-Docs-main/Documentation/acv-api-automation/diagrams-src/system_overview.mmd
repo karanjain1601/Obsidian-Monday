@@ -1,0 +1,11 @@
+graph LR
+  subgraph Automation
+    A[Test Runner] --> B[Framework Lib]
+    A --> C[Report Generator]
+    B --> D[HTTP Clients]
+    B --> E[Auth & Config]
+  end
+  C --> F[Report Storage]
+  A --> G[Artifact DB]
+  H[CI: Jenkins/GitHub Actions] --> A
+  I[ACV Services] -->|REST / SOAP| D

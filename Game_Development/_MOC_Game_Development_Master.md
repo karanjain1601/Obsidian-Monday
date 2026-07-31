@@ -10,7 +10,7 @@ status: complete
 # Game Development — Map of Content
 
 > [!info] About this vault
-> 26 notes across 6 sections — covering game math, Unity, Unreal Engine 5, Godot 4, reusable game systems (AI pathfinding, networking, audio, UI/UX), and server-side game development (authoritative servers, netcode, matchmaking).
+> 33 notes across 7 sections — covering game math, Unity, Unreal Engine 5, Godot 4, reusable game systems (AI pathfinding, networking, audio, UI/UX), server-side game development (authoritative servers, netcode, matchmaking), and computer graphics (rendering pipeline, shaders, PBR, lighting, spatial partitioning).
 > Start with **01 Foundations** to build engine-agnostic skills, then branch into whichever engine section fits your goals. Use the Learning Paths below to stay oriented.
 
 ---
@@ -28,6 +28,7 @@ graph TD
     S5["05 — Game Systems"]
 
     S6["06 — Server Side"]
+    S7["07 — Computer Graphics"]
 
     MASTER --> S1
     MASTER --> S2
@@ -35,6 +36,7 @@ graph TD
     MASTER --> S4
     MASTER --> S5
     MASTER --> S6
+    MASTER --> S7
 
     S1 --> GDO["Game Dev Overview"]
     S1 --> GMF["Game Math Fundamentals"]
@@ -56,6 +58,15 @@ graph TD
     S6 --> GSY["Game State Synchronization"]
     S6 --> GBS["Game Backend Services"]
 
+    S7 --> RNDP["Rendering Pipeline"]
+    S7 --> HLSL["HLSL and GLSL"]
+    S7 --> DXGL["DirectX and OpenGL"]
+    S7 --> VLKN["Vulkan Basics"]
+    S7 --> LSSH["Lighting and Shadows"]
+    S7 --> PBRN["Physically Based Rendering"]
+    S7 --> CRSPL["Curves and Splines"]
+    S7 --> SPAT["Spatial Partitioning"]
+
     style MASTER fill:#2d2d2d,color:#fff
     style S1 fill:#4a9eff,color:#fff
     style S2 fill:#4a9eff,color:#fff
@@ -63,11 +74,15 @@ graph TD
     style S4 fill:#4a9eff,color:#fff
     style S5 fill:#4a9eff,color:#fff
     style S6 fill:#4a9eff,color:#fff
+    style S7 fill:#4a9eff,color:#fff
     style UO fill:#ff6b6b,color:#fff
     style UCP fill:#ff6b6b,color:#fff
     style GN fill:#ff6b6b,color:#fff
     style GSY fill:#ff6b6b,color:#fff
     style GBS fill:#ff6b6b,color:#fff
+    style VLKN fill:#ff6b6b,color:#fff
+    style PBRN fill:#ff6b6b,color:#fff
+    style SPAT fill:#ff6b6b,color:#fff
 ```
 
 *(Blue = section entry points, Red = advanced notes, arrows = "leads to")*
@@ -84,6 +99,7 @@ graph TD
 | 04 | Godot 4 | 3 | [[Godot_Fundamentals]] | Beginner → Intermediate |
 | 05 | Game Systems | 4 | [[AI_Pathfinding]] | Intermediate → Advanced |
 | 06 | Server Side | 4 | [[Game_Server_Architecture]] | Intermediate → Advanced |
+| 07 | Computer Graphics | 8 | [[Rendering_Pipeline]] | Intermediate → Advanced |
 
 ---
 
@@ -140,6 +156,23 @@ graph TD
 
 ---
 
+### Path D — Graphics Programmer
+
+*Best for: engine programmers, technical artists, developers targeting custom rendering pipelines or AAA visual fidelity.*
+
+1. [[Game_Development_Overview]] — understand disciplines and the role of the rendering programmer
+2. [[Game_Math_Fundamentals]] — vectors, matrices, and quaternions are the language of every GPU transform
+3. [[Rendering_Pipeline]] — master the rasterization pipeline from vertices to framebuffer pixels
+4. [[HLSL_and_GLSL]] — learn shader languages and the SPIR-V compilation model
+5. [[DirectX_and_OpenGL]] — understand the API landscape and tradeoffs between high-level and explicit APIs
+6. [[Vulkan_Basics]] — dive into explicit GPU control, synchronization, and memory management
+7. [[Lighting_and_Shadows]] — implement Phong, shadow maps, cascaded shadow maps, and SSAO
+8. [[Physically_Based_Rendering]] — implement the Cook-Torrance BRDF, IBL, and ACES tone mapping
+9. [[Curves_and_Splines]] — add smooth paths for camera rigs, animation curves, and procedural geometry
+10. [[Spatial_Partitioning]] — build BVH structures for ray tracing, culling, and physics broad-phase
+
+---
+
 ## Section MOC Index
 
 | Section | One-Line Description |
@@ -150,6 +183,7 @@ graph TD
 | **[[04_Godot]]** | Godot 4 from Node/Scene architecture through GDScript and complete 2D game system patterns |
 | **[[05_Game_Systems]]** | Engine-agnostic, reusable systems: AI pathfinding, multiplayer netcode, audio pipelines, and UI/UX patterns |
 | **[[_MOC_Server_Side_GameDev]]** | Server-side multiplayer: authoritative game servers, network protocols, state synchronization, matchmaking, and backend services |
+| **[[_MOC_Computer_Graphics]]** | Real-time rendering: GPU pipeline, shader languages, DirectX/Vulkan APIs, PBR, lighting, shadow maps, curves, and spatial partitioning |
 
 ---
 
@@ -209,6 +243,19 @@ graph TD
 | [[Network_Protocol_Design]] | UDP over TCP (no head-of-line blocking), custom reliable UDP (ACK bitfield), Protobuf serialization, delta compression, interest management | Advanced |
 | [[Game_State_Synchronization]] | Client-side prediction + server reconciliation (shooters), rollback netcode GGPO (fighting games), snapshot interpolation with rendering delay, lag compensation | Advanced |
 | [[Game_Backend_Services]] | ELO/MMR matchmaking with bracket expansion, Redis Sorted Set leaderboards, JWT session management, analytics pipeline, statistical anti-cheat, live ops feature flags | Advanced |
+
+### 07 — Computer Graphics
+
+| Note | Core Idea | Difficulty |
+|------|-----------|------------|
+| [[Rendering_Pipeline]] | Rasterization pipeline stages, vertex/fragment shaders, GPU architecture (warps, caches), render passes, forward vs deferred rendering | Intermediate |
+| [[HLSL_and_GLSL]] | HLSL (DirectX/Unity) and GLSL (OpenGL/Vulkan) shader languages, uniforms, varyings, push constants, SPIR-V bytecode compilation | Intermediate |
+| [[DirectX_and_OpenGL]] | DirectX 12 vs OpenGL vs Vulkan vs Metal vs WebGL, command buffers, pipeline state objects, swap chains, present modes | Intermediate |
+| [[Vulkan_Basics]] | Vulkan instances/devices/queues, render passes, pipeline state objects, descriptor sets, fences/semaphores, pipeline barriers | Advanced |
+| [[Lighting_and_Shadows]] | Ambient/diffuse/specular, Phong/Blinn-Phong, point/spot/directional lights, shadow maps, PCF, cascaded shadow maps, SSAO | Intermediate |
+| [[Physically_Based_Rendering]] | Cook-Torrance BRDF, DFG terms, metallic/roughness workflow, IBL (irradiance map, prefiltered env), ACES tone mapping | Advanced |
+| [[Curves_and_Splines]] | Bezier, Catmull-Rom, Hermite, B-splines — mathematical curves for animation, camera paths, and procedural geometry | Intermediate |
+| [[Spatial_Partitioning]] | BVH (SAH-built), DBVT for dynamic objects, Octree, BSP trees, broad-phase vs narrow-phase collision detection | Advanced |
 
 ---
 

@@ -1,0 +1,13 @@
+# Build artefacts
+node_modules/
+**/site/
+_preview-*.png
+
+# TLS material — never commit private keys
+cert/*.p12
+cert/*.pfx
+cert/*.key
+cert/privkey*.pem
+
+# Optional offline-install bundles for deploy.sh
+deploy/rpms/

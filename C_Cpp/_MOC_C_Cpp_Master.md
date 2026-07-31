@@ -10,7 +10,7 @@ status: complete
 # C and C++ Master MOC
 
 > [!abstract] About
-> 21 notes across 4 sections covering C fundamentals and modern C++. Section 01 is pure C (the foundation); sections 02–04 are C++ building on that foundation. C++ includes C as a subset — every C concept carries forward, with C++ providing safer, higher-level alternatives for each dangerous C pattern (manual memory → smart pointers, raw arrays → STL containers, function pointers → lambdas/templates).
+> 25 notes across 4 sections covering C fundamentals and modern C++. Section 01 is pure C (the foundation); sections 02–04 are C++ building on that foundation. C++ includes C as a subset — every C concept carries forward, with C++ providing safer, higher-level alternatives for each dangerous C pattern (manual memory → smart pointers, raw arrays → STL containers, function pointers → lambdas/templates).
 
 ---
 
@@ -47,10 +47,10 @@ graph TD
 
 | # | Section | Notes | Focus |
 |---|---------|-------|-------|
-| 01 | [[C_Overview\|C Fundamentals]] | 6 | Pure C: types, memory, strings, structs, I/O |
+| 01 | [[C_Overview\|C Fundamentals]] | 7 | Pure C: types, memory, strings, structs, I/O, IPC |
 | 02 | [[Cpp_Overview\|C++ Core]] | 6 | OOP, templates, STL, modern C++11-20 features |
-| 03 | [[Memory_Management_Cpp\|Memory & Performance]] | 5 | Move semantics, concurrency, exceptions, perf |
-| 04 | [[CMake_Build_System\|Systems & Tooling]] | 4 | CMake, algorithms, FFI, testing/debugging |
+| 03 | [[Memory_Management_Cpp\|Memory & Performance]] | 6 | Move semantics, concurrency, POSIX threads, exceptions, perf |
+| 04 | [[CMake_Build_System\|Systems & Tooling]] | 6 | CMake, algorithms, FFI, testing, popular libraries, debugging |
 
 ---
 
@@ -64,6 +64,7 @@ graph TD
 | [[C_Strings_and_Arrays]] | Null-terminated strings, string.h (strcpy/strcmp/strstr), array decay, multidimensional arrays |
 | [[C_Structs_and_Unions]] | Struct padding, union type-punning, typedef, bitfields, flexible array member |
 | [[C_Preprocessor_and_IO]] | Macros, include guards, conditional compilation, printf format specifiers, file I/O |
+| [[C_IPC]] | Pipes, FIFOs, message queues, shared memory (mmap/shmget), semaphores, Unix domain sockets |
 
 ---
 
@@ -89,6 +90,7 @@ graph TD
 | [[Cpp_Concurrency]] | std::thread, mutex/lock_guard, condition_variable, atomic, async/future, jthread (C++20) |
 | [[Cpp_Exception_Handling]] | try/catch/throw, noexcept, safety guarantees (basic/strong/no-throw), exceptions in ctors |
 | [[Cpp_Performance]] | Profiling (perf/gprof), SoA vs AoS, constexpr/consteval, LTO, PGO, sanitizers |
+| [[POSIX_Threads]] | pthread_create/join, mutexes, condition variables, TLS (pthread_key_t / __thread), vs std::thread |
 
 ---
 
@@ -100,6 +102,8 @@ graph TD
 | [[Cpp_STL_Algorithms]] | `<algorithm>` (sort/find/transform/remove), `<numeric>`, C++20 Ranges & views, parallel policies |
 | [[C_Cpp_Interop_and_FFI]] | extern "C", shared libraries (.so/.dll), dlopen/dlsym, ctypes (Python), CGO (Go), Rust FFI |
 | [[C_Cpp_Testing_and_Debug]] | GDB commands, ASan/UBSan, Valgrind memcheck, Google Test, Catch2 |
+| [[Cpp_Popular_Libraries]] | Boost (asio, beast, filesystem, lexical_cast), Qt framework (signals/slots, MOC), OpenCV (cv::Mat, DNN) |
+| [[C_Cpp_Debugging]] | Valgrind (memcheck, helgrind, massif), ASan, LSan, UBSan, TSan, GDB essentials, core dumps |
 
 ---
 

@@ -78,8 +78,8 @@ graph TD
 |-----------|-------|-----------|
 | LangChain | Any | Mature ecosystem, many integrations |
 | LlamaIndex | Any | RAG-first, document-heavy workflows |
-| AutoGen | Any | Multi-agent conversation framework |
-| CrewAI | Any | Role-based agents with goals/backstories |
+| [[AutoGen]] | Any | Multi-agent conversation framework |
+| [[CrewAI]] | Any | Role-based agents with goals/backstories |
 | Semantic Kernel | Any | Microsoft enterprise, .NET + Python |
 
 ## The Math

@@ -50,6 +50,10 @@ graph TD
     ANNAlgorithms --> Weaviate
     ANNAlgorithms --> Chroma
     ANNAlgorithms --> pgvector
+    ANNAlgorithms --> FAISS["FAISS"]
+    ANNAlgorithms --> Qdrant["Qdrant"]
+    MultiAgent --> AutoGen["AutoGen"]
+    MultiAgent --> CrewAI["CrewAI"]
     VectorDBOverview --> KVCache
     KVCache --> SpecDecoding
     KVCache --> ContinuousBatching
@@ -71,18 +75,22 @@ graph TD
 4. [[Memory_in_Agents]] — episodic, semantic, and procedural memory mechanisms; connects directly into vector database use
 5. [[Plan_and_Execute]] — separates planning from execution for more complex, multi-step tasks
 6. [[Multi_Agent_Systems]] — orchestrator/worker architectures, debate, and collaborative agent patterns
-7. [[Vector_Databases_Overview]] — the infrastructure layer for semantic search and long-term agent memory
-8. [[Embedding_Models]] — how text and other modalities are mapped to dense vector spaces
-9. [[ANN_Algorithms]] — approximate nearest-neighbor methods (HNSW, IVF, PQ) that make vector search fast at scale
-10. [[Pinecone]] — managed vector DB; serverless index management and metadata filtering
-11. [[Weaviate]] — open-source vector DB with schema, hybrid search, and module ecosystem
-12. [[Chroma]] — lightweight embedded vector DB popular for local and notebook-based RAG
-13. [[pgvector]] — vector extension for PostgreSQL; co-locates semantic and relational data
-14. [[KV_Cache]] — key-value attention cache that eliminates redundant computation during autoregressive generation
-15. [[Flash_Attention]] — IO-aware exact attention; dramatically reduces memory bandwidth for long contexts
-16. [[Speculative_Decoding]] — draft-then-verify paradigm for latency reduction without quality loss
-17. [[Continuous_Batching]] — iteration-level scheduling that maximizes GPU utilization in serving systems
-18. [[Quantization_for_Inference]] — INT8/INT4/NF4 weight and activation quantization for reduced memory and faster decode
+7. [[AutoGen]] — Microsoft's conversational multi-agent framework; ConversableAgent, GroupChat, and code execution loops
+8. [[CrewAI]] — role-based agent orchestration; Crew, Agent, Task, and Process abstractions for team-style workflows
+9. [[Vector_Databases_Overview]] — the infrastructure layer for semantic search and long-term agent memory
+10. [[Embedding_Models]] — how text and other modalities are mapped to dense vector spaces
+11. [[ANN_Algorithms]] — approximate nearest-neighbor methods (HNSW, IVF, PQ) that make vector search fast at scale
+12. [[Pinecone]] — managed vector DB; serverless index management and metadata filtering
+13. [[Weaviate]] — open-source vector DB with schema, hybrid search, and module ecosystem
+14. [[Chroma]] — lightweight embedded vector DB popular for local and notebook-based RAG
+15. [[pgvector]] — vector extension for PostgreSQL; co-locates semantic and relational data
+16. [[FAISS]] — Meta's open-source library for billion-scale ANN search; IVF-PQ indexes and GPU acceleration
+17. [[Qdrant]] — Rust-based high-performance vector DB; payload filtering inside HNSW traversal; scalar and binary quantization
+18. [[KV_Cache]] — key-value attention cache that eliminates redundant computation during autoregressive generation
+19. [[Flash_Attention]] — IO-aware exact attention; dramatically reduces memory bandwidth for long contexts
+20. [[Speculative_Decoding]] — draft-then-verify paradigm for latency reduction without quality loss
+21. [[Continuous_Batching]] — iteration-level scheduling that maximizes GPU utilization in serving systems
+22. [[Quantization_for_Inference]] — INT8/INT4/NF4 weight and activation quantization for reduced memory and faster decode
 
 ---
 
@@ -95,6 +103,8 @@ graph TD
 | [[Plan_and_Execute]] | Decoupled planning and execution phases for long-horizon tasks | Intermediate |
 | [[Tool_Use_and_Function_Calling]] | JSON-schema tool definitions, parallel function calls, and result handling | Intermediate |
 | [[Multi_Agent_Systems]] | Orchestrator patterns, message passing, and agent specialization | Advanced |
+| [[AutoGen]] | Conversational multi-agent framework; ConversableAgent, GroupChat, code execution | Advanced |
+| [[CrewAI]] | Role-based agent teams; Crew, Agent, Task, Process hierarchy for goal-driven workflows | Intermediate |
 | [[Memory_in_Agents]] | Working memory, episodic recall, semantic memory, and memory consolidation | Intermediate |
 | [[Vector_Databases_Overview]] | Dense vector storage, CRUD for embeddings, and hybrid search concepts | Beginner |
 | [[Embedding_Models]] | Sentence transformers, dense retrieval, and embedding dimensionality trade-offs | Intermediate |
@@ -103,6 +113,8 @@ graph TD
 | [[Weaviate]] | Schema-based vector DB, BM25 hybrid, HNSW with ACORN | Intermediate |
 | [[Chroma]] | Embedded SQLite-backed vector store for local RAG | Beginner |
 | [[pgvector]] | PostgreSQL extension for vector similarity with SQL joins | Intermediate |
+| [[FAISS]] | Meta's open-source ANN library; IVF-PQ indexes; CPU and GPU backends for billion-scale search | Advanced |
+| [[Qdrant]] | Rust-based vector DB; payload-aware HNSW filtering; scalar/binary quantization; cloud and self-hosted | Intermediate |
 | [[KV_Cache]] | Past key/value tensor caching for token re-use in autoregressive models | Advanced |
 | [[Speculative_Decoding]] | Small draft model proposes tokens; large model verifies in parallel | Advanced |
 | [[Continuous_Batching]] | Dynamic batching at each decode step to maximize GPU utilization | Advanced |

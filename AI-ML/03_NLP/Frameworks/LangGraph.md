@@ -240,7 +240,7 @@ flowchart TD
 
 ### LangGraph vs CrewAI vs AutoGen
 
-| Dimension | LangGraph | CrewAI | AutoGen |
+| Dimension | LangGraph | [[CrewAI]] | [[AutoGen]] |
 |-----------|-----------|--------|---------|
 | **Mental model** | Explicit state machine / graph | Role-based team ("crew") | Conversational agents |
 | **Control** | Fine-grained — define every edge | Medium — role config drives flow | High-level — agents self-coordinate |

@@ -1,0 +1,29 @@
+erDiagram
+  TEST_RUN ||--o{ TEST_CASE : contains
+  TEST_CASE ||--o{ TEST_STEP : contains
+  TEST_RUN {
+    string id PK
+    datetime start_time
+    datetime end_time
+    string environment
+    string status
+    int total_cases
+    int passed_cases
+    int failed_cases
+  }
+  TEST_CASE {
+    string id PK
+    string run_id FK
+    string name
+    string status
+    float duration
+  }
+  TEST_STEP {
+    string id PK
+    string case_id FK
+    string name
+    string request
+    string response
+    string status
+    string attachment_ref
+  }

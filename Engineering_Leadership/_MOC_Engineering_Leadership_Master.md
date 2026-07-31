@@ -12,7 +12,7 @@ status: complete
 # Engineering Leadership Master MOC
 
 > [!abstract] About
-> 17 notes across 4 sections covering the full spectrum of engineering leadership: managing engineering teams, shipping products as a PM, designing organizations for scale, and running healthy code review practices. Draws on named frameworks (DORA, SBI, JTBD, WSJF, RICE, Conway's Law, Team Topologies, SPACE, Google Code Review Guide) from foundational research and industry practice.
+> 24 notes across 4 sections covering the full spectrum of engineering leadership: managing engineering teams, shipping products as a PM, designing organizations for scale, and running healthy code review practices. Draws on named frameworks (DORA, SBI, JTBD, WSJF, RICE, Conway's Law, Team Topologies, SPACE, Kotter 8-Step, ADKAR, Google Code Review Guide) from foundational research and industry practice.
 
 ## Knowledge Map
 
@@ -28,6 +28,10 @@ graph TD
     B --> B3[Technical Leadership]
     B --> B4[Delivery and Execution]
     B --> B5[Team Building and Culture]
+    B --> B6[Technical Debt Management]
+    B --> B7[Technical Roadmapping]
+    B --> B8[Financial Management for EMs]
+    B --> B9[Crisis and Incident Management]
 
     C --> C1[Product Manager Overview]
     C --> C2[Product Discovery]
@@ -39,6 +43,9 @@ graph TD
     D --> D2[Communication and Influence]
     D --> D3[Staff Plus Engineering]
     D --> D4[Engineering Metrics and Health]
+    D --> D5[Change Management]
+    D --> D6[Executive Communication]
+    D --> D7[Documentation Culture]
 
     E --> E1[Code Review Best Practices]
     E --> E2[Code Review Tools]
@@ -67,6 +74,10 @@ graph TD
 | [[Technical_Leadership]] | Cunningham Debt Matrix, ADR template, Build/Buy/Integrate | Tech roadmap, debt budget, code review culture |
 | [[Delivery_and_Execution]] | DORA Metrics, Three-Point Estimation, PERT | Sprint rituals, scope creep, blameless post-mortems, OKRs |
 | [[Team_Building_and_Culture]] | Westrum Model, Psychological Safety, Structured Interviewing | Hiring pipeline, 30/60/90 onboarding, remote async-first, reorgs |
+| [[Technical_Debt_Management]] | Cunningham-McConnell Quadrant, Debt Register, Strangler Fig | Debt taxonomy (code/design/architecture/test), blast radius scoring, TDR, stakeholder communication |
+| [[Technical_Roadmapping]] | Now/Next/Later Horizons, OKR-linked roadmap, WSJF | Dependency sequencing, stakeholder alignment, Gantt vs Now/Next/Later, capacity planning |
+| [[Financial_Management_for_EMs]] | ROI analysis, Build/Buy/Integrate, Cost of Delay, WSJF | Engineering budget anatomy, cloud cost optimization (3 tiers), headcount vs tooling |
+| [[Crisis_and_Incident_Management]] | IC role, DORA Recovery, Blameless Post-Mortem, Runbook template | War room protocol, severity classification, game days, action item tracking |
 
 ### 02 Product Management
 
@@ -86,6 +97,9 @@ graph TD
 | [[Communication_and_Influence]] | BLUF, Amazon 6-Pager, Three-Option Frame | Influence without authority, executive communication, conflict ladder |
 | [[Staff_Plus_Engineering]] | Will Larson's 4 Archetypes | Glue work, technical strategy docs, organizational politics, TPM role |
 | [[Engineering_Metrics_and_Health]] | DORA, SPACE, Error Budgets, Goodhart's Law | SLO/SLA/SLI, toil measurement, DevEx metrics, velocity caveats |
+| [[Change_Management]] | Kotter's 8-Step, ADKAR (Prosci), Stakeholder Map | Resistance patterns, change fatigue, communication cadence, coalition building |
+| [[Executive_Communication]] | BLUF, SCR Arc, Metric Framing Hierarchy | Board presentation structure, engineering metrics for executives, navigating up |
+| [[Documentation_Culture]] | ADR template, RFC lifecycle, Docs-as-Code | Decision records, runbook standards, reducing doc burden, docs CI pipeline |
 
 ### 04 Code Review
 
@@ -125,6 +139,17 @@ graph TD
 | **Google Code Review Guide** | Principles for authors and reviewers | [[Code_Review_Best_Practices]], [[Code_Review_Culture]] |
 | **CODEOWNERS** | Auto-assign reviewers by file path | [[Code_Review_Tools]] |
 | **Review SLA** | 24h first-response norm for PR review | [[Code_Review_Culture]] |
+| **Cunningham-McConnell Debt Quadrant** | Classify debt by deliberateness and prudence | [[Technical_Debt_Management]] |
+| **Strangler Fig Pattern** | Incremental architectural migration without big-bang rewrite | [[Technical_Debt_Management]] |
+| **Now/Next/Later Horizon** | Roadmap format honest about uncertainty | [[Technical_Roadmapping]] |
+| **Cost of Delay (CD)** | Quantify the business cost of delayed delivery | [[Financial_Management_for_EMs]], [[Technical_Roadmapping]] |
+| **Kotter's 8-Step** | Top-down model for large organizational change | [[Change_Management]] |
+| **ADKAR** (Prosci) | Individual-level change readiness model | [[Change_Management]] |
+| **SCR Arc** (Situation-Complication-Resolution) | Narrative structure for executive storytelling | [[Executive_Communication]] |
+| **ADR** (Architecture Decision Record) | Immutable record of significant technical decisions | [[Technical_Leadership]], [[Documentation_Culture]] |
+| **RFC** (Request for Comments) | Structured proposal process before a decision is made | [[Documentation_Culture]] |
+| **IC Role** (Incident Commander) | Single coordination point during production incidents | [[Crisis_and_Incident_Management]] |
+| **Blameless Post-Mortem** | Learning review focused on system conditions, not individuals | [[Crisis_and_Incident_Management]], [[Delivery_and_Execution]] |
 
 ## Learning Paths
 

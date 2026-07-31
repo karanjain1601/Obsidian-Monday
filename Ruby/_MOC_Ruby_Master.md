@@ -12,7 +12,7 @@ status: complete
 
 # Ruby and Ruby on Rails — Master MOC
 
-> **About:** 20 notes across 4 sections covering the Ruby language from first principles through metaprogramming, and Ruby on Rails from MVC architecture through authentication, background jobs, and testing. Includes tooling, gem ecosystem, and alternative frameworks (Sinatra, Grape, Hanami).
+> **About:** 26 notes across 4 sections covering the Ruby language from first principles through metaprogramming, and Ruby on Rails from MVC architecture through Hotwire, authorization, file uploads, email, deployment, and testing. Includes tooling, gem ecosystem, and alternative frameworks (Sinatra, Grape, Hanami).
 
 ---
 
@@ -37,6 +37,7 @@ graph TD
     S02 --> RMeta[Ruby_Metaprogramming]
     S02 --> RFI[Ruby_File_IO_and_Stdlib]
     S02 --> REH[Ruby_Error_Handling]
+    S02 --> RCO[Ruby_Concurrency]
 
     S03 --> ROV[Rails_Overview]
     S03 --> RAM[Rails_Models_ActiveRecord]
@@ -44,10 +45,15 @@ graph TD
     S03 --> RVA[Rails_Views_and_API]
     S03 --> RAB[Rails_Auth_Background_Jobs]
     S03 --> RT[Rails_Testing]
+    S03 --> RHW[Rails_Hotwire]
+    S03 --> RAZ[Rails_Authorization]
+    S03 --> RAS[Rails_Active_Storage]
+    S03 --> RAM2[Rails_Action_Mailer]
 
     S04 --> BG[Bundler_and_Gems]
     S04 --> RPT[Ruby_Performance_and_Tooling]
     S04 --> SAA[Sinatra_and_API_Alternatives]
+    S04 --> RD[Rails_Deployment]
 
     RO --> RTV
     RTV --> RCF
@@ -83,7 +89,7 @@ graph TD
 ---
 
 ### 02 — Ruby Core Features
-*5 notes · Stdlib, metaprogramming, collections*
+*6 notes · Stdlib, metaprogramming, collections, concurrency*
 
 | Note | Topic | Difficulty |
 |---|---|---|
@@ -92,11 +98,12 @@ graph TD
 | [[Ruby_Metaprogramming]] | Open classes, define_method, send, method_missing, class_eval, DSLs | Advanced |
 | [[Ruby_File_IO_and_Stdlib]] | File/IO, CSV, JSON, YAML, ERB, Net::HTTP, magic keywords | Intermediate |
 | [[Ruby_Error_Handling]] | Exception hierarchy, begin/rescue/ensure, custom exceptions, retry | Intermediate |
+| [[Ruby_Concurrency]] | Threads, Fibers, Ractors (Ruby 3+), GVL, async gem, EventMachine | Advanced |
 
 ---
 
 ### 03 — Rails
-*6 notes · MVC, Active Record, controllers, views, auth, testing*
+*10 notes · MVC, Active Record, controllers, views, Hotwire, auth, authorization, storage, email, testing*
 
 | Note | Topic | Difficulty |
 |---|---|---|
@@ -106,17 +113,22 @@ graph TD
 | [[Rails_Views_and_API]] | ERB, partials, helpers, forms, API mode, serializers, CORS | Intermediate |
 | [[Rails_Auth_Background_Jobs]] | Devise, JWT, Pundit, Active Job, Sidekiq, cron scheduling | Advanced |
 | [[Rails_Testing]] | RSpec, FactoryBot, Capybara, VCR, mocks/doubles, DatabaseCleaner | Intermediate |
+| [[Rails_Hotwire]] | Turbo Drive, Turbo Frames, Turbo Streams, Stimulus.js, StimulusReflex | Intermediate |
+| [[Rails_Authorization]] | Pundit policy objects, CanCanCan abilities, RBAC, scopes | Intermediate |
+| [[Rails_Active_Storage]] | File uploads, direct uploads, S3/GCS/Azure, image variants (libvips) | Intermediate |
+| [[Rails_Action_Mailer]] | Mailer classes, templates, previews, inlined CSS, deliver_later, letter_opener | Intermediate |
 
 ---
 
 ### 04 — Ecosystem and Tools
-*3 notes · Gems, performance, alternatives*
+*4 notes · Gems, performance, alternatives, deployment*
 
 | Note | Topic | Difficulty |
 |---|---|---|
 | [[Bundler_and_Gems]] | Gemfile, version constraints, bundle commands, popular gems, gemspec | Beginner |
 | [[Ruby_Performance_and_Tooling]] | RuboCop, benchmark-ips, stackprof, memory_profiler, Ractors, Fibers | Advanced |
 | [[Sinatra_and_API_Alternatives]] | Rack, Sinatra DSL, Grape, Hanami, Sorbet type checking | Intermediate |
+| [[Rails_Deployment]] | Kamal (Docker), Capistrano, Heroku, asset pipeline, Puma config, NGINX | Advanced |
 
 ---
 
@@ -189,10 +201,16 @@ Focused on building JSON APIs with Rails, without the view layer.
 | Lazy enumerators | [[Ruby_Enumerables_and_Collections]] |
 | `method_missing` | [[Ruby_OOP]], [[Ruby_Metaprogramming]] |
 | Exception hierarchy | [[Ruby_Error_Handling]] |
-| Ractors (parallelism) | [[Ruby_Performance_and_Tooling]] |
+| Ractors (parallelism) | [[Ruby_Performance_and_Tooling]], [[Ruby_Concurrency]] |
+| Threads / Fibers / GVL | [[Ruby_Concurrency]] |
 | Convention over Configuration | [[Rails_Overview]] |
 | Devise + Pundit | [[Rails_Auth_Background_Jobs]] |
 | Rack middleware | [[Sinatra_and_API_Alternatives]] |
+| Turbo Frames / Turbo Streams | [[Rails_Hotwire]] |
+| Pundit policy objects | [[Rails_Authorization]] |
+| File uploads / S3 variants | [[Rails_Active_Storage]] |
+| Mailer / deliver_later | [[Rails_Action_Mailer]] |
+| Kamal / Capistrano | [[Rails_Deployment]] |
 
 ---
 

@@ -87,6 +87,7 @@ graph TD
 17. [[AWS_SageMaker]] — managed training jobs, distributed training libraries, SageMaker Pipelines, and endpoints
 18. [[GCP_Vertex_AI]] — custom training, model registry, Vertex Pipelines, and TPU access
 19. [[Azure_ML]] — compute clusters, environments, pipelines, and MLflow integration
+20. [[Ollama]] — local LLM serving on CPU/GPU without cloud dependency; GGUF format, model pull/run API, and REST interface
 
 ---
 
@@ -113,6 +114,7 @@ graph TD
 | [[AWS_SageMaker]] | Training jobs, distributed training library, SageMaker Studio | Intermediate |
 | [[GCP_Vertex_AI]] | Custom jobs, TPU pods, Model Garden, and Vertex Pipelines | Intermediate |
 | [[Azure_ML]] | Compute clusters, environments, component-based pipelines | Intermediate |
+| [[Ollama]] | Local LLM serving; GGUF model management, REST API, and CPU/GPU inference without cloud dependency | Beginner |
 
 ---
 

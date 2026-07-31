@@ -10,7 +10,7 @@ status: complete
 # Vue — Map of Content
 
 > [!abstract] What This Section Covers
-> Vue 3 is a progressive, component-based UI framework that sits between Angular's full-framework approach and React's minimal-library approach. Vue offers a gentle learning curve with its template-based syntax while providing the full power of the Composition API for complex applications. This section covers: Vue 3 fundamentals and SFC structure, component communication (props/emits/slots), the Proxy-based reactivity system and composable patterns, routing and state management with Vue Router 4 and Pinia, and testing with Vitest + Vue Test Utils plus performance optimization techniques.
+> Vue 3 is a progressive, component-based UI framework that sits between Angular's full-framework approach and React's minimal-library approach. Vue offers a gentle learning curve with its template-based syntax while providing the full power of the Composition API for complex applications. This section covers: Vue 3 fundamentals and SFC structure, component communication (props/emits/slots), the Proxy-based reactivity system and composable patterns, routing and state management with Vue Router 4 and Pinia, testing with Vitest + Vue Test Utils plus performance optimization techniques, Nuxt 3 full-stack framework (SSR/SSG/Nitro), form validation libraries (Vee-Validate/FormKit/Vuelidate), and advanced patterns (Teleport, Provide/Inject, Custom Directives, render functions).
 
 ## Concept Map
 
@@ -23,11 +23,17 @@ graph TD
     CENTER --> React["[[Vue_Reactivity_and_Composition_API]]\nref/reactive · computed\nwatchEffect · Composables"]
     CENTER --> Router["[[Vue_Router_and_Pinia]]\nVue Router 4 · Guards\nPinia · defineStore"]
     CENTER --> Test["[[Vue_Testing_and_Performance]]\nVitest · Vue Test Utils\nKeepAlive · v-memo · AsyncComp"]
+    CENTER --> Nuxt["[[Nuxt_Framework]]\nSSR · SSG · Nitro Server\nAuto-imports · useFetch · Modules"]
+    CENTER --> Forms["[[Vue_Forms]]\nVee-Validate v4 · FormKit\nVuelidate · Zod integration"]
+    CENTER --> Adv["[[Vue_Advanced]]\nTeleport · Provide/Inject\nDirectives · h() · Plugins"]
 
     Fund -->|"components use"| Comp
     Comp -->|"reactivity powers"| React
     React -->|"composables used in"| Router
     Router -->|"test with"| Test
+    React -->|"composables power"| Nuxt
+    Fund -->|"forms build on"| Forms
+    Comp -->|"advanced patterns"| Adv
 
     style CENTER fill:#42b883,color:#fff
     style Fund fill:#0891b2,color:#fff
@@ -44,6 +50,9 @@ graph TD
 3. [[Vue_Reactivity_and_Composition_API]] — Deep dive: `ref` vs `reactive`, `computed`, `watch`/`watchEffect`, custom composables (`useXxx`), reactivity under the hood (Proxy).
 4. [[Vue_Router_and_Pinia]] — App-level concerns: Vue Router 4 route config, navigation guards, dynamic routes; Pinia `defineStore`, state/getters/actions, `storeToRefs`.
 5. [[Vue_Testing_and_Performance]] — Quality and optimization: Vitest + VTU component tests, mocking Pinia, `v-memo`, `<KeepAlive>`, `defineAsyncComponent`, virtual scrolling.
+6. [[Nuxt_Framework]] — Full-stack Vue: Nuxt 3 architecture, SSR/SSG/hybrid rendering, Nitro server engine, auto-imports, `useFetch`/`useAsyncData`, Nuxt modules.
+7. [[Vue_Forms]] — Form handling: Vee-Validate v4 with Zod schemas, FormKit schema-driven forms, Vuelidate reactive approach, server error mapping.
+8. [[Vue_Advanced]] — Low-level patterns: `<Teleport>` for modals, typed `provide`/`inject`, custom directives with lifecycle hooks, `h()` render functions, Vue plugins.
 
 ## All Notes at a Glance
 
@@ -54,6 +63,9 @@ graph TD
 | [[Vue_Reactivity_and_Composition_API]] | Intermediate | ref/reactive, Proxy tracking, watchEffect, composables, toRefs |
 | [[Vue_Router_and_Pinia]] | Intermediate | Route config, navigation guards, Pinia stores, storeToRefs |
 | [[Vue_Testing_and_Performance]] | Advanced | Vitest setup, VTU mount, v-memo, KeepAlive, async components, virtualization |
+| [[Nuxt_Framework]] | Intermediate | Nuxt 3, SSR/SSG/hybrid rendering, Nitro, useFetch/useAsyncData, auto-imports, modules |
+| [[Vue_Forms]] | Intermediate | Vee-Validate v4, Zod integration, FormKit schema-driven, Vuelidate, server errors |
+| [[Vue_Advanced]] | Advanced | Teleport, typed provide/inject, custom directives, h() render functions, plugins |
 
 ## Key Questions This Section Answers
 

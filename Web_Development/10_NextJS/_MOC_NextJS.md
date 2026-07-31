@@ -10,7 +10,7 @@ status: complete
 # Next.js — Map of Content
 
 > [!abstract] What This Section Covers
-> 6 notes covering Next.js App Router, rendering strategies, optimization, authentication, and fullstack patterns. Next.js is the production-ready React framework that solves routing, rendering strategy (SSR/SSG/ISR/CSR), data fetching, and build-time optimization. This section covers the App Router (Next.js 13+) as the primary paradigm — from project setup through fullstack patterns using Server Actions, tRPC, and Prisma.
+> 9 notes covering Next.js App Router, rendering strategies, optimization, authentication, fullstack patterns, Server Actions, Edge Middleware, and internationalization. Next.js is the production-ready React framework that solves routing, rendering strategy (SSR/SSG/ISR/CSR), data fetching, and build-time optimization. This section covers the App Router (Next.js 13+) as the primary paradigm — from project setup through Server Actions (mutations without API routes), Edge Middleware (auth, A/B testing, geo-routing), and i18n with next-intl.
 
 ## Concept Map
 
@@ -24,12 +24,18 @@ graph TD
     CENTER --> Opt["[[NextJS_Optimization]]\nnext/image · next/font · next/script\ndynamic() · code splitting · PPR"]
     CENTER --> Auth["[[NextJS_Authentication_and_Deployment]]\nAuth.js · middleware · JWT vs DB sessions\nVercel · Docker · static export"]
     CENTER --> Full["[[NextJS_Fullstack_Patterns]]\nServer Actions · tRPC · Prisma\nnext-intl · testing · useOptimistic"]
+    CENTER --> SA["[[NextJS_Server_Actions]]\nuseFormState · useFormStatus\nrevalidatePath · optimistic updates"]
+    CENTER --> MW["[[NextJS_Middleware]]\nEdge Runtime · auth redirect\nA/B testing · geo-routing · matcher"]
+    CENTER --> I18N["[[NextJS_i18n]]\nnext-intl · locale routing\nICU pluralization · RTL support"]
 
     Fund -->|"foundation for"| Router
     Router -->|"data in"| Data
     Data -->|"optimize with"| Opt
     Router -->|"protect with"| Auth
     Data -->|"mutations via"| Full
+    Router -->|"mutations via"| SA
+    Router -->|"intercepted by"| MW
+    Full -->|"i18n deep dive"| I18N
 
     style CENTER fill:#7c3aed,color:#fff
     style Fund fill:#2563eb,color:#fff
@@ -48,6 +54,9 @@ graph TD
 4. [[NextJS_Optimization]] — `next/image`, `next/font`, `next/script`, `dynamic()` lazy loading, and bundle analysis.
 5. [[NextJS_Authentication_and_Deployment]] — Auth.js setup, route protection with middleware, Vercel zero-config deploy, and Docker standalone output.
 6. [[NextJS_Fullstack_Patterns]] — Server Actions with form state, optimistic updates, tRPC, Prisma with Server Components, i18n, and E2E testing.
+7. [[NextJS_Server_Actions]] — Deep dive: `"use server"`, `useFormState`/`useFormStatus`, `revalidatePath`/`revalidateTag`, optimistic updates with `useOptimistic`, Server Actions vs API routes.
+8. [[NextJS_Middleware]] — Edge Runtime, `NextResponse.redirect`/`rewrite`, auth middleware, A/B testing, geolocation routing, matcher config, security headers.
+9. [[NextJS_i18n]] — next-intl setup, locale-prefixed routing, ICU message format, pluralization, number/date formatting, RTL support, locale switcher.
 
 ## All Notes at a Glance
 
@@ -59,6 +68,9 @@ graph TD
 | [[NextJS_Optimization]] | Intermediate | next/image, next/font, next/script, dynamic imports, Middleware |
 | [[NextJS_Authentication_and_Deployment]] | Advanced | Auth.js, JWT/DB sessions, middleware auth, Vercel, Docker, static export |
 | [[NextJS_Fullstack_Patterns]] | Advanced | Server Actions, useOptimistic, tRPC, Prisma patterns, testing, i18n |
+| [[NextJS_Server_Actions]] | Advanced | "use server", useFormState/useFormStatus, revalidatePath, optimistic updates |
+| [[NextJS_Middleware]] | Advanced | Edge Runtime, auth redirect, A/B testing, geo-routing, matcher config |
+| [[NextJS_i18n]] | Advanced | next-intl, locale routing, ICU pluralization, number/date format, RTL |
 
 ## Key Questions This Section Answers
 

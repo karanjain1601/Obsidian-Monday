@@ -23,6 +23,8 @@ graph TD
     EvalFramework --> SHAP[SHAP]
     SHAP --> LIME[LIME]
     LIME --> Attention[Attention_Visualization]
+    LIME --> XAI[Explainable_AI]
+    XAI --> Bias[AI_Bias_and_Fairness]
     Attention --> Bias[AI_Bias_and_Fairness]
     Bias --> Adversarial[Adversarial_Robustness]
     Adversarial --> RedTeam[Red_Teaming]
@@ -38,11 +40,12 @@ graph TD
 4. [[Evaluation/Evaluation_Frameworks]] — Implement systematic eval pipelines with harnesses, holdout sets, and confidence intervals
 5. [[Interpretability/SHAP]] — Use Shapley values to attribute model predictions to individual features globally and locally
 6. [[Interpretability/LIME]] — Apply local linear approximations to explain any black-box model's individual predictions
-7. [[Interpretability/Attention_Visualization]] — Inspect transformer attention weights to gain qualitative insight into model focus
-8. [[Safety/AI_Bias_and_Fairness]] — Measure and mitigate demographic disparities using group fairness definitions and debiasing techniques
-9. [[Safety/Adversarial_Robustness]] — Understand adversarial attacks (FGSM, PGD) and defenses (adversarial training, certified robustness)
-10. [[Safety/Red_Teaming]] — Systematically probe models for harmful outputs, jailbreaks, and capability failures before deployment
-11. [[Safety/Responsible_AI]] — Apply governance frameworks, model cards, datasheets, and organizational practices for accountable AI
+7. [[Interpretability/Explainable_AI]] — Survey XAI techniques across the full spectrum: model-agnostic vs model-specific, global vs local, post-hoc vs inherent
+8. [[Interpretability/Attention_Visualization]] — Inspect transformer attention weights to gain qualitative insight into model focus
+9. [[Safety/AI_Bias_and_Fairness]] — Measure and mitigate demographic disparities using group fairness definitions and debiasing techniques
+10. [[Safety/Adversarial_Robustness]] — Understand adversarial attacks (FGSM, PGD) and defenses (adversarial training, certified robustness)
+11. [[Safety/Red_Teaming]] — Systematically probe models for harmful outputs, jailbreaks, and capability failures before deployment
+12. [[Safety/Responsible_AI]] — Apply governance frameworks, model cards, datasheets, and organizational practices for accountable AI
 
 ---
 
@@ -56,6 +59,7 @@ graph TD
 | [[Evaluation/Evaluation_Frameworks]] | Reproducible harnesses, statistical testing, and leakage-free eval infrastructure | Intermediate |
 | [[Interpretability/SHAP]] | Game-theoretic feature importance with global and local explanations | Intermediate |
 | [[Interpretability/LIME]] | Locally faithful linear surrogate models for explaining single predictions | Intermediate |
+| [[Interpretability/Explainable_AI]] | XAI landscape: model-agnostic vs model-specific, global vs local, post-hoc vs inherent interpretability | Intermediate |
 | [[Interpretability/Attention_Visualization]] | Heatmaps and attention rollout for qualitative transformer interpretability | Beginner |
 | [[Safety/AI_Bias_and_Fairness]] | Demographic parity, equalized odds, calibration, and debiasing methods | Intermediate |
 | [[Safety/Adversarial_Robustness]] | Attack methods, threat models, certified defenses, and robustness evaluation | Advanced |

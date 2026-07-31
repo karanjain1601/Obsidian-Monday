@@ -8,7 +8,7 @@ created: 2026-07-26
 # 🏁 Competitive Programming — Map of Content
 
 > [!abstract] What This Section Covers
-> Competitive programming extends core DSA with a toolkit of mathematical techniques, advanced string algorithms, and specialised data structures that reduce hard problems to known patterns within time limits. This section covers 19 notes organised into six clusters: environment setup, mathematics (number theory, modular arithmetic, sieve, combinatorics, Euler's totient, Chinese Remainder Theorem, Miller–Rabin primality), bit manipulation, string algorithms (KMP, Z-algorithm, hashing, suffix array), advanced data structures (Fenwick/BIT tree, Segment Tree, Sparse Table), and advanced techniques (coordinate compression, meet-in-the-middle). The section closes with a pattern index linking problem constraints to the right algorithm family.
+> Competitive programming extends core DSA with a toolkit of mathematical techniques, advanced string algorithms, and specialised data structures that reduce hard problems to known patterns within time limits. This section covers 20 notes organised into six clusters: environment setup, mathematics (number theory, modular arithmetic, sieve, combinatorics, Euler's totient, Chinese Remainder Theorem, Miller–Rabin primality), bit manipulation, string algorithms (KMP, Z-algorithm, hashing, suffix array, Aho-Corasick), advanced data structures (Fenwick/BIT tree, Segment Tree, Sparse Table), and advanced techniques (coordinate compression, meet-in-the-middle). The section closes with a pattern index linking problem constraints to the right algorithm family.
 
 ## Concept Map
 
@@ -40,6 +40,7 @@ graph TD
     STR --> KMP["[[KMP_Algorithm]]"]
     STR --> ZA["[[Z_Algorithm]]"]
     STR --> SA["[[Suffix_Array]]"]
+    STR --> AC["[[Aho_Corasick]]"]
 
     DS --> FT["[[Fenwick_Tree]]"]
     DS --> ST["[[Segment_Tree_Advanced]]"]
@@ -66,12 +67,13 @@ graph TD
 11. [[Z_Algorithm]] — Z-array; O(n+m) matching; comparison with KMP
 12. [[String_Hashing]] — Polynomial rolling hash; collision avoidance; double hashing
 13. [[Suffix_Array]] — SA-IS or prefix-doubling construction; LCP array; applications
-14. [[Fenwick_Tree]] — Binary indexed tree; point update + prefix sum in O(log n)
-15. [[Sparse_Table]] — Idempotent range queries in O(1); static array preprocessing
-16. [[Segment_Tree_Advanced]] — Lazy propagation; range update + range query; persistent segment trees
-17. [[Coordinate_Compression]] — Mapping large value ranges to small indices before applying BIT/SegTree
-18. [[Meet_in_the_Middle]] — Split search space; 2^(n/2) collision approach; application to subset sum
-19. [[Problem_Patterns_Index]] — Constraint → algorithm mapping reference; pattern recognition guide
+14. [[Aho_Corasick]] — Multi-pattern string matching via a trie automaton with failure links; O(Σ|Pᵢ|) build + O(n + occ) query; replaces running KMP for each pattern
+15. [[Fenwick_Tree]] — Binary indexed tree; point update + prefix sum in O(log n)
+16. [[Sparse_Table]] — Idempotent range queries in O(1); static array preprocessing
+17. [[Segment_Tree_Advanced]] — Lazy propagation; range update + range query; persistent segment trees
+18. [[Coordinate_Compression]] — Mapping large value ranges to small indices before applying BIT/SegTree
+19. [[Meet_in_the_Middle]] — Split search space; 2^(n/2) collision approach; application to subset sum
+20. [[Problem_Patterns_Index]] — Constraint → algorithm mapping reference; pattern recognition guide
 
 ## All Notes at a Glance
 
@@ -90,6 +92,7 @@ graph TD
 | [[KMP_Algorithm]] | Failure function; O(n+m) string matching | Advanced |
 | [[Z_Algorithm]] — | Z-array; alternative to KMP for pattern matching | Advanced |
 | [[Suffix_Array]] | Sorted suffixes; LCP; substring search; string DP | Advanced |
+| [[Aho_Corasick]] | Multi-pattern trie automaton; failure links; O(Σ\|Pᵢ\|) build + O(n+occ) search | Advanced |
 | [[Fenwick_Tree]] | BIT for point update / prefix query in O(log n) | Advanced |
 | [[Segment_Tree_Advanced]] | Lazy prop; range update; persistent; merge sort tree | Advanced |
 | [[Sparse_Table]] | Static RMQ in O(1) after O(n log n) preprocessing | Intermediate |

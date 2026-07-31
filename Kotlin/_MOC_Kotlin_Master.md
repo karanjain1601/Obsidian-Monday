@@ -9,7 +9,7 @@ status: complete
 
 # 🟣 Kotlin — Master Map of Content
 
-> **20 notes across 4 sections** covering Kotlin from first principles through coroutines, Android/Ktor development, and Kotlin Multiplatform. Kotlin is a statically typed, null-safe JVM language by JetBrains — the preferred language for Android and a strong choice for server-side development.
+> **23 notes across 4 sections** covering Kotlin from first principles through coroutines, Android/Ktor development, and Kotlin Multiplatform. Kotlin is a statically typed, null-safe JVM language by JetBrains — the preferred language for Android and a strong choice for server-side development.
 
 ---
 
@@ -44,6 +44,9 @@ graph LR
     SC --> KTOR["Ktor Server\nrouting DSL, plugins\nWebSockets, testApplication"]:::eco
     ANDROID --> TEST["Kotlin Testing\nMockK, Kotest\nrunTest, Turbine"]:::eco
     KTOR --> TEST
+    SC --> SB["Kotlin Spring Boot\nWebFlux+coroutines\nExposed ORM"]:::eco
+    SB --> SER["Kotlin Serialization\n@Serializable\nJSON/CBOR/Protobuf"]:::eco
+    KO --> GRADLE["Gradle Kotlin DSL\nbuild.gradle.kts\nversion catalogs"]:::eco
 
     classDef entry fill:#EDE7F6,stroke:#6A1B9A,color:#1A237E,font-weight:bold
     classDef fund fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
@@ -99,6 +102,9 @@ graph LR
 | [[Kotlin_Multiplatform]] | `expect`/`actual`, shared business logic, Ktor HTTP, SQLDelight, Compose Multiplatform | Advanced |
 | [[Ktor_Server]] | Routing DSL, plugins, auth, WebSockets, `testApplication`, Ktor vs Spring Boot | Advanced |
 | [[Kotlin_Testing]] | MockK (`coEvery`/`coVerify`), Kotest assertions, `runTest` virtual time, Turbine for Flow | Intermediate |
+| [[Kotlin_Spring_Boot]] | Spring Boot + Kotlin data classes, WebFlux + coroutines, Exposed ORM, plugin.spring | Intermediate |
+| [[Kotlin_Serialization]] | kotlinx.serialization, `@Serializable`, JSON/CBOR/Protobuf, custom `KSerializer<T>` | Intermediate |
+| [[Gradle_Kotlin_DSL]] | `build.gradle.kts`, version catalogs, lazy tasks, `buildSrc` convention plugins | Intermediate |
 
 ---
 
@@ -140,7 +146,10 @@ Kotlin_Overview
   → Coroutine_Dispatchers_and_Context
   → Coroutine_Builders_and_Scope
   → Structured_Concurrency
-  → Ktor_Server
+  → Ktor_Server               ← lightweight Kotlin-native server
+  → Kotlin_Spring_Boot        ← Spring Boot + coroutines + Exposed ORM
+  → Kotlin_Serialization      ← kotlinx.serialization for request/response
+  → Gradle_Kotlin_DSL         ← build tooling
   → Kotlin_Testing
 ```
 
@@ -183,6 +192,9 @@ Kotlin is adjacent to Java — every Java developer will recognise these connect
 | Java `record` (Java 16) | `data class` | [[Kotlin_Classes_and_OOP]] |
 | `sealed interface` (Java 17) | `sealed class` | [[Kotlin_Classes_and_OOP]] |
 | JUnit 5 + Mockito | JUnit 5 + MockK + Kotest | [[Kotlin_Testing]] |
+| Spring Boot (Java) | Spring Boot + Kotlin data classes + coroutines | [[Kotlin_Spring_Boot]] |
+| Jackson (Java) | kotlinx.serialization / Jackson-Kotlin module | [[Kotlin_Serialization]] |
+| build.gradle (Groovy) | build.gradle.kts (Kotlin DSL) | [[Gradle_Kotlin_DSL]] |
 
 ---
 

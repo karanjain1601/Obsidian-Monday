@@ -1,0 +1,9 @@
+# files excluded from podman build context
+.git
+node_modules
+cert
+deploy/rpms
+**/site-assets/_preview-*.png
+*.p12
+*.pfx
+*.key

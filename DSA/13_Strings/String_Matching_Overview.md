@@ -74,7 +74,7 @@ flowchart TD
 | [[KMP_Algorithm]] | O(m) | O(n) | O(m) | **O(n+m)** | single pattern, guaranteed linear |
 | [[Z_Algorithm]] | O(m) | O(n) | O(n+m) | **O(n+m)** | single pattern, simple mental model |
 | [[Rabin_Karp]] | O(m) | O(n) avg | O(1) | O(nm) | multiple equal-length patterns, 2D |
-| Aho-Corasick | O(Σ\|Pᵢ\|) | O(n + occ) | O(Σ\|Pᵢ\|·σ) | O(n + occ) | many patterns at once |
+| [[Aho_Corasick\|Aho-Corasick]] | O(Σ\|Pᵢ\|) | O(n + occ) | O(Σ\|Pᵢ\|·σ) | O(n + occ) | many patterns at once |
 | [[Suffix_Array]] | O(n log n) | O(m log n) | O(n) | build-dependent | fixed text, many queries |
 | [[Suffix_Tree]] | O(n) | O(m) | O(n·σ) | O(n) | fixed text, powerful substring queries |
 

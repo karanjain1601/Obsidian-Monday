@@ -322,7 +322,7 @@ for node in response.source_nodes:
 
 - [[_MOC_NLP|↑ Section MOC]]
 
-- [[Vector_Databases_Overview]] — Chroma, Pinecone, Weaviate, Qdrant — the storage layer for RAG
+- [[Vector_Databases_Overview]] — Chroma, Pinecone, Weaviate, [[Qdrant]] — the storage layer for RAG
 - [[Embedding_Models]] — the models that convert text to vectors for semantic search
 - [[Naive_RAG]] — the basic RAG implementation; starting point
 - [[Advanced_RAG]] — query transformation, reranking, hybrid search improvements over naive RAG

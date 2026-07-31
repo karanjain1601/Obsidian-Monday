@@ -10,7 +10,7 @@ status: complete
 # ⛓️ Blockchain & Web3 — Master Map of Content
 
 > [!abstract] About This Vault
-> This vault contains ~37 notes across 6 sections covering the full Blockchain & Web3 engineering stack — from distributed ledger theory and cryptographic primitives through Bitcoin's UTXO/Lightning architecture, the EVM and Solidity, DeFi protocol mechanics, and production Web3 tooling (Hardhat/Foundry, The Graph, IPFS, cross-chain bridges). Notes are written for engineers who build, audit, and operate on-chain systems: each note leads with an analogy, includes a Mermaid diagram, real formulas, code snippets, and production pitfalls. The vault is cross-linked to System Design and AI-ML vaults where relevant.
+> This vault contains ~40 notes across 6 sections covering the full Blockchain & Web3 engineering stack — from distributed ledger theory and cryptographic primitives through Bitcoin's UTXO/Lightning architecture, the EVM and Solidity, DeFi protocol mechanics, and production Web3 tooling (Hardhat/Foundry, The Graph, IPFS, cross-chain bridges, smart contract security, OpenZeppelin, wallets). Notes are written for engineers who build, audit, and operate on-chain systems: each note leads with an analogy, includes a Mermaid diagram, real formulas, code snippets, and production pitfalls. The vault is cross-linked to System Design and AI-ML vaults where relevant.
 
 ---
 
@@ -62,6 +62,10 @@ graph TD
     F06 --> N28["The Graph Protocol"]
     F06 --> N29["IPFS & Filecoin"]
     F06 --> N30["Cross-Chain Bridges"]
+    F06 --> N31["Smart Contract Security Tools"]
+    F06 --> N33["Crypto Wallets"]
+
+    F04 --> N32["OpenZeppelin Contracts"]
 
     style MASTER fill:#7c3aed,color:#fff
     style F01 fill:#2563eb,color:#fff
@@ -81,9 +85,9 @@ graph TD
 | 01 | [[_MOC_Blockchain_Fundamentals\|Blockchain Fundamentals]] | 5 | Ledgers, trilemma, hashing, consensus, P2P, crypto primitives |
 | 02 | [[_MOC_Applied_Cryptography\|Applied Cryptography]] | 5 | ECDSA, ZKPs, commitments, MPC, post-quantum |
 | 03 | [[_MOC_Bitcoin_Protocol\|Bitcoin Protocol]] | 5 | UTXO, Script, mining, Lightning, Taproot |
-| 04 | [[_MOC_Ethereum_EVM\|Ethereum & EVM]] | 5 | EVM internals, Solidity, gas, ABI, upgrades |
+| 04 | [[_MOC_Ethereum_EVM\|Ethereum & EVM]] | 6 | EVM internals, Solidity, gas, ABI, upgrades, OpenZeppelin |
 | 05 | [[_MOC_DeFi_Protocols\|DeFi Protocols]] | 5 | AMMs, lending, MEV, oracles, derivatives |
-| 06 | [[_MOC_Web3_Development\|Web3 Development]] | 5 | ethers.js/viem, Hardhat/Foundry, Graph, IPFS, bridges |
+| 06 | [[_MOC_Web3_Development\|Web3 Development]] | 7 | ethers.js/viem, Hardhat/Foundry, Graph, IPFS, bridges, security tools, wallets |
 
 ---
 
@@ -100,8 +104,10 @@ graph TD
 6. [[Gas_and_Optimization|Gas & Optimization]] — production cost management
 7. [[ABI_and_Contract_Interaction|ABI & Contract Interaction]] — integration patterns
 8. [[Upgradeable_Contracts|Upgradeable Contracts]] — proxy patterns
-9. [[Hardhat_and_Foundry|Hardhat & Foundry]] — testing toolchain
-10. [[MEV_and_Arbitrage|MEV & Arbitrage]] — adversarial awareness
+9. [[OpenZeppelin_Contracts|OpenZeppelin Contracts]] — audited ERC standards and security primitives
+10. [[Hardhat_and_Foundry|Hardhat & Foundry]] — testing toolchain
+11. [[Smart_Contract_Security_Tools|Smart Contract Security Tools]] — Slither, Echidna, Foundry invariants
+12. [[MEV_and_Arbitrage|MEV & Arbitrage]] — adversarial awareness
 
 ### Path B — Protocol / DeFi Researcher
 > Goal: Understand DeFi mechanisms, audit protocol economics, and reason about attacks.

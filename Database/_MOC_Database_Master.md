@@ -10,7 +10,7 @@ status: complete
 # 🗃️ Database — Master Map of Content
 
 > [!abstract] About This Vault
-> A complete database-engineering reference: **~69 notes across 11 sections**, anchored in **PostgreSQL** and **MySQL** and cross-linked to the System Design and DSA vaults. It runs the full stack — from the relational model, data modelling, and SQL, through the engine internals every backend engineer should know (transactions & isolation, storage & indexing, query processing), into scaling out (distributed databases, NoSQL families, the concrete systems), and finishing with production operations and analytics. Every note pairs an intuition-first analogy with runnable PostgreSQL/MySQL examples, trade-off tables, common pitfalls, and review questions. Start at the section that matches your goal below, or follow one of the four learning paths.
+> A complete database-engineering reference: **~74 notes across 11 sections**, anchored in **PostgreSQL** and **MySQL** and cross-linked to the System Design and DSA vaults. It runs the full stack — from the relational model, data modelling, and SQL, through the engine internals every backend engineer should know (transactions & isolation, storage & indexing, query processing), into scaling out (distributed databases, NoSQL families, the concrete systems), and finishing with production operations and analytics. Every note pairs an intuition-first analogy with runnable PostgreSQL/MySQL examples, trade-off tables, common pitfalls, and review questions. Start at the section that matches your goal below, or follow one of the four learning paths.
 
 ## Vault Architecture
 
@@ -63,8 +63,8 @@ graph TD
 | 05 | Query Processing | 5 | [[_MOC_DB_Query_Processing]] | Intermediate → Advanced |
 | 06 | Distributed Databases | 7 | [[_MOC_DB_Distributed]] | Advanced |
 | 07 | NoSQL | 6 | [[_MOC_DB_NoSQL]] | Intermediate → Advanced |
-| 08 | Database Systems | 6 | [[_MOC_DB_Systems]] | Beginner → Advanced |
-| 09 | Administration & Ops | 6 | [[_MOC_DB_Administration]] | Intermediate → Advanced |
+| 08 | Database Systems | 8 | [[_MOC_DB_Systems]] | Beginner → Advanced |
+| 09 | Administration & Ops | 9 | [[_MOC_DB_Administration]] | Intermediate → Advanced |
 | 10 | Analytical | 5 | [[_MOC_DB_Analytical]] | Intermediate → Advanced |
 
 ---
@@ -133,8 +133,8 @@ This vault is the DB-engineering deep dive that grounds the systems-level and al
 - [[_MOC_DB_Query_Processing]] — From SQL text to results: the execution pipeline, the optimizer, reading execution plans, join algorithms, and query tuning.
 - [[_MOC_DB_Distributed]] — Scaling past one node: partitioning/sharding, replication, consistency models, distributed transactions, consensus/quorums, NewSQL, and polyglot persistence.
 - [[_MOC_DB_NoSQL]] — Beyond tables: the BASE/aggregate mindset and the four families (key-value, document, wide-column, graph) plus time-series and vector stores.
-- [[_MOC_DB_Systems]] — The engines in practice: PostgreSQL, MySQL, SQLite, Redis, MongoDB, and Cassandra.
-- [[_MOC_DB_Administration]] — Running it in production: backup & recovery, high availability & failover, monitoring, security, schema migrations, and performance tuning.
+- [[_MOC_DB_Systems]] — The engines in practice: PostgreSQL, MySQL, SQLite, Redis (incl. [[Redis_Modules]] and [[Redis_Lua_Scripting]]), MongoDB, and Cassandra.
+- [[_MOC_DB_Administration]] — Running it in production: backup & recovery ([[PostgreSQL_Backup_Tools]]), high availability & failover ([[PostgreSQL_HA_and_Patroni]]), maintenance ([[PostgreSQL_Maintenance]]), monitoring, security, schema migrations, and performance tuning.
 - [[_MOC_DB_Analytical]] — Analytics at scale: OLTP vs OLAP, columnar storage, data-warehouse modelling, ETL/ELT integration, and analytical databases.
 
 #MOC #Database #MasterMOC
