@@ -83,7 +83,7 @@ The deepest cluster in the vault; only a few dedicated deep-dives remain.
 | ✅ **Programming Language Theory** | Theory of Computation ↔ Compilers ↔ Maths/Logic ↔ FP language vaults | **Built 2026-08-01** — 36-note vault in `Programming_Language_Theory/`: lambda calculus, operational/denotational/axiomatic semantics, type systems (STLC → System F → dependent types), Curry-Howard & logic, paradigms, language design & verification. The theory companion to the Compilers vault. |
 | ✅ **Distributed Systems Theory** | System Design ↔ Operating Systems ↔ Databases | **Built 2026-08-01** — 36-note vault in `Distributed_Systems_Theory/` (6 sections: Foundations & Models, Communication & Global State, Consensus & Agreement, Consistency & Replication, Distributed Data, Advanced Topics & Frontiers). Logical/vector clocks, FLP & CAP, Paxos/Raft/PBFT, consistency spectrum, CRDTs, quorums, consistent hashing, DHTs, gossip, Nakamoto consensus, TLA+, self-stabilization, USL. The THEORY beneath the practical System Design vault. |
 | ⬜ **Robotics & Control** | Optimization ↔ Signals & Systems ↔ AI-ML ↔ Physics | Kinematics/dynamics, control theory (PID → LQR → MPC), state estimation (Kalman/particle filters), SLAM, RL for control. |
-| 🟡 **Cryptography (deep-dive)** | Number Theory ([[_MOC_Mathematics_Master]]) ↔ Cybersecurity ↔ Blockchain ↔ Information Theory | Currently spread across `Cybersecurity/04` + Math. A dedicated vault: symmetric/asymmetric foundations, ZK proofs, lattice/PQ crypto, MPC, the number-theory ↔ security bridge. |
+| ✅ **Cryptography (deep-dive)** | Number Theory ([[_MOC_Mathematics_Master]]) ↔ Cybersecurity ↔ Blockchain ↔ Information Theory | **Built 2026-08-01** — 36-note theory/math vault in `Cryptography/` (6 sections: Mathematical Foundations, Symmetric, Public-Key, Protocols & Applications, Advanced, Cryptanalysis & Frontiers). Number theory/groups/hardness/provable security, AES/modes/hashes/MACs, RSA/DH/ECC/signatures/PKI, TLS/Signal/KDFs/RNG, ZK/FHE/MPC/PQC/secret-sharing, cryptanalysis/side-channels/misuse/blockchain-crypto. Complements the applied `Cybersecurity/04` section. |
 | 🟡 **Formal Methods & Verification** | Compilers ↔ Logic ↔ ToC ↔ OS (seL4) | Model checking, Hoare logic, proof assistants (Coq/Lean/Isabelle), TLA+. Seeded in `Compilers/06`. |
 | ⬜ **Embedded Systems & IoT** | Operating Systems ↔ Computer Architecture ↔ Networking ↔ Signals | Firmware, RTOS, microcontrollers, device drivers, edge computing, sensor fusion — the software/hardware boundary. |
 | ⬜ **Concurrency & Parallel Programming** | Operating Systems ↔ Computer Architecture ↔ language vaults | A dedicated deep-dive: memory models, lock-free structures, actor/CSP models, GPU/SIMD, distributed concurrency — currently scattered across OS + CompArch + language vaults. |
@@ -127,13 +127,13 @@ Whole engineering disciplines the vault touches only through their physics/CS ne
 
 | Topic | Connects | Why it's worth it |
 |-------|----------|-------------------|
-| ⬜ **Electrical & Electronics Engineering** | Physics (E&M) ↔ Signals & Systems ↔ Computer Architecture ↔ Materials | Circuit analysis, analog/digital electronics, power systems, semiconductors, RF — the hardware substrate beneath computing. |
-| ⬜ **Mechanical Engineering** | Physics (mechanics) ↔ Materials Science ↔ Robotics ↔ Maths | Statics/dynamics, applied thermodynamics, machine design, vibrations, manufacturing. |
-| ⬜ **Aerospace & Orbital Mechanics** | Physics ↔ Astronomy ↔ Fluid Dynamics ↔ Control | Aerodynamics, propulsion, astrodynamics/orbital mechanics, spacecraft design, guidance. |
-| ⬜ **Chemical & Process Engineering** | Chemistry ↔ Materials Science ↔ Thermodynamics ↔ Energy | Reaction engineering, transport phenomena, separations, process control, scale-up. |
-| ⬜ **Civil & Structural Engineering** | Physics (statics) ↔ Materials ↔ Maths ↔ Earth Science | Structural analysis, mechanics of materials, geotechnics, infrastructure. |
-| ⬜ **Optics & Photonics** | Physics (waves) ↔ Materials ↔ Quantum Computing ↔ Signals | Geometric/wave/quantum optics, lasers, fiber optics, imaging, photonic computing. |
-| ⬜ **Energy Systems & Power** | Physics ↔ Chemistry ↔ Earth Science ↔ Economics | Generation/storage/grid, renewables, batteries, nuclear — the cross-cutting energy-transition domain. |
+| ✅ **Electrical & Electronics Engineering** | Physics (E&M) ↔ Signals & Systems ↔ Computer Architecture ↔ Materials | Circuit analysis, analog/digital electronics, power systems, semiconductors, RF — the hardware substrate beneath computing. **DONE (36 notes, Electrical_Engineering/).** |
+| ✅ **Mechanical Engineering** | Physics (mechanics) ↔ Materials Science ↔ Robotics ↔ Maths | Statics/dynamics, applied thermodynamics, machine design, vibrations, manufacturing. **DONE (36 notes, Mechanical_Engineering/).** |
+| ✅ **Aerospace & Orbital Mechanics** | Physics ↔ Astronomy ↔ Fluid Dynamics ↔ Control | Aerodynamics, propulsion, astrodynamics/orbital mechanics, spacecraft design, guidance. **DONE (36 notes, Aerospace_Engineering/).** |
+| ✅ **Chemical & Process Engineering** | Chemistry ↔ Materials Science ↔ Thermodynamics ↔ Energy | Reaction engineering, transport phenomena, separations, process control, scale-up. **DONE (36 notes, Chemical_Engineering/).** |
+| ✅ **Civil & Structural Engineering** | Physics (statics) ↔ Materials ↔ Maths ↔ Earth Science | Structural analysis, mechanics of materials, geotechnics, infrastructure. **DONE (36 notes, Civil_Engineering/).** |
+| ✅ **Optics & Photonics** | Physics (waves) ↔ Materials ↔ Quantum Computing ↔ Signals | Geometric/wave/quantum optics, lasers, fiber optics, imaging, photonic computing. **DONE (36 notes, Optics_and_Photonics/).** |
+| ✅ **Energy Systems & Power** | Physics ↔ Chemistry ↔ Earth Science ↔ Economics | Generation/storage/grid, renewables, batteries, nuclear — the cross-cutting energy-transition domain. **DONE (36 notes, Energy_Systems/). COMPLETES the Engineering & Applied Sciences table.** |
 
 ---
 
@@ -147,32 +147,32 @@ The descriptive life-science vaults (Biology, Genetics, Neuroscience) and the ap
 
 | Topic | Connects | Why it's worth it |
 |-------|----------|-------------------|
-| ⬜ **Clinical Medicine & Pathophysiology** | Biology ↔ Health ↔ Neuroscience ↔ Genetics | Organ systems in disease, diagnosis, the mechanisms behind illness — the clinical layer above descriptive biology. |
-| ⬜ **Pharmacology & Drug Discovery** | Chemistry ↔ Biology ↔ Genetics ↔ AI-ML | Pharmacokinetics/dynamics, drug targets, the discovery pipeline, computational drug design. |
-| 🟡 **Immunology (deep-dive)** | Biology ↔ Health ↔ Medicine | Innate/adaptive immunity, vaccines, autoimmunity, immunotherapy. Covered lightly in Biology/Health. |
-| 🟡 **Epidemiology & Public Health** | Health ↔ Statistics ↔ Sociology ↔ Political Science | Study design, causal inference, disease surveillance, health policy. Some coverage in the Health vault. |
-| 🟡 **Ecology & Conservation Science** | Biology ↔ Earth Science ↔ Systems Thinking ↔ Economics | Population/community/ecosystem ecology, biodiversity, conservation, environmental management. |
-| ⬜ **Paleontology & Deep-Time Life** | Biology ↔ Earth Science ↔ History ↔ Evolution | Fossil record, mass extinctions, macroevolution — life across geological time. |
+| ✅ **Clinical Medicine & Pathophysiology** | Biology ↔ Health ↔ Neuroscience ↔ Genetics | Organ systems in disease, diagnosis, the mechanisms behind illness — the clinical layer above descriptive biology. **DONE (36 notes, Clinical_Medicine/).** |
+| ✅ **Pharmacology & Drug Discovery** | Chemistry ↔ Biology ↔ Genetics ↔ AI-ML | Pharmacokinetics/dynamics, drug targets, the discovery pipeline, computational drug design. **DONE (36 notes, Pharmacology/).** |
+| ✅ **Immunology (deep-dive)** | Biology ↔ Health ↔ Medicine | Innate/adaptive immunity, vaccines, autoimmunity, immunotherapy. Covered lightly in Biology/Health. → BUILT 2026-08-02 as `Immunology/` (36 notes, 6 sections). **COMPLETES the Medicine & Applied Life Sciences table (all 6 rows ✅).** |
+| ✅ **Epidemiology & Public Health** | Health ↔ Statistics ↔ Sociology ↔ Political Science | Study design, causal inference, disease surveillance, health policy. **DONE (36 notes, Epidemiology_and_Public_Health/).** |
+| ✅ **Ecology & Conservation Science** | Biology ↔ Earth Science ↔ Systems Thinking ↔ Economics | Population/community/ecosystem ecology, biodiversity, conservation, environmental management. → BUILT 2026-08-02 as `Ecology_and_Conservation/` (36 notes, 6 sections). |
+| ✅ **Paleontology & Deep-Time Life** | Biology ↔ Earth Science ↔ History ↔ Evolution | Fossil record, mass extinctions, macroevolution — life across geological time. → BUILT 2026-08-02 as `Paleontology_and_Deep_Time/` (36 notes, 6 sections). |
 
 ### More Social Sciences ⬜
 
 | Topic | Connects | Why it's worth it |
 |-------|----------|-------------------|
 | 🟡 **International Relations (deep-dive)** | Political Science ↔ History ↔ Economics ↔ Game Theory | IR theory (realism/liberalism/constructivism), security studies, global governance. Partly in Political Science. |
-| ⬜ **Public Policy & Governance** | Political Science ↔ Economics ↔ Law ↔ Ethics | Policy analysis, cost-benefit, regulation, institutional design, implementation. |
+| ✅ **Public Policy & Governance** | Political Science ↔ Economics ↔ Law ↔ Ethics | Policy analysis, cost-benefit, regulation, institutional design, implementation. → BUILT 2026-08-02 as `Public_Policy_and_Governance/` (36 notes, 6 sections). |
 | 🟡 **Criminology & Justice** | Sociology ↔ Law ↔ Psychology ↔ Statistics | Theories of crime, deterrence, penology, criminal-justice systems. Touched in Sociology + Law. |
 | 🟡 **Human Geography & Geopolitics** | Political Science ↔ Earth Science ↔ Economics ↔ History | Spatial analysis, urbanization, migration, resource geopolitics. |
 | 🟡 **Education & Pedagogy** | Learning Science ↔ Psychology ↔ Cognitive Science | Instructional design, curriculum theory, assessment — the science of teaching (vs Learning Science's how-to-learn focus). |
-| ⬜ **Media & Communication Studies** | Literature & Rhetoric ↔ Sociology ↔ Linguistics ↔ Psychology | Mass-communication theory, propaganda/persuasion, network media effects, journalism. |
+| ✅ **Media & Communication Studies** | Literature & Rhetoric ↔ Sociology ↔ Linguistics ↔ Psychology | Mass-communication theory, propaganda/persuasion, network media effects, journalism. |
 | 🟡 **Demography & Population Studies** | Sociology ↔ Economics ↔ Statistics ↔ History | Fertility/mortality/migration, population pyramids, aging societies. |
 
 ### More Humanities & Arts ⬜
 
 | Topic | Connects | Why it's worth it |
 |-------|----------|-------------------|
-| ⬜ **Religious Studies & Comparative Religion** | Mythology ↔ Philosophy ↔ History ↔ Anthropology | Comparative religion, theology, ritual, sacred texts — the academic study of religion, distinct from mythology's narrative focus. |
+| ✅ **Religious Studies & Comparative Religion** | Mythology ↔ Philosophy ↔ History ↔ Anthropology | Comparative religion, theology, ritual, sacred texts — the academic study of religion, distinct from mythology's narrative focus. → BUILT 2026-08-02 as `Religious_Studies_and_Comparative_Religion/` (36 notes, 6 sections). |
 | ⬜ **Film & Media Aesthetics** | Art & Aesthetics ↔ Literature ↔ Music ↔ Computer Graphics | Cinematography, montage theory, sound design, narrative structure in moving images. |
-| ⬜ **Architecture** | Art & Aesthetics ↔ Civil Engineering ↔ History ↔ Materials | Architectural theory/history, space and form, sustainable/parametric design — art meets engineering. |
+| ✅ **Architecture** | Art & Aesthetics ↔ Civil Engineering ↔ History ↔ Materials | Architectural theory/history, space and form, sustainable/parametric design — art meets engineering. → BUILT 2026-08-02 as `Architecture/` (36 notes, 6 sections). |
 | 🟡 **Classical Studies & Philology** | History ↔ Literature ↔ Linguistics ↔ Mythology | Greek/Latin languages and texts, textual criticism, the classical inheritance. |
 | ⬜ **Performing Arts** | Music Theory ↔ Art ↔ Literature ↔ Psychology | Theatre, dance, and performance theory, dramaturgy, embodiment. |
 
@@ -195,12 +195,12 @@ Several Part-III bridges from the old roadmap already became full vaults (**Info
 
 | Bridge vault | Connects | Why it's worth it |
 |--------------|----------|-------------------|
-| ⬜ **History of Science** | History ↔ Physics ↔ Maths ↔ Philosophy | How ideas were actually discovered — and resisted. A section exists in `History/15`; a dedicated vault (Kuhn/paradigms, the Scientific Revolution, key controversies) is high-leverage. |
-| ⬜ **Evolutionary Game Theory** | Game Theory ↔ Biology ↔ Economics ↔ Political Science | One mathematics, four fields of dynamics: replicator equations, ESS, cooperation/altruism, cultural evolution. |
-| ⬜ **Behavioral Economics** | Psychology ↔ Microeconomics ↔ Finance | Why real humans break rational-agent models: prospect theory, heuristics/biases, nudges, market anomalies. Partly in Psychology/Finance; a dedicated bridge would centralize it. |
-| ⬜ **Statistical Mechanics ↔ ML** | Physics ↔ AI-ML ↔ Information Theory | Energy-based models, diffusion, Boltzmann machines, the free-energy principle. Seeded in `Information_Theory/05`; deserves a focused bridge. |
-| ⬜ **Computational Social Science / Cliodynamics** | History ↔ Sociology ↔ AI-ML ↔ Complexity | Agent-based models, network analysis of societies, quantitative history — "Computational X" applied to the humanities. |
-| ⬜ **Complexity Economics** | Economics ↔ Systems Thinking ↔ Game Theory ↔ Physics | Agent-based markets, power laws, non-equilibrium economics — the Santa Fe alternative to neoclassical models. |
+| ✅ **History of Science** | History ↔ Physics ↔ Maths ↔ Philosophy | **Built 2026-08-01** — 36-note vault in `History_of_Science/` (6 sections: Foundations & Ancient/Medieval, The Scientific Revolution, Modern Physics Revolutions, Life/Mind/Earth Sciences, Philosophy & Sociology of Science, Science/Society & Frontiers). Ancient→Islamic→Copernican→Newton→chemical/Darwinian/EM→relativity/quantum/atomic/cosmology→molecular-bio/germ-theory/tectonics/computing→Popper/Kuhn/Lakatos/SSK/realism→ethics/gender/religion/pseudoscience. Deep-dive expanding the `History/15` section; demos re-derive each era's pivotal computation. |
+| ✅ **Evolutionary Game Theory** | Game Theory ↔ Biology ↔ Economics ↔ Political Science | **Built 2026-08-01** — 36-note vault in `Evolutionary_Game_Theory/` (6 sections: Foundations, Dynamics & Stability, Evolution of Cooperation, Applications in Biology, Applications in Economics & Society, Advanced Topics & Frontiers). Replicator dynamics/ESS/Hawk-Dove → Moran/RPS/adaptive-dynamics → cooperation's five rules → sex-ratio/signaling/Red-Queen/microbial/bet-hedging → bounded-rationality/culture/conventions/ultimatum/markets/politics → fixation/graphs/ML/eco-evo/cancer-medicine/capstone. Deep-dive complementing `Game_Theory/06`; numpy+matplotlib demos. |
+| ✅ **Behavioral Economics** | Psychology ↔ Microeconomics ↔ Finance | Why real humans break rational-agent models: prospect theory, heuristics/biases, nudges, market anomalies. **BUILT 2026-08-01 — 36 notes in `Behavioral_Economics/` (6 sections): foundations-rationality · prospect-theory-risk · biases-judgment · intertemporal-social · behavioral-finance · applications-policy-frontiers.** Centralizes material scattered across Psychology/Finance/Cognitive Science; opens into neuroeconomics + behavioral-ML. |
+| ✅ **Statistical Mechanics ↔ ML** | Physics ↔ AI-ML ↔ Information Theory | Energy-based models, diffusion, Boltzmann machines, the free-energy principle. **BUILT 2026-08-01 — 36 notes in `Statistical_Mechanics_and_Machine_Learning/` (6 sections): foundations-correspondence · energy-based-models · sampling-MCMC · diffusion-nonequilibrium · phase-transitions-learning · inference-frontiers.** The dictionary energy↔loss, temperature↔noise, free-energy↔ELBO; deep-dive expanding the `Information_Theory/05` seed. |
+| ✅ **Computational Social Science / Cliodynamics** | History ↔ Sociology ↔ AI-ML ↔ Complexity | Agent-based models, network analysis of societies, quantitative history — "Computational X" applied to the humanities. **BUILT 2026-08-02 — 36 notes in `Computational_Social_Science/` (6 sections): foundations · social-network-analysis · agent-based-social-simulation · text-as-data · cliodynamics-&-quantitative-history · prediction-causality-&-frontiers.** The "telescope for humanity" methods-portfolio (networks · ABM · text/NLP/LLMs · ML/prediction · causal inference/experiments · cliodynamics) bridging AI-ML/Sociology/Complexity Economics/Systems Thinking/History/Political Science; honest throughline on big-data-≠-good-data, prediction limits (Fragile Families), ethics, and the data divide. |
+| ✅ **Complexity Economics** | Economics ↔ Systems Thinking ↔ Game Theory ↔ Physics | Agent-based markets, power laws, non-equilibrium economics — the Santa Fe alternative to neoclassical models. **BUILT 2026-08-01 — 36 notes in `Complexity_Economics/` (6 sections): foundations-beyond-equilibrium · agent-based-computational · networks-contagion · power-laws-scaling · evolution-innovation-growth · dynamics-policy-frontiers.** The economy as a complex adaptive system; deep-dive complementing Systems Thinking + EGT + Macro/Micro. |
 | ⬜ **Network Science** | Systems Thinking ↔ Sociology ↔ Biology ↔ CS ↔ Physics | Graph structure of real systems — small-world/scale-free networks, contagion, community detection. One math across a dozen fields. |
 | 🟡 **Cybernetics & Control Theory** | Systems Thinking ↔ Signals ↔ Robotics ↔ Biology | Feedback, homeostasis, the science of goal-directed systems. Touched in Systems Thinking; a focused bridge would anchor it. |
 | ⬜ **Neuroeconomics** | Neuroscience ↔ Economics ↔ Psychology ↔ Behavioral Econ | The neural basis of value, reward, and decision — where the brain meets the market. |
@@ -223,16 +223,16 @@ Several Part-III bridges from the old roadmap already became full vaults (**Info
 3. ✅ **Distributed Systems Theory** — *Built 2026-08-01* (36-note vault). Completes the systems story beneath System Design.
 
 **Then — the highest-leverage bridge vaults:**
-4. ⬜ **Cryptography (deep-dive)** — number theory ↔ security ↔ blockchain, civilisation-scale stakes.
-5. ⬜ **History of Science** — ties History ↔ Physics ↔ Maths ↔ Philosophy.
-6. ⬜ **Evolutionary Game Theory** — one math across biology, econ, and politics.
+4. ✅ **Cryptography (deep-dive)** — *Built 2026-08-01* (36-note vault). Number theory ↔ security ↔ blockchain, civilisation-scale stakes.
+5. ✅ **History of Science** — *Built 2026-08-01* (36-note vault). Ties History ↔ Physics ↔ Maths ↔ Philosophy.
+6. ✅ **Evolutionary Game Theory** — *Built 2026-08-01* (36-note vault). One math across biology, econ, and politics; **last named build-order item — the numbered list is now COMPLETE.**
 
 **Then — the applied-physics branches (round out the natural sciences):**
-7. ⬜ **Biophysics**, **Computational Physics**, **Fluid Dynamics** — bridge Physics into Biology, Numerics, and the Earth-science vaults.
+7. ✅ **Applied-physics triad — COMPLETE (all 3 built 2026-08-01):** **Biophysics** ✅ (36-note vault in `Biophysics/` — the densest physics↔life-sciences bridge) · **Computational Physics** ✅ (36-note vault in `Computational_Physics/` — numerical foundations/ODEs/PDEs/Monte-Carlo/many-body-quantum/HPC; the "third pillar" simulation vault) · **Fluid Dynamics** ✅ (36-note vault in `Fluid_Dynamics/` — foundations/governing-eqns/viscous-boundary-layers/turbulence/compressible-rotating-geophysical/computation-apps; deep-dive complementing Physics/10, bridging Meteorology/Oceanography/Aerospace/Astrophysics). Bridged Physics into Biology, Numerics, and the Earth-science vaults.
 
 **Finally — remaining bridges & niche math:**
-8. ⬜ Behavioral Economics · Statistical Mechanics↔ML · Complexity Economics · Computational Social Science
-9. ⬜ Robotics & Control · Combinatorics (pure) · Information Geometry · Mathematical Logic (deep) · Geophysics · Plasma/Fusion · Formal Methods
+8. ✅ **Behavioral Economics ✅** · **Statistical Mechanics↔ML ✅** · **Complexity Economics ✅** · **Computational Social Science ✅** (`Computational_Social_Science/`) — ALL FOUR bridge vaults DONE (built 2026-08-01/02, 36 notes each). #8 COMPLETE.
+9. ✅ **Robotics & Control ✅** (`Robotics_and_Control/`, 36 notes) · **Combinatorics (pure) ✅** (`Combinatorics/`, 36 notes) · **Information Geometry ✅** (`Information_Geometry/`, 36 notes) · **Mathematical Logic (deep) ✅** (`Mathematical_Logic/`, 36 notes) · **Geophysics ✅** (`Geophysics/`, 36 notes) · **Plasma/Fusion ✅** (`Plasma_and_Fusion/`, 36 notes) · **Formal Methods ✅** (`Formal_Methods/`, built 2026-08-02, 36 notes: foundations-specification · logic-proof-solvers · deductive-verification · model-checking-temporal · static-analysis-abstraction · applications-frontiers) — ALL SEVEN standalones DONE (36 notes each). #9 COMPLETE.
 
 **Broader spread — build as curiosity strikes (each still adds real edges):**
 10. The **engineering** disciplines (EE, Mechanical, Aerospace, Chemical, Civil, Optics, Energy Systems), **Medicine & Applied Life Sciences** (Clinical Medicine, Pharmacology, Epidemiology, Ecology, Paleontology), the additional **social sciences & humanities** (Public Policy, Media Studies, Religious Studies, Architecture, Performing Arts, Criminology), the **practical meta-skills** (Decision Theory, Forecasting, Negotiation, Entrepreneurship), and the remaining **bridges** (Network Science, Neuroeconomics, Astrobiology, Quantum Biology, Philosophy of Science, Environmental Economics, Semiotics). Lower-priority only because the core CS/maths/science graph is already dense — not because they lack value.
